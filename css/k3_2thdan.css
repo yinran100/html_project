@@ -1,0 +1,29 @@
+.k3_logo{
+	left: 325px;
+}
+.h th {
+    font-size: 17px;
+}
+.table tr td.win{
+	font-size: 25px;
+}
+.name{
+	font-size: 37px;
+	top: 15px;
+	left: 425px;
+}
+.table tr.ta td:nth-child(1){
+	font-size: 15px;
+}
+.table tr:not(.bottom):not(.djs) td:nth-child(4){
+	border-right: 2px solid #444444 !important;
+}
+.table tr td.dia{
+	width: 30px;
+}
+.table tr td.dia div.dif{
+	margin: 0 -2px;
+	font-size: 22px;
+	line-height: 1;
+	letter-spacing: -2px;
+}

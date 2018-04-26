@@ -1,0 +1,101 @@
+
+body{
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	background-color: #06BEFC;
+}
+ul{list-style-type:none}
+.homePage{
+	width: 100%;
+	height: 100%;	
+}
+.layer, .layer2{
+	width:100%;
+	height:100%;
+	left:0;
+	top:0;
+	background:rgba(0, 0, 0, .4);
+	position:absolute;
+	display:none;
+}
+.commWait{
+	display:none;
+	position:absolute;
+	z-index:10;
+	top:0;
+	left:0;	
+	width:100%;
+	height:200%;
+	padding-top:855px;
+	text-align: center;
+	background:rgba(255,255,255,0.5);
+}
+.commWait .loading{
+	margin:0 auto;
+	width:179px;
+	height:179px;
+	background: url(../img/loading.png) no-repeat;
+}
+.commWait .msg{
+	width: 370px;
+	margin: 0 auto;
+	color: #CCFFFF;
+	font-size:28px;  
+	font-weight: bold;
+	text-shadow: 1px 1px 2px #990000,1px 1px 0px #FFF,-1px -1px 2px #990000,-1px 1px 2px #990000;
+}
+
+/*��ת*/
+.effect_rotate{
+	-webkit-backface-visibility:visible;
+	-webkit-transform-origin:center center;
+	-webkit-animation:ef_rotate 1s 0s linear infinite;
+} 
+@-webkit-keyframes ef_rotate{
+	from{
+    -webkit-transform:rotateZ(0deg);
+  }
+  to{
+    -webkit-transform:rotateZ(360deg);
+  }
+}
+.effect_rotate{
+	-moz-backface-visibility:visible;
+	-moz-transform-origin:center center;
+	-moz-animation: ef_rotate 1s linear infinite;
+} 
+@-moz-keyframes ef_rotate{
+	from{
+    -webkit-transform:rotateZ(0deg);
+  }
+  to{
+    -webkit-transform:rotateZ(360deg);
+  }
+}
+.dialog{
+	position:absolute;
+	width: 800px;
+	height: 300px;
+	top: 700px;
+	left: 200px;
+	/*font-family: "wr"; */
+	background-color: #444444;
+	border-radius: 10px 10px 10px 10px;
+	z-index: 20;
+}
+.dialog span{
+	color: whitesmoke;
+	font-size: 40px;
+	margin: 35px;
+	line-height: 3;
+}
+.dialog span.q{
+	margin: 20px;
+}
+.dialog span.y,.dialog span.n{
+	margin: 85px;
+}
+.dialog span.y.ac,.dialog span.n.ac{
+	color: gold;
+}

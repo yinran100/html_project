@@ -1,0 +1,46 @@
+.ql730_logo {
+	position: inherit;
+	left: 375px;
+	top: 5px;
+	height: 74px;
+	width: 93px;
+	background: url(../img/logo_ql730.png) no-repeat;
+}
+.name{
+	left: 455px;
+}
+.table{
+	font-size: 17px;
+}
+.table .t th.term{
+	font-size: 21px;
+}
+.table tr:not(.h) td.win{
+	letter-spacing: -1px;
+	color: #DC143C;
+}
+.table tr:not(.h):not(.bottom) td:nth-child(9){
+	color: blue;
+}
+.table tr:not(.bottom) td.termN.time{
+	font-size: 17px;
+	font-family: "wr";
+}
+.table tr.bottom td.bom{
+	font-size: 14px;
+}
+.table tr:not(.bottom) td.dia{
+	width: 32px;
+}
+
+.table tr td.dia div.one,
+.table tr td.dia div.two{
+	line-height: 1;
+	margin: 0 -3px;
+	letter-spacing: -1px;
+	font-size: 29px;
+	font-weight: bold;
+}
+/*江西贵州*/
+/*.table tr:not(.day):nth-child(even) td.dia{	background-color: #e6f7fe;}
+.table tr:not(.day):nth-child(odd) td.dia{	background-color: #f5f9fc;}*/

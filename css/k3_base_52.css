@@ -1,0 +1,32 @@
+.table tr:not(.bottom) td.time, .table tr:not(.bottom) td.state{
+	font-size: 19px;
+}
+.table tr td.win{
+	font-size: 25px;
+}
+.table .h th:nth-child(6),.table .h th:nth-child(22),.table .h th:nth-child(26),
+.table tr:not(.bottom) td:nth-last-child(5),.table tr:not(.bottom) td:nth-last-child(9),.table tr:not(.bottom) td:nth-last-child(25),
+.table tr:not(.h):not(.bottom) td:nth-last-child(31),
+.table tr.bottom td:nth-child(1),.table tr.bottom td:nth-child(7),.table tr.bottom td:nth-child(23),.table tr.bottom td:nth-child(27){
+	border-right: 2px solid #444444 !important;
+}
+.table tr:not(.day):nth-child(even) td.dia{	background-color: #daf9e6;}
+.table tr:not(.day):nth-child(odd) td.dia{	background-color: #f1faf1;}
+.table tr:not(.day):nth-child(even) td.dia:nth-last-child(n+5){	background-color: #fbfcce;}
+.table tr:not(.day):nth-child(odd) td.dia:nth-last-child(n+5){	background-color: #fcfced;}
+.table tr:not(.day):nth-child(even) td.dia:nth-last-child(n+9){	background-color: #fadde6;}
+.table tr:not(.day):nth-child(odd) td.dia:nth-last-child(n+9){	background-color: #fbf0f4;}
+.table tr:not(.day):nth-child(even) td.dia:nth-last-child(n+25){	background-color: #d0ecf7;}
+.table tr:not(.day):nth-child(odd) td.dia:nth-last-child(n+25){	background-color: #ebf3f8;}
+
+.table tr td.win{	width:35px;}
+.table tr td.dia{	width:26px;}
+.table tr td.dia:nth-last-child(n+9){	width:32px;}
+.table tr td.dia:nth-last-child(n+25){	width:27px;}
+.table tr td.dia div.one,.table tr td.dia div.two,
+.table tr td.dia div.ds,.table tr td.dia div.js{
+	line-height: 1;
+	margin: -2px;
+	letter-spacing: -2px;
+}
+.table tr td.dia div.ds,.table tr td.dia div.js{ font-size: 26px;}

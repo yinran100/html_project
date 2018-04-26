@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>3D走势图</title>
+		<link id="basecss" rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link id="viewcss" rel="stylesheet" type="text/css" href="css/s3.css"/>
+	</head>
+	<body >
+		<div id="homePage">
+			<header class="header">
+					<div class="logo"></div>
+					<div class="s3_logo"></div>
+					<div class="header_title"></div>
+					<span class="name">3D基本走势图</span>
+					<div class = "date"><span></span><span></span></div>
+					<div class = "version"><span></span><span></span></div>
+			</header>
+			<canvas id="line" width="1080" height="1800"> </canvas>
+			<div id="layer"></div>
+			<section id="contentBody">
+				<table class="table" id="ta" border="0" cellspacing="1" cellpadding="0">
+					<colgroup>
+   						<col class = "issue" span="1">
+    					<col class = "winNumbers" span="3">
+    					<col class = "dia1" span="10">
+    					<col span="10"><col span="10"><col span="10">
+  					</colgroup>
+					<tr class="t">
+						<th class = "yellow term" rowspan="2">期号</th>
+						<th class = "green append_border winnum" colspan="3" rowspan="2">中奖号码</th>
+						<th class = "blue" colspan="10">号码走势</th>
+						<th class = "mm" colspan="10">百位走势</th>
+						<th class = "mm" colspan="10">十位走势</th>
+						<th class = "mm1" colspan="10">个位走势</th>
+					</tr>
+					<tr class="h">
+						<th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
+						<th>6</th><th>7</th><th>8</th><th>9</th>
+						<th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
+						<th>6</th><th>7</th><th>8</th><th>9</th>
+						<th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
+						<th>6</th><th>7</th><th>8</th><th>9</th>
+						<th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
+						<th>6</th><th>7</th><th>8</th><th class="mm1">9</th>
+					</tr>
+					<tbody id="tabody" data-bind="foreach:diagramHtml">
+						<tr data-bind="{attr:{'class':'n'+($index()+1)},style:{height:trHeight()},css:{'border':$index()%10==9&&$index()>0,'day':$data.daycut==1,'djs':isLast($index())}}"></tr>
+					</tbody>
+					<tr class="bottom"  data-bind="foreach:wintimes">
+						<td data-bind="{css:{'dia': $index()!=0,'green':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="bottom" data-bind="foreach:misstimes">
+						<td data-bind="{css:{'dia': $index()!=0,'orange':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="bottom" data-bind="foreach:maxtimes">
+						<td data-bind="{css:{'dia': $index()!=0,'yellow':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+				</table>
+				<div class = "news">
+					<!--<marquee id="notice" direction="left" behavior="scroll" scrollamount="3" scrolldelay="30" loop="-1"  hspace="10" vspace="10">-->
+					<marquee id="notice" direction="left" behavior="scroll" scrollamount="3" scrolldelay="30" loop="-1"  hspace="10" vspace="10" > 
+						<span></span>
+					</marquee>
+					<div class = "leftfoot"></div>
+					<div class = "rightfoot"></div>
+				</div>
+			</section>
+		</div>
+		<script type="text/javascript" src="js/shortcut.js"></script>
+		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="js/htmlUtils.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="js/s3.js"></script>
+	</body>
+</html>

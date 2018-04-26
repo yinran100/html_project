@@ -1,0 +1,74 @@
+.header_title{
+	width: 372px;
+	left: 360px;
+	background: url(../../img/header/s3_title.png);
+}
+.s3_logo {
+	left: 675px;
+	position: inherit;
+	height: 75px;
+	width: 75px;
+	background-image: url(../../img/logo_s3.png);
+}
+.name{
+	left: 465px;
+}
+.table{
+	font-size: 17px;
+}
+.table .t th{
+	font-size: 19px;
+}
+.table .h th{
+	font-size: 18px;
+}
+.table tr:not(.bottom) td.termN.time,.table tr:not(.bottom) td.win.state{
+	font-size: 17px;
+}
+.table tr th.winnum {
+    min-width: 103px;
+}
+.table tr:not(.h) th:nth-last-child(n+2),.table .h th:nth-child(10),
+.table .h th:nth-child(20),.table .h th:nth-child(30),.table .h th:nth-child(40),
+.table tr:not(.bottom) td:nth-last-child(2),
+.table tr:not(.bottom) td:nth-last-child(12),
+.table tr:not(.bottom) td:nth-last-child(22),
+.table tr:not(.bottom) td:nth-last-child(32),
+.table tr:not(.bottom) td:nth-last-child(42),
+.table tr.bottom td:nth-child(11),
+.table tr.bottom td:nth-child(21),
+.table tr.bottom td:nth-child(31),
+.table tr.bottom td:nth-child(41){
+	border-right: 2px solid #444444 !important;
+}
+.table tr td.dia{
+	width: 30px;
+}
+.table tr td.dia:nth-last-child(n+2){
+	width: 21px;
+}
+
+.table tr td.dia div.one,
+.table tr td.dia div.two,
+.table tr td.dia div.three,
+.table tr td.dia div.four{
+	border-radius: 50%;
+	color: #fffdf0;
+	letter-spacing: -2px;
+	line-height: 1;
+	padding: 2px;
+	font-size: 17px;
+	width: 17px;
+	margin: auto;
+}
+.table tr td.dia div.zero{
+	color: #000000;
+	letter-spacing: -1px;
+	font-size: 22px;
+}
+.table tr.bottom td.dia div.md{
+	font-size: 15px;
+}
+.table tr.bottom td.dia div.lg{
+	font-size: 14px;
+}

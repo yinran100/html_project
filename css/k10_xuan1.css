@@ -1,0 +1,61 @@
+.table th {	font-size: 17px;}
+.table .term{	font-size: 20px;}
+.h th:nth-child(n+21){	
+	font-family: "wr";
+	font-weight: normal;
+}
+.table tr:not(.bottom) td.win{
+	font-size: 17px;
+	font-weight: normal;
+}
+.table tr:not(.bottom) td.win.state{	font-size: 18px;}
+.table tr:not(.bottom) td:nth-child(2):not(.state){	color: crimson;}
+
+.table tr:not(.day):nth-child(even) td.dia{	background-color: #e6f7fe;}
+.table tr:not(.day):nth-child(odd) td.dia{	background-color: #f5f9fc;}
+.table tr:not(.day):nth-child(even) td.dia:nth-last-child(n+3){	background-color: #fcf0f1;}
+.table tr:not(.day):nth-child(odd) td.dia:nth-last-child(n+3){	background-color: #fffafa;}
+.table tr:not(.day):nth-child(even) td.dia:nth-last-child(n+5){	background-color: #e6f7fe;}
+.table tr:not(.day):nth-child(odd) td.dia:nth-last-child(n+5){	background-color: #f5f9fc;}
+.table tr:not(.day):nth-child(even) td.dia:nth-last-child(n+7){	background-color: #fcf0f1;}
+.table tr:not(.day):nth-child(odd) td.dia:nth-last-child(n+7){	background-color: #fffafa;}
+.table tr:not(.day):nth-child(even) td.dia:nth-last-child(n+10){	background-color: #e6f7fe;}
+.table tr:not(.day):nth-child(odd) td.dia:nth-last-child(n+10){	background-color: #f5f9fc;}
+.table tr:not(.day):nth-child(even) td.dia:nth-last-child(n+13){	background-color: #fcf0f1;}
+.table tr:not(.day):nth-child(odd) td.dia:nth-last-child(n+13){	background-color: #fffafa;}
+.table .h th:nth-child(20),.table .h th:nth-child(23),.table .h th:nth-child(26),
+.table .h th:nth-child(28),.table .h th:nth-child(30),
+.table tr:not(.bottom):not(.djs) td:nth-child(9),
+.table tr:not(.bottom):not(.djs) td:nth-child(29),
+.table tr:not(.bottom):not(.djs) td:nth-child(32),
+.table tr:not(.bottom):not(.djs) td:nth-child(35),
+.table tr:not(.bottom):not(.djs) td:nth-child(37),
+.table tr:not(.bottom):not(.djs) td:nth-child(39),
+.table tr.djs td:nth-child(22),.table tr.djs td:nth-child(25),
+.table tr.djs td:nth-child(28),.table tr.djs td:nth-child(30),
+.table tr.djs td:nth-child(32),
+.table tr.bottom td:nth-child(21),.table tr.bottom td:nth-child(24),
+.table tr.bottom td:nth-child(27),.table tr.bottom td:nth-child(29),
+.table tr.bottom td:nth-child(31){
+	border-right: 2px solid #444444 !important;
+}
+.table tr td.dia{	width:	27px;}
+.table tr td.dia:nth-last-child(n+9){	width:	28px;}
+
+.table tr:not(.bottom) td div.zero{
+	font-size: 27px;
+	line-height: 1;
+	margin: -2px;
+	letter-spacing: -1px;
+}
+.table tr td.first{ background-color: #93D8ED !important;}
+.table tr td.second{	background-color: #EAA1A7 !important;}
+.table tr td.dia div.one,.table tr td.dia div.two{
+	letter-spacing: -1px;
+	color: black;
+	font-size: 17px;
+}
+.table tr td.dia div.three,.table tr td.dia div.four,.table tr td.dia div.five{
+	color: black;
+	font-family:"wr";
+	}

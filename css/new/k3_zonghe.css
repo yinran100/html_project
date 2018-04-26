@@ -1,0 +1,66 @@
+.header_title{
+	width: 372px;
+	left: 340px;
+	background: url(../../img/header/k3_zonghe_title.png);
+}
+.table{
+	font-size: 16px;
+}
+.t th,.h th,.table tr:not(.bottom) td.time, .table tr:not(.bottom) td.state{
+	font-size: 16px;
+}
+.table tr th.term {
+    min-width: 52px;
+}
+.table tr th.winnum {
+    min-width: 88px;
+}
+.table tr:not(.bottom) td.win{
+	font-size: 19px;
+}
+.table .h th:nth-child(6),.table .h th:nth-child(12),
+.table .h th:nth-child(18),.table .h th:nth-child(24),.table .h th:nth-child(40),
+.table tr:not(.bottom):not(.djs) td:nth-child(4),
+.table tr:not(.bottom):not(.djs) td:nth-child(10),
+.table tr:not(.bottom):not(.djs) td:nth-child(16),
+.table tr:not(.bottom):not(.djs) td:nth-child(22),
+.table tr:not(.bottom):not(.djs) td:nth-child(28),
+.table tr:not(.bottom):not(.djs) td:nth-child(44),
+.table tr.djs td:nth-child(8),
+.table tr.djs td:nth-child(14),
+.table tr.djs td:nth-child(20),
+.table tr.djs td:nth-child(26),
+.table tr.djs td:nth-child(42),
+.table tr.bottom td:nth-child(7),
+.table tr.bottom td:nth-child(13),
+.table tr.bottom td:nth-child(19),
+.table tr.bottom td:nth-child(25),
+.table tr.bottom td:nth-child(41){
+	border-right: 2px solid #444444 !important;
+}
+
+.table tr td.dia{
+	width: 20px;
+}
+.table tr td.dia div.one,.table tr td.dia div.second,
+.table tr td.dia div.third,.table tr td.dia div.fouth,
+.table tr td.dia div.two,.table tr td.dia div.kua{
+	border-radius: 50%;
+	color: #fffdf0;
+	letter-spacing: -1px;
+	font-size: 15px;
+	line-height: 1;
+	padding: 2px;
+	width: 15px;
+	margin: auto;
+}
+.table tr.ta td:nth-child(1){	font-size: 15px;}
+.table tr.ta td:nth-child(1) span{font-size: 14px;}
+.table tr.bottom td.dia div.md{
+	font-size: 15px;
+	font-weight: 200;
+}
+.table tr.bottom td.dia div.lg{
+	font-size: 13px;
+	font-weight: 100;
+}

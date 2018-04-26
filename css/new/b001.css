@@ -1,0 +1,87 @@
+.header_title{
+	width: 372px;
+	left: 350px;
+	background: url(../../img/header/b001_title.png);
+}
+.b001_logo {
+	position: inherit;
+	left: 690px;
+	top: 0px;
+	height: 74px;
+	width: 93px;
+	background: url(../../img/logo_b001.png) no-repeat;
+}
+.name{
+	left: 440px;
+}
+.table{
+	font-size: 17px;
+}
+.table .t th:first-child{
+	font-size: 21px;
+}
+.h th{	
+	letter-spacing: -1px;
+	font-weight: normal;
+	font-size: 17px;
+}
+.table tr:not(.bottom) td.termN{
+	width: 104px;
+}
+.table tr:not(.bottom) td.termN.time{
+	font-size: 14px;
+	font-family: "wr";
+}
+
+.table tr:not(.h) th:nth-last-child(n+2),
+.table .h th:nth-child(33),
+.table tr:not(.bottom) td:nth-last-child(17),
+.table tr:not(.bottom) td:nth-last-child(50),
+.table tr.bottom td:nth-child(1),
+.table tr.bottom td:nth-child(34){
+	border-right: 2px solid #444444 !important;
+}
+
+.table tr.bottom td:nth-child(1){
+	font-size: 15px;
+}
+
+.table tr.bottom td div{
+	font-weight: 100;
+	letter-spacing: -1px;
+	margin:-2px;
+}
+.table tr td.dia{
+	width: 20px;
+}
+.table tr td.dia:nth-last-child(n+17){
+	width: 19px;
+}
+.table tr:not(.bottom) td div {
+	font-weight: 100;
+	font-size: 15px;
+	letter-spacing: -1px;
+	margin: -2px;
+	padding-right:1px;
+}
+.table tr td.dia div.one,
+.table tr td.dia div.two{
+	border-radius: 50%;
+	color: #fffdf0;
+	letter-spacing: -1px;
+	font-size: 15px;
+	line-height: 1;
+	padding: 3px;
+	width: 15px;
+	margin-left: -1px;
+}
+.table tr td.dia div.two{
+	background-color: #2D93CA;
+}
+.table tr.bottom td.dia div.md{
+	font-size: 14px !important;
+}
+.table tr.bottom td.dia div.lg{
+	font-size: 13px !important;
+	font-weight:100;
+}

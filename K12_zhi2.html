@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>快乐12前二直走势图</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/klzhi2.css"/>
+	</head>
+
+	<body>
+		<div id="homePage">
+			<header class="header">
+					<div class="logo"></div>
+					<div class="k12_logo"></div>
+					<span class="name">快乐12前二直走势图</span>
+					<div class = "date"><span></span><span></span></div>
+					<div class = "version"><span></span><span></span></div>
+			</header>
+			<canvas id="line" height="1800" width="1080"> </canvas>
+			<div id="layer"></div>
+			<section id="contentBody">
+				<table class="table" id="ta" border="0"  cellspacing="1" cellpadding="0">
+					<tr class="t">
+						<th class = "term" rowspan="2" colspan="1" >期号</th>
+						<th class = "term append_border" colspan="5" rowspan="2">开奖号码</th>
+						<th class="mm" colspan="12">第一位号码分布图</th>
+						<th class="mm" colspan="12">第二位号码分布图</th>
+						<th class="mm" colspan="1" rowspan="2">奇数</th>
+						<th class="mm" colspan="1" rowspan="2">质数</th>
+						<th class="mm" colspan="1" rowspan="2">和值</th>
+						<th class="mm1" colspan="1" rowspan="2">跨度</th>
+					</tr>
+					<tr class="h">
+						<th>01</th><th>02</th><th>03</th><th>04</th><th>05</th><th>06</th><th>07</th>
+						<th>08</th><th>09</th><th>10</th><th>11</th><th>12</th>
+						<th>01</th><th>02</th><th>03</th><th>04</th><th>05</th><th>06</th><th>07</th>
+						<th>08</th><th>09</th><th>10</th><th>11</th><th>12</th>
+					</tr>
+					<tr class="bottom">
+						<td colspan='6'>当日出现次数</td>
+						<td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td>
+						<td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td>
+						<td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td>
+						<td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td>
+						<td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td>
+						<td class="pro"><div>-</div></td><td class="pro"><div>-</div></td><td class="pro"><div>-</div></td><td class="pro"><div>-</div></td>
+					</tr>
+					<tr class="bottom">
+						<td colspan='6'>当前遗漏</td>
+						<td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td>
+						<td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td>
+						<td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td>
+						<td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td>
+						<td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td>
+						<td class="pro"><div>-</div></td><td class="pro"><div>-</div></td><td class="pro"><div>-</div></td><td class="pro"><div>-</div></td>
+					</tr>
+					<tr class="bottom">
+						<td colspan='6'>最大遗漏</td>
+						<td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td>
+						<td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td>
+						<td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td>
+						<td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td>
+						<td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td><td class="dia"><div></div></td>
+						<td class="pro"><div>-</div></td><td class="pro"><div>-</div></td><td class="pro"><div>-</div></td><td class="pro"><div>-</div></td>
+					</tr>
+				</table>
+				<div class = "news">
+					<marquee id="notice" direction="left" behavior="scroll" scrollamount="3" scrolldelay="30" loop="-1"  hspace="10" vspace="10">
+						<span></span>
+					</marquee>
+					<div class = "foot"></div>
+				</div>
+			</section>			
+		</div>
+		<script type="text/javascript" src="js/shortcut.js"></script>
+		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="js/htmlUtils.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="js/klzhi2.js"></script>
+		
+	</body>
+</html>

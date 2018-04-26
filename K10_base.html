@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>快乐十分基本走势图</title>
+		<link id="basecss" rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link id="viewcss" rel="stylesheet" type="text/css" href="css/k10_base.css"/>
+	</head>
+	<body>
+		<div id="homePage">
+			<header class="header">
+					<div class="logo"></div>
+					<div class="k10_logo"></div>
+					<span class="name">快乐十分基本走势图</span>
+					<div class = "date"><span></span><span></span></div>
+					<div class = "version"><span></span><span></span></div>
+			</header>
+			<canvas id="line" height="1800" width="1080"> </canvas>
+			<div id="layer"></div>
+			<section id="contentBody">
+				<table class="table" id="ta" border="0"  cellspacing="1" cellpadding="0">
+					<tr class="t">
+						<th class = "term" rowspan="2" colspan="1" >期号</th>
+						<th class = "term append_border" colspan="8" rowspan="2">开奖号码</th>
+						<th colspan="20">开奖号码分布图</th>
+						<th class="mm1 append_border" rowspan="2">和</br>值</th>
+						<th class="mm1 append" rowspan="2">跨</br>度</th>
+						<th class="mm1 append" rowspan="2">大</br>小</br>比</th>
+						<th class="mm1 append" rowspan="2">奇</br>偶</br>比</th>
+						<th class="mm1 append" rowspan="2">质</br>合</br>比</th>
+					</tr>
+					<tr class="h">
+						<th>01</th><th>02</th><th>03</th><th>04</th><th>05</th><th>06</th><th>07</th><th>08</th><th>09</th><th>10</th>
+						<th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th>
+					</tr>
+					<tbody id="tabody"  data-bind="foreach:diagramHtml">
+						<tr data-bind="{attr:{'class':'n'+($index()+1)},style:{height:trHeight()},css:{'border':$index()%10==9&&$index()>0,'day':$data.daycut==1,'djs':isLast($index())}}"></tr>
+					</tbody>
+					<tr class="bottom"  data-bind="foreach:wintimes">
+						<td data-bind="{css:{'dia': $index()!=0,'green':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="bottom" data-bind="foreach:misstimes">
+						<td data-bind="{css:{'dia': $index()!=0,'orange':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="bottom" data-bind="foreach:maxtimes">
+						<td data-bind="{css:{'dia': $index()!=0,'yellow':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+				</table>
+				<div class = "news">
+					<marquee id="notice" direction="left" behavior="scroll" scrollamount="3" scrolldelay="30" loop="-1"  hspace="10" vspace="10" > 
+						<span></span>
+					</marquee>
+					<div class = "leftfoot"></div>
+					<div class = "rightfoot"></div>
+				</div>
+			</section>			
+		</div>
+		<script type="text/javascript" src="js/shortcut.js"></script>
+		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="js/htmlUtils.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="js/k10_base.js"></script>
+	</body>
+</html>

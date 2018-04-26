@@ -1,0 +1,37 @@
+.table tr:not(.bottom) td.time, .table tr:not(.bottom) td.state{
+	font-size: 19px;
+}
+
+.table .h th:nth-child(6),.table .h th:nth-child(22),
+.table tr:not(.bottom):not(.djs) td:nth-child(4),
+.table tr:not(.bottom):not(.djs) td:nth-child(10),
+.table tr:not(.bottom):not(.djs) td:nth-child(26),
+.table tr.djs td:nth-child(8),
+.table tr.djs td:nth-child(24),
+.table tr.bottom td:nth-child(7),
+.table tr.bottom td:nth-child(23){
+	border-right: 2px solid #444444 !important;
+}
+.table tr td.win{
+	width: 35px;
+}
+.table tr td.dia:nth-last-child(n+21){
+	width: 28px;
+}
+.table tr td.dia:nth-last-child(n+5){
+	width:34px;
+}
+.table tr td.dia{
+	width:41px;
+}
+.table tr td.dia div.one,.table tr td.dia div.two{
+	line-height: 1;
+	margin: -2px;
+	letter-spacing: -2px;
+}
+.table tr td.dia div.three{
+	border-radius: 50%;
+	width: 15px;
+	height: 15px;
+	margin: 0px auto;
+}

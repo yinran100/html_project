@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>幸运彩基本走势图（一）</title>
+		<link id="basecss" rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link id="viewcss" rel="stylesheet" type="text/css" href="css/xyc_base1.css"/>
+	</head>
+	<body>
+		<div id="homePage">
+			<header class="header">
+					<div class="logo"></div>
+					<div class="xyc_logo"></div>
+					<span class="name">幸运彩基本走势图（一）</span>
+					<div class = "date"><span></span><span></span></div>
+					<div class = "version"><span></span><span></span></div>
+			</header>
+			<canvas id="line" height="1800" width="1080"> </canvas>
+			<div id="layer"></div>
+			<section id="contentBody">
+				<table class="table" id="ta" border="0"  cellspacing="1" cellpadding="0">
+					<colgroup>
+   						<col class = "lightblue" span="1">
+   						<col class = "ghostwhite" span="3"><col class = "lightyellow" span="3">
+    					<col class = "ghostwhite" span="3"><col class = "lightyellow" span="1">
+    					<col class = "ghostwhite" span="11"><col class = "lightblue" span="1">
+  					</colgroup>
+					<tr class="hot">
+						<th class = "term" rowspan="3" colspan="1" >期号</th><th class="mm" colspan="10">幸运魔方</th><th class="rcol black_border" rowspan="3">.</th>
+						<th class="mm1" colspan="11">勇士争先</th>
+					</tr>
+					<tr class="t">
+						<th class = "term" colspan="3" rowspan="1">第一局</th>
+						<th class = "term" colspan="3" rowspan="1">第二局</th>
+						<th class = "term" colspan="3" rowspan="1">第三局</th>
+						<th class="append_border" rowspan="2">和 值</th>
+						<th class="mm1" rowspan="2">1</th><th class="mm1 append" rowspan="2">2</th><th class="mm1 append" rowspan="2">3</th>
+						<th class="mm1 append" rowspan="2">4</th><th class="mm1 append" rowspan="2">5</th><th class="mm1 append" rowspan="2">6</th>
+						<th class="mm1 append" rowspan="2">7</th><th class="mm1 append" rowspan="2">8</th><th class="mm1 append" rowspan="2">9</th>
+						<th class="mm1 append" rowspan="2">10</th><th class="mm1 append_border" rowspan="2">和 值</th>
+					</tr>
+					<tr class="h">
+						<th>0</th><th>1</th><th>2</th> <th>0</th><th>1</th><th>2</th> <th>0</th><th>1</th><th>2</th>
+					</tr>
+					<tbody id="tabody" data-bind="foreach:diagramHtml">
+						<tr data-bind="{attr:{'class':'n'+($index()+1)},style:{height:trHeight()},css:{'border':$index()%10==9&&$index()>0,'day':$data.daycut==1,'djs':isLast($index())}}"></tr>
+					</tbody>
+					<tr class="notr">
+						<td colspan="11"></td><td rowspan="4"></td>
+						<td colspan="11"></td>
+					</tr>
+					<tr class="bottom"  data-bind="foreach:wintimes">
+						<td data-bind="{css:{'dia': $index()!=0,'green':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$index()==10?'-':$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="bottom" data-bind="foreach:misstimes">
+						<td data-bind="{css:{'dia': $index()!=0,'orange':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$index()==10?'-':$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="bottom" data-bind="foreach:maxtimes">
+						<td data-bind="{css:{'dia': $index()!=0,'yellow':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$index()==10?'-':$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+				</table>
+				<div class = "news">
+					<marquee id="notice" direction="left" behavior="scroll" scrollamount="3" scrolldelay="30" loop="-1"  hspace="10" vspace="10" > 
+						<span></span>
+					</marquee>
+					<div class = "leftfoot"></div>
+					<div class = "rightfoot"></div>
+				</div>
+			</section>
+		</div>
+		<script type="text/javascript" src="js/shortcut.js"></script>
+		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="js/htmlUtils.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="js/xyc_base1.js"></script>
+	</body>
+</html>

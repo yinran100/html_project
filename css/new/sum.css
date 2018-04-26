@@ -1,0 +1,53 @@
+.header_title{
+	width: 372px;
+	left: 340px;
+	background: url(../../img/header/k3_sum_title.png);
+}
+.table .t th.mm1:nth-last-child(n+2){
+	border-right: 1px solid #A9A9A9;
+}
+.table tr.h th:nth-child(16),
+.table tr.h th:nth-child(26),
+.table tr.h th:nth-child(29),
+.table tr:not(.h):not(.bottom) td:nth-last-child(2),
+.table tr:not(.h):not(.bottom) td:nth-last-child(5),
+.table tr:not(.h):not(.bottom) td:nth-last-child(15),
+.table tr:not(.h):not(.bottom) td:nth-last-child(31),
+.table tr.bottom td:nth-child(17),
+.table tr.bottom td:nth-child(27),
+.table tr.bottom td:nth-child(30){
+	border-right: 2px solid #444444 !important;
+}
+
+.table tr td.win:not(.state){
+	width: 35px;
+}
+.table tr td.dia{
+	width:41px;
+}
+.table tr td.dia:nth-last-child(n+2){
+	width:25px;
+}
+.table tr td.dia:nth-last-child(n+5){
+	width:25px;
+}
+.table tr td.dia:nth-last-child(n+15){
+	width:33px;
+}
+.table tr td.dia div.two,.table tr td.dia div.three{
+	line-height: 1;
+	margin: auto;
+	padding: 3px;
+	width: 22px;
+	letter-spacing: -2px;
+	border-radius: 50%;
+	font-size:22px;
+}
+.table tr td.dia:nth-last-child(1) div,.table tr td.dia div.four{
+	font-size:24px;
+	line-height: 1;
+	margin: -3px;
+}
+.table tr td.lu{
+	background-color: #F8C049 !important;
+}

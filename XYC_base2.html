@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>幸运彩基本走势图（二）</title>
+		<link id="basecss" rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link id="viewcss" rel="stylesheet" type="text/css" href="css/xyc_base2.css"/>
+	</head>
+	<body>
+		<div id="homePage">
+			<header class="header">
+					<div class="logo"></div>
+					<div class="xyc_logo"></div>
+					<span class="name">幸运彩基本走势图（二）</span>
+					<div class = "date"><span></span><span></span></div>
+					<div class = "version"><span></span><span></span></div>
+			</header>
+			<canvas id="line" height="1800" width="1080"> </canvas>
+			<div id="layer"></div>
+			<section id="contentBody">
+				<table class="table" id="ta" border="0"  cellspacing="1" cellpadding="0">
+					<colgroup>
+   						<col class = "lightblue" span="1">
+   						<col class = "ghostwhite" span="3"><col class = "lightyellow" span="10">
+    					<col class = "ghostwhite" span="10"><col class = "lightyellow" span="10">
+    					<col class = "lightblue" span="3">
+  					</colgroup>
+					<tr class="t">
+						<th class = "term" colspan="1" rowspan="2">期号</th>
+						<th class = "winnum append_border" colspan="3" rowspan="2">幸运一</th>
+						<th colspan="10">第一名</th><th colspan="10">第二名</th><th colspan="10">第三名+综合</th>
+						<th class = "mm1 append_border" rowspan="2">和<br/>值</th><th class = "mm1 append" rowspan="2">大<br/>小</th><th class = "mm1 append" rowspan="2">单<br/>双</th>
+					</tr>
+					<tr class="h">
+						<th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="mm">10</th>
+						<th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="mm">10</th>
+						<th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="mm">10</th>
+					</tr>
+					<tbody id="tabody" data-bind="foreach:diagramHtml">
+						<tr data-bind="{attr:{'class':'n'+($index()+1)},style:{height:trHeight()},css:{'border':$index()%10==9&&$index()>0,'day':$data.daycut==1,'djs':isLast($index())}}"></tr>
+					</tbody>
+					<tr class="bottom"  data-bind="foreach:wintimes">
+						<td data-bind="{css:{'dia': $index()!=0,'green':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="bottom" data-bind="foreach:misstimes">
+						<td data-bind="{css:{'dia': $index()!=0,'orange':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="bottom" data-bind="foreach:maxtimes">
+						<td data-bind="{css:{'dia': $index()!=0,'yellow':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+				</table>
+				<div class = "news">
+					<marquee id="notice" direction="left" behavior="scroll" scrollamount="3" scrolldelay="30" loop="-1"  hspace="10" vspace="10" > 
+						<span></span>
+					</marquee>
+					<div class = "leftfoot"></div>
+					<div class = "rightfoot"></div>
+				</div>
+			</section>
+		</div>
+		<script type="text/javascript" src="js/shortcut.js"></script>
+		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="js/htmlUtils.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="js/xyc_base2.js"></script>
+	</body>
+</html>

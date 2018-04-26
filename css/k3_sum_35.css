@@ -1,0 +1,45 @@
+.table .t th.mm1:nth-last-child(n+2){
+	border-right: 1px solid #A9A9A9;
+}
+.table .h th:nth-child(16),.table .h th:nth-child(26),.table .h th:nth-child(29),
+.table tr:not(.bottom):not(.djs) td:nth-child(4),
+.table tr:not(.bottom):not(.djs) td:nth-child(20),
+.table tr:not(.bottom):not(.djs) td:nth-child(30),
+.table tr:not(.bottom):not(.djs) td:nth-child(33),
+.table tr.djs td:nth-child(18),
+.table tr.djs td:nth-child(28),
+.table tr.djs td:nth-child(31),
+.table tr.bottom td:nth-child(17),
+.table tr.bottom td:nth-child(27),
+.table tr.bottom td:nth-child(30){
+	border-right: 2px solid #444444 !important;
+}
+
+.table tr td.win:not(.state){
+	width: 35px;
+}
+.table tr td.dia{
+	width:41px;
+}
+.table tr td.dia:nth-last-child(n+2){
+	width:25px;
+}
+.table tr td.dia:nth-last-child(n+5){
+	width:25px;
+}
+.table tr td.dia:nth-last-child(n+15){
+	width:33px;
+}
+.table tr td.dia div.two,.table tr td.dia div.three,.table tr td.dia div.four{
+	line-height: 1;
+	margin: -3px;
+	letter-spacing: -2px;
+}
+.table tr td.dia:nth-last-child(1) div,.table tr td.dia div.four{
+	font-size:24px;
+	line-height: 1;
+	margin: -3px;
+}
+.table tr td.lu{
+	background-color: #F8C049 !important;
+}

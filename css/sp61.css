@@ -1,0 +1,59 @@
+.sp61_logo {
+	position: inherit;
+	left: 370px;
+	top: 0px;
+	height: 75px;
+	width: 61px;
+	background: url(../img/logo_sp61.png) no-repeat;
+}
+.table tr th.term {
+    min-width: 86px;
+}
+.h th{	
+	letter-spacing: -1px;
+	font-weight: normal;
+	font-family: "wr";
+}
+.table tr:not(.bottom) td.termN.time{
+	font-size: 15px;
+	font-family: "wr";
+}
+.table tr:not(.h) th:nth-last-child(n+2),.table .h th:nth-child(4),.table .h th:nth-child(8),.table .h th:nth-child(12),
+.table .h th:nth-child(16),.table .h th:nth-child(20),.table .h th:nth-child(24),
+.table tr:not(.bottom) td:nth-last-child(13),.table tr:not(.bottom) td:nth-last-child(17),.table tr:not(.bottom) td:nth-last-child(21),
+.table tr:not(.bottom) td:nth-last-child(25),.table tr:not(.bottom) td:nth-last-child(29),.table tr:not(.bottom) td:nth-last-child(33),
+.table tr.bottom td:nth-child(1),.table tr.bottom td:nth-child(5),.table tr.bottom td:nth-child(9),.table tr.bottom td:nth-child(13),
+.table tr.bottom td:nth-child(17),.table tr.bottom td:nth-child(21),.table tr.bottom td:nth-child(25){
+	border-right: 2px solid #444444 !important;
+}
+
+.table tr.bottom td:nth-child(1){
+	font-size: 15px;
+}
+.table tr td div{
+	line-height: 1;
+	font-weight: 100;
+	letter-spacing: -1px;
+}
+.table tr td.dia{
+	width: 28px;
+}
+.table tr td.dia div.one{
+	color: #DC143C;
+	font-size: 26px;
+}
+.table tr td.dia div.two{
+	background-color: #000000;
+	border-radius: 50%;
+	width: 15px;
+	height: 15px;
+	margin: 0px auto;
+}
+.table tr td.dia div.zero{
+	letter-spacing: -1px;
+	font-weight: bold;
+	font-size: 22px;
+	font-family: "wr";
+	color: #0066CC;
+}
+

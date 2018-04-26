@@ -1,0 +1,48 @@
+.header_title{
+	width: 372px;
+	left: 340px;
+	background: url(../../img/header/k3_weitu_title.png);
+}
+.append_border::after{
+	
+}
+.append:before{
+	top: 30px;
+}
+.table .h th:nth-child(6),.table .h th:nth-child(12),
+.table .h th:nth-child(18),.table .h th:nth-child(24),
+.table tr:not(.bottom):not(.djs) td:nth-child(4),
+.table tr:not(.bottom):not(.djs) td:nth-child(10),
+.table tr:not(.bottom):not(.djs) td:nth-child(16),
+.table tr:not(.bottom):not(.djs) td:nth-child(22),
+.table tr:not(.bottom):not(.djs) td:nth-child(28),
+.table tr.djs td:nth-child(8),
+.table tr.djs td:nth-child(14),
+.table tr.djs td:nth-child(20),
+.table tr.djs td:nth-child(26),
+.table tr.bottom td:nth-child(7),
+.table tr.bottom td:nth-child(13),
+.table tr.bottom td:nth-child(19),
+.table tr.bottom td:nth-child(25){
+	border-right: 2px solid #444444 !important;
+}
+.table tr td.dia:nth-last-child(n+3){
+	width: 33px;
+}
+
+.table tr td.dia div.one,.table tr td.dia div.second,
+.table tr td.dia div.third,.table tr td.dia div.fouth,
+.table tr td.dia div.zero{
+	border-radius: 50%;
+	color: #fffdf0;
+	letter-spacing: -2px;
+	font-size: 22px;
+	line-height: 1;
+	padding: 3px;
+	width: 22px;
+	margin: auto;
+}
+.table tr td.dia div.zero{
+	font-size: 20px;
+	width: 20px;
+}

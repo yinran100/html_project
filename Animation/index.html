@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>开奖动画</title>
+		<link rel="stylesheet" type="text/css" href="css/AnimationPage.css" />
+		
+	</head>
+
+	<body>
+		<div id="B001ad" style="display: none;">
+			<div class="term_code"></div>	
+			<div class="innext_firstaward"></div>
+			<div class="big_win_num"></div>	
+			<div class="big_win_amount"></div>	
+		</div>
+		<div id="kjdh">
+			<div class="k3_logo1"></div>
+			<div class="term_code"> <span></span></div>
+			<div class="kjhm"></div>
+			<div class="win_code0">1</div>
+			<div class="win_code1">2</div>
+			<div class="win_code2">3</div>
+			<!--动画 -->
+			<div class="bomb0"></div>
+			<div class="bomb1"></div>
+			<div class="bomb2"></div>
+
+			<div class="firework0"></div>
+			<div class="firework1"></div>
+			<div class="firework2"></div>
+		</div>
+		<div class="hidden">
+			<script type="text/javascript">
+				function preload() {
+					new Image().src = "Animation/img/baozha.png";
+					new Image().src = "Animation/img/yanhua.png";
+					new Image().src = "Animation/img/num_31px.png";
+					new Image().src = "Animation/img/num_68px.png";
+					new Image().src = "Animation/img/b001win_a.png";
+					new Image().src = "Animation/img/b001win_b.png";
+					new Image().src = "Animation/img/circleImage.png";
+					new Image().src = "Animation/img/BGimage.png";
+				}
+				preload();
+			</script>
+		</div>
+		 <audio id="numSound1" controls="controls" preload="auto" style="position:absolute; visibility:hidden;">
+			<source src="./sound/1.ogg" id="num1" type="audio/ogg" ></source>
+			<!--  source src="./sound/1.mp3" type="audio/mpeg"></source-->
+			</audio>
+			<audio id="numSound2" controls="controls" preload="auto" style="position:absolute; visibility:hidden;">
+			<source src="./sound/2.ogg" id="num2" type="audio/ogg" ></source>
+			
+			</audio>
+			<audio id="numSound3" controls="controls" preload="auto" style="position:absolute; visibility:hidden;">
+			<source src="./sound/3.ogg" id="num3" type="audio/ogg" ></source>
+			
+			</audio>
+			<audio id="numSound4" controls="controls" preload="auto" style="position:absolute; visibility:hidden;">
+			<source src="./sound/4.ogg" id="num4" type="audio/ogg" ></source>
+			
+			</audio>
+			<audio id="numSound5" controls="controls" preload="auto" style="position:absolute; visibility:hidden;">
+			<source src="./sound/5.ogg" id="num5" type="audio/ogg" ></source>
+			
+			</audio>
+			<audio id="numSound6" controls="controls" preload="auto" style="position:absolute; visibility:hidden;">
+			<source src="./sound/6.ogg" id="num6" type="audio/ogg" ></source>
+			
+			</audio>
+			<audio id="womenAnnSound" controls="controls" preload="auto" style="position:absolute; visibility:hidden;">
+			<source src="./sound/k3wos.ogg" id="womenAnnSay" type="audio/ogg" ></source>
+			
+			</audio>
+		<script type="text/javascript" src="js/base64.js"></script>
+		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="js/AnimationPage.js"></script>
+	</body>
+</html>

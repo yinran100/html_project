@@ -1,0 +1,60 @@
+.k12_logo{
+	left: 335px;
+}
+.name{
+	left: 445px;
+}
+.table tr:nth-child(even) td.dia{
+	background-color: #e6f7fe;
+}
+.table tr:nth-child(odd) td.dia{
+	background-color: #f5f9fc;
+}
+.table tr:nth-child(even) td.dia:nth-last-child(n+17){
+	background-color: #fcf0f1;
+}
+.table tr:nth-child(odd) td.dia:nth-last-child(n+17){
+	background-color: #fffafa;
+}
+.table tr:nth-child(even) td.pro{
+	background-color: #fcf0f1;
+}
+.table tr:nth-child(odd) td.pro{
+	background-color: #fffafa;
+}
+.table tr:not(.bottom) td:nth-child(2):not(.state),
+.table tr:not(.bottom) td:nth-child(3):not(.state){
+	color: #DC143C;
+}
+.table .h th:nth-child(6),.table .h th:nth-child(22),.table .h th:nth-child(28),
+.table tr:not(.bottom):not(.djs) td:nth-child(4),
+.table tr:not(.bottom):not(.djs) td:nth-child(10),
+.table tr:not(.bottom):not(.djs) td:nth-child(26),
+.table tr:not(.bottom):not(.djs) td:nth-child(32),
+.table tr.djs td:nth-child(8),
+.table tr.djs td:nth-child(24),
+.table tr.djs td:nth-child(30),
+.table tr.bottom td:nth-child(7),
+.table tr.bottom td:nth-child(23),
+.table tr.bottom td:nth-child(29){
+	border-right: 2px solid #444444 !important;
+}
+.table tr.bottom td:nth-child(1){
+	font-size: 16px;
+}
+.table tr td.dia div.first,
+.table tr td.dia div.second{
+	color: black;
+	font-size:27px;
+	line-height: 27px;
+	font-weight: bold;
+}
+.table tr td.dia{
+	width: 30px;
+}
+.table tr td.pro{
+	width: 25px;
+}
+.table tr:not(.bottom) td.pro div{
+	color: black;	
+}

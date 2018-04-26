@@ -1,0 +1,71 @@
+.k12_logo{
+	left: 335px;
+}
+.name{
+	left: 445px;
+}
+.table{
+	font-size: 16px;
+}
+.table tr:not(.bottom) td.termN.bb,
+.table tr:not(.bottom) td.win.yy{
+	font-size: 18px;
+}
+.table tr:not(.bottom) td:nth-child(2):not(.yy),
+.table tr:not(.bottom) td:nth-child(3):not(.yy),
+.table tr:not(.bottom) td:nth-child(4):not(.yy){
+	color: #DC143C;
+}
+.table tr:nth-child(even) td.pro{
+	background-color: #e6f7fe;
+}
+.table tr:nth-child(odd) td.pro{
+	background-color: #f5f9fc;
+}
+.table tr:nth-child(even) td.dia:nth-last-child(n+3){
+	background-color: #fcf0f1;
+}
+.table tr:nth-child(odd) td.dia:nth-last-child(n+3){
+	background-color: #fffafa;
+}
+.table tr:nth-child(even) td.dia:nth-last-child(n+15){
+	background-color: #e6f7fe;
+}
+.table tr:nth-child(odd) td.dia:nth-last-child(n+15){
+	background-color: #f5f9fc;
+}
+.table tr:nth-child(even) td.dia:nth-last-child(n+27){
+	background-color: #fcf0f1;
+}
+.table tr:nth-child(odd) td.dia:nth-last-child(n+27){
+	background-color: #fffafa;
+}
+.table tr:not(.h) th:nth-last-child(n+3),
+.table .h th:nth-child(12),.table .h th:nth-child(24),.table .h th:nth-child(36),
+.table tr:not(.bottom) td:nth-last-child(3),
+.table tr:not(.bottom) td:nth-last-child(15),
+.table tr:not(.bottom) td:nth-last-child(27),
+.table tr:not(.bottom) td:nth-last-child(39),
+.table tr.bottom td:nth-child(13),
+.table tr.bottom td:nth-child(25),
+.table tr.bottom td:nth-child(37){
+	border-right: 2px solid #444444 !important;
+}
+.table tr td.dia{
+	width: 23px;
+}
+.table tr td.dia div.first,
+.table tr td.dia div.second,
+.table tr td.dia div.third{
+	color: black;
+	font-size:22px;
+	letter-spacing: -1px;
+	line-height: 22px;
+	font-weight: bold;
+}
+.table tr td.pro{
+	width: 25px;
+}
+.table tr:not(.bottom) td.pro div{
+	color: black;	
+}

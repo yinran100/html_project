@@ -1,0 +1,11 @@
+.table tr:not(.bottom) td.win{
+	font-size: 23px;
+}
+.table tr td.dia div.one,
+.table tr td.dia div.two,
+.table tr td.dia div.three,
+.table tr td.dia div.second,
+.table tr td.dia div.third,
+.table tr td.dia div.fouth{
+	font-size:31px;
+}

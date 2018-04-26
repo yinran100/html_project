@@ -1,0 +1,28 @@
+.xyc_logo{	left: 355px;}
+.name{	left: 450px;}
+.table tr:not(.bottom) td.time, .table tr:not(.bottom) td.state{
+	font-size: 20px;
+}
+.table{font-size: 19px;}
+.table .h th:nth-child(3),
+.table tr:not(.bottom):not(.djs) td:nth-child(4){
+	border-right: 2px solid #444444 !important;
+}
+.table tr td.dia{
+	width: 37px;
+}
+.table tr td.win{
+	color: cornsilk !important;
+}
+.table tr td.win:nth-child(2){	background-color: #d63131;}
+.table tr td.win:nth-child(3){	background-color: #d1a229;}
+.table tr td.win:nth-child(4){	background-color: #2d7ece;}
+.table tr td.dia div.one{
+	font-size: 31px;
+	line-height: 1;
+	letter-spacing: -1px;
+	margin: -2px;
+}
+.table tr.bottom td:nth-child(1) div{
+	font-size: 18px;
+}

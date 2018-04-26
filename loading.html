@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>走势图加载页</title>
+		<link rel="stylesheet" type="text/css" href="css/loading.css">
+		<script src='js/vconsole.min.js'></script>
+	</head>
+	<body>
+<div class="homePage"></div>
+<!-- 遮罩层 -->
+ <div class="layer"></div>		
+<!-- 通讯等待 -->
+<div id="divCommWait" class="commWait">
+   	<br><ul>
+   		<li class="loading"></li>
+   		<li class="msg">数据加载中，请稍候......</li>
+   	</ul>
+</div>
+<div class="layer2" style="display: none;"></div>	
+<div class="dialog" style="display: none;">
+	<span class="q"></span>
+	<span class="y"></span>
+	<span class="n">设置中心IP</span>
+</div>
+	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="js/loading.js"></script>
+	<script type="text/javascript" src="layer/layer.js"></script> 
+	</body>
+</html>

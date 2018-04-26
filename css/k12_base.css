@@ -1,0 +1,63 @@
+.table th {
+	font-size: 20px;
+}
+.table .t th:nth-child(n+4) {
+	font-size: 17px;
+	line-height: 1;
+}
+.table tr:not(.bottom) td.win{
+	font-size: 18px;
+	font-weight: normal;
+}
+.table tr:not(.bottom) td.win.state{
+	font-size: 16px;
+}
+.table .t th.mm1:nth-last-child(n+2){
+	border-right: 1px solid #A9A9A9;
+}
+.table tr:not(.bottom) td.win:nth-child(2):not(.state),
+.table tr:not(.bottom) td.win:nth-child(3):not(.state),
+.table tr:not(.bottom) td.win:nth-child(4):not(.state){
+	color: crimson;
+}
+.table tr:not(.day):nth-child(even) td.dia{
+	background-color: #e6f7fe;
+}
+.table tr:not(.day):nth-child(odd) td.dia{
+	background-color: #f5f9fc;
+}
+.table tr:not(.day):nth-child(even) td.dia:nth-last-child(n+7){
+	background-color: #fcf0f1;
+}
+.table tr:not(.day):nth-child(odd) td.dia:nth-last-child(n+7){
+	background-color: #fffafa;
+}
+.table tr:not(.h) th:nth-last-child(n+7),.table .h th:nth-child(12), 
+.table tr:not(.bottom) td:nth-last-child(7),
+.table tr:not(.bottom) td:nth-last-child(19),
+.table tr.bottom td:nth-child(13){
+	border-right: 2px solid #444444 !important;
+}
+.table tr td.dia{
+	font-size: 21px;
+	color: #000000;
+}
+.table tr td.dia div.one,.table tr td.dia div.zero{
+	font-size: 31px;
+	line-height: 1;
+	margin: -2px;
+	letter-spacing: -1px;
+}
+.table tr td.dia{	width:	44px;}
+.table tr td.back{
+	background-color: #FABEC3 !important;
+}
+.table tr td.dia div.one{
+	color: crimson;
+}
+.table tr.bottom td.dia div.md {
+    font-size: 20px;
+}
+.table tr.bottom td.dia div.lg {
+    font-size: 18px;
+}

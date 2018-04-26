@@ -1,0 +1,57 @@
+.xyc_logo{	left: 325px;}
+.name{	left: 425px;}
+.table{	font-size: 21px;}
+.table .h th:nth-last-child(n+10){	font-family: "wr";}
+.table tr:not(.bottom) td.win{
+	font-size: 26px;
+	width: 71px;
+}
+.table tr:not(.bottom) td.termN.time, .table tr:not(.bottom) td.state{
+	font-size: 21px;
+}
+.table .h th:nth-child(3),.table .h th:nth-child(6),.table .h th:nth-child(9),.table .h th:nth-child(12),
+.table tr:not(.bottom):not(.djs) td:nth-child(4),
+.table tr:not(.bottom):not(.djs) td:nth-child(7),
+.table tr:not(.bottom):not(.djs) td:nth-child(10),
+.table tr:not(.bottom):not(.djs) td:nth-child(13),
+.table tr.djs td:nth-child(5),
+.table tr.djs td:nth-child(8),
+.table tr.djs td:nth-child(11),
+.table tr.bottom td:nth-child(4),
+.table tr.bottom td:nth-child(7),
+.table tr.bottom td:nth-child(10){
+	border-right: 2px solid #444444 !important;
+}
+.table tr td.win:not(.state){
+	width: 66px;
+}
+.table tr td.dia{
+	width: 76px;
+}
+.table tr td.dia div.one,
+.table tr td.dia div.two,
+.table tr td.dia div.three{
+	font-size: 31px;
+	color: #000000;
+	line-height: 1;
+	margin: -2px;
+	font-weight: bold;
+}
+.table tr td.dia:nth-last-child(1) div{
+	color: #000000;
+	font-size:30px;
+	margin: -2px;
+	line-height: 1;
+}
+.table tr.bottom td:nth-child(1) div{
+	font-size: 20px;
+}
+.table tr.bottom td div{
+	letter-spacing: 0px;
+}
+.table tr.bottom td.dia div.md {
+    font-size: 20px;
+}
+.table tr.bottom td.dia div.lg {
+    font-size: 18px;
+}

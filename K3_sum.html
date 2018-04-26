@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>快3和值走势图</title>
+		<link id="basecss" rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link id="viewcss" rel="stylesheet" type="text/css" href="css/k3_sum.css"/>
+		<link id="sizecss" rel="stylesheet" type="text/css" href="css/size_0.css"/>
+	</head>
+	<body>
+		<div id="homePage">
+			<header class="header">
+					<div class="logo"></div>
+					<div class="k3_logo"></div>
+					<div class="header_title"></div>
+					<span class="name">快3和值走势图</span>
+					<div class = "date"><span></span><span></span></div>
+					<div class = "version"><span></span><span></span></div>
+			</header>
+			<canvas id="line" height="1800" width="1080"> </canvas>
+			<div id="layer"></div>
+			<section id="contentBody">
+				<table class="table" id="ta" border="0"  cellspacing="1" cellpadding="0">
+					<colgroup>
+   						<col class = "issue" span="1">
+    					<col class = "winNumbers" span="3">
+    					<col class = "dia1" span="6">
+    					<col class = "dia2" span="16">
+    					<col class = "dia3" span="4">
+  					</colgroup>
+					<tr class="t">
+						<th class = "yellow term" rowspan="2" colspan="1" >期号</th>
+						<th class = "green append_border winnum" colspan="3" rowspan="2">开奖号码</th>
+						<th class="blue" colspan="6">开奖号码分布图</th>
+						<th colspan="16">和 值</th>
+						<th class="orange mm1 append_border" rowspan="2">全大</th>
+						<th class="orange mm1 append" rowspan="2">两大<br>一小</th>
+						<th class="orange mm1 append" rowspan="2">两小<br>一大</th>
+						<th class="orange mm1 append" rowspan="2">全小</th>
+					</tr>
+					<tr class="h">
+						<th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th>
+						<th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+						<th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th>
+					</tr>
+					<tbody id="tabody" data-bind="foreach:diagramHtml">
+						<tr data-bind="{attr:{'class':'n'+($index()+1)},style:{height:trHeight()},css:{'border':$index()%10==9&&$index()>0,'day':$data.daycut==1,'djs':isLast($index())}}"></tr>
+					</tbody>
+					<tr class="bottom"  data-bind="foreach:wintimes">
+						<td data-bind="{css:{'dia': $index()!=0,'green':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="bottom" data-bind="foreach:misstimes">
+						<td data-bind="{css:{'dia': $index()!=0,'orange':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="bottom" data-bind="foreach:maxtimes">
+						<td data-bind="{css:{'dia': $index()!=0,'yellow':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="ta"><td class="blue" colspan='4'>昨日未出</td><td class="t1" colspan='26' data-bind="html:weichuk3()[0]"></td></tr>
+					<tr class="ta"><td class="darkblue" colspan='4'>前两日未出</td><td class="t2" colspan='26' data-bind="html:trendModel.weichuk3()[1]"></td></tr>
+					<tr class="ta"><td class="blue" colspan='4'>前三日未出<span>(未出期数)</span></td><td class="t3" colspan='26' data-bind="html:trendModel.weichuk3()[2]"></td></tr>	
+				</table>
+				<div class = "news">
+					<!--<marquee id="notice" direction="left" behavior="scroll" scrollamount="3" scrolldelay="30" loop="-1"  hspace="10" vspace="10">-->
+					<marquee id="notice" direction="left" behavior="scroll" scrollamount="3" scrolldelay="30" loop="-1"  hspace="10" vspace="10" > 
+						<span></span>
+					</marquee>
+					<div class = "leftfoot"></div>
+					<div class = "rightfoot"></div>
+				</div>
+			</section>			
+		</div>
+		<script type="text/javascript" src="js/shortcut.js"></script>
+		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="js/htmlUtils.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="js/k3_sum.js"></script>
+	</body>
+</html>

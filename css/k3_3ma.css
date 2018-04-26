@@ -1,0 +1,98 @@
+#ifrContent {
+	-moz-transform:rotate(90deg); 
+	-webkit-transform:rotate(90deg); 
+	-o-transform:rotate(90deg); 
+	transform:rotate(90deg); 
+}
+body{
+	background: url(../img/back_s.jpg) no-repeat;
+}
+.header{
+	width: 1920px;
+	background-image: none;
+}
+.append_border::after{
+	height: 959px;
+}
+.logo{
+	left: 70px;
+	background-image: none;
+}
+.k3_logo{
+	left: 730px;
+	background-image: none;
+}
+.name{
+	font-size: 35px;
+	top: 16px;
+	left: 855px;
+}
+.date,.version {
+    right: 45px;
+}
+#line{
+	top: 0px;
+	left:44px;
+}
+.table{font-size: 22px;}
+.table th,.table tr:not(.bottom) td.time, .table tr:not(.bottom) td.state{
+	font-size: 21px;
+}
+.table tr:not(.bottom) td.win{
+	font-size: 26px;
+}
+.table tr:not(.bottom) td.termN{
+	letter-spacing: 1px;
+}
+.table .h th:nth-child(6),.table .h th:nth-child(22),.table .h th:nth-child(28),
+.table tr:not(.bottom):not(.djs) td:nth-child(4),
+.table tr:not(.bottom):not(.djs) td:nth-child(10),
+.table tr:not(.bottom):not(.djs) td:nth-child(26),
+.table tr:not(.bottom):not(.djs) td:nth-child(32),
+.table tr.djs td:nth-child(8),
+.table tr.djs td:nth-child(24),
+.table tr.djs td:nth-child(30),
+.table tr.bottom td:nth-child(7),
+.table tr.bottom td:nth-child(23),
+.table tr.bottom td:nth-child(29){
+	border-right: 2px solid #444444 !important;
+}
+.table tr td.win{
+	width: 55px;
+}
+.table tr:not(.djs) td.dia{
+	width:43px;
+}
+.table tr:not(.djs) td.dia:nth-child(n+27){
+	width: 40px;
+}
+.table tr.t th:nth-child(6){	width:35px;}
+.table tr td.list.head{word-break: normal;}
+.table tr.t th:nth-child(n+7){	width:93px;}
+.table tr td.hz{font-size: 18px;font-weight: bold;}
+.table tr td.list:not(.hz):not(.head){font-size: 26px;font-weight: bold;}
+.table tr td.dia div.one,.table tr td.dia div.two,.table tr td.dia div.three{
+	line-height: 1;
+	margin: -2px;
+	font-size: 35px;
+}
+.table tr td.dia div.kua{
+	font-size: 31px;
+	line-height: 1;
+}
+.table tr:not(.bottom):not(.ta):not(.t):not(.h):not(.hot){
+	background-color: rgba(0,0,0,0);	/*取消原有颜色*/
+}
+.table col{background-color:  rgb(255,251,249);}
+.table col:nth-child(3),.table col:nth-child(7){	/*黄色*/
+	background-color: #faeed4;
+}
+.table col:nth-child(2),.table col:nth-child(5){	/*绿色*/
+	background-color: #dbfbdb;
+}
+.table tr.bottom td.dia div.md{
+	font-size: 18px;
+}
+.table tr.bottom td.dia div.lg{
+	font-size: 18px;
+}

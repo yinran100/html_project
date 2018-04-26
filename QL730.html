@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>七乐彩基本走势图</title>
+		<link id="basecss" rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link id="viewcss" rel="stylesheet" type="text/css" href="css/ql730.css"/>
+	</head>
+	<body >
+		<div id= "homePage">
+			<header class = "header">
+					<div class = "logo"></div>
+					<div class = "ql730_logo"></div>
+					<div class="header_title"></div>
+					<span class = "name">七乐彩基本走势图</span>
+					<div class = "date"><span></span><span></span></div>
+					<div class = "version"><span></span><span></span></div>
+			</header>
+			<canvas id="line" width="1080" height="1800"> </canvas>
+			<div id="layer"></div>
+			<section id="contentBody">
+				<table class="table" id="ta" border="0"  cellspacing="1" cellpadding="0">
+					<colgroup>
+   						<col class = "issue" span="1">
+    					<col class = "dia1" span="30">
+  					</colgroup>
+					<tr class="t">
+						<th class = "yellow term" rowspan="2">期号</th>
+						<th class = "blue mm1" colspan="30">开奖号码分布图</th>
+					</tr>
+					<tr class="h">
+						<th>01</th><th>02</th><th>03</th><th>04</th><th>05</th><th>06</th>
+						<th>07</th><th>08</th><th>09</th><th>10</th><th>11</th><th>12</th>
+						<th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th>
+						<th>19</th><th>20</th><th>21</th><th>22</th><th>23</th><th>24</th>
+						<th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th class = "mm1">30</th>
+					</tr>
+					<tbody id="tabody" data-bind="foreach:diagramHtml">
+						<tr data-bind="{attr:{'class':'n'+($index()+1)},style:{height:trHeight()},css:{'border':$index()%10==9&&$index()>0,'day':$data.daycut==1,'djs':isLast($index())}}"></tr>
+					</tbody>
+					<tr class="bottom"  data-bind="foreach:wintimes">
+						<td data-bind="{css:{'dia': $index()!=0,'bom':$index()==0,'green':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="bottom" data-bind="foreach:misstimes">
+						<td data-bind="{css:{'dia': $index()!=0,'orange':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="bottom" data-bind="foreach:maxtimes">
+						<td data-bind="{css:{'dia': $index()!=0,'yellow':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+				</table>
+				<div class = "news">
+					<marquee id="notice" direction="left" behavior="scroll" scrollamount="3" scrolldelay="30" loop="-1"  hspace="10" vspace="10" > 
+						<span></span>
+					</marquee>
+					<div class = "leftfoot"></div>
+					<div class = "rightfoot"></div>
+				</div>
+			</section>
+		</div>
+		<script type="text/javascript" src="js/shortcut.js"></script>
+		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="js/htmlUtils.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="js/ql730.js"></script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+.layui-layer,
+.layui-layer-shade,
+.sysmsg,#homePage{
+	-webkit-transform:rotate(90deg) !important;
+	-o-transform:rotate(90deg);
+	transform:rotate(90deg) !important;
+}
+
+.sysmsg{
+	right:auto !important;
+	left: 10px !important;
+}
+.layui-layer-shade{width: 1920px !important;}
+#homePage{
+	left:-420px;
+	top: 420px;
+	/*left:1080px;*/
+	width:1920px;
+	height: 1080px;
+}
+.table{
+	width:1920px;
+	height:963px;
+}
+#layer{
+	left: 35%;
+	top: 35%;
+}
+.rightfoot,.leftfoot{
+	bottom:840px;
+	background-image: none;
+}
+.news{background-color: transparent;}

@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<head>
+		<meta charset="utf-8" />
+		<title>快3热号推荐图</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>		
+		<link rel="stylesheet" type="text/css" href="css/k3_hotnumber.css"/>		
+	</head>
+	<div id="homePage">
+			<header class="header">
+					<div class="logo"></div>
+					<div class="k3_logo"></div>
+					<span class="name">快3四码三不同和二同号复选走势图</span>
+					<div class = "date"><span></span><span></span></div>
+					<div class = "version"><span></span><span></span></div>
+			</header>
+			<canvas id="line" height="1800" width="1080"> </canvas>
+			<section id="contentBody">
+				<table class="table" id="ta" border="0"  cellspacing="2" cellpadding="0">
+					<tr class="hot">
+						<th colspan="4" >当前热号4码</th>
+						<th class="mm1" colspan="15"></th>
+					</tr>
+					<tr class="t">
+						<th class = "term" rowspan="2" colspan="1" >期号</th>
+						<th class = "term append_border" colspan="3" rowspan="2">开奖号码</th>
+						<th class="border" colspan="6">开奖号码分布图</th>
+						<th class="append_border" rowspan="2" colspan="1">和 值</th>
+						<th colspan="4">当前热4码三不同号</th>
+						<th class="mm1" colspan="4">当前热4码二同号复选</th>
+					</tr>
+					<tr class="h">
+						<th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th>
+						<th class="d3"></th><th class="d3"></th><th class="d3"></th><th class="d3"></th>
+						<th class="d3"></th><th class="d3"></th><th class="d3"></th><th class="d3 mm1"></th>
+					</tr>
+					<tbody id="tabody"  data-bind="foreach:diagramHtml">
+						<tr data-bind="{attr:{'class':'n'+($index()+1)},style:{height:trHeight()},css:{'border':$index()%10==9&&$index()>0,'day':$data.daycut==1,'djs':isLast($index())}}"></tr>
+					</tbody>
+					<tr class="bottom"  data-bind="foreach:wintimes">
+						<td data-bind="{css:{'dia': $index()!=0,'green':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$index()==7?'-':$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="bottom" data-bind="foreach:misstimes">
+						<td data-bind="{css:{'dia': $index()!=0,'orange':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$index()==7?'-':$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="bottom" data-bind="foreach:maxtimes">
+						<td data-bind="{css:{'dia': $index()!=0,'yellow':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$index()==7?'-':$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="ta"><td class="blue" colspan='4'>昨日未出</td><td class="t1" colspan='15' data-bind="html:weichuk3()[0]"></td></tr>
+					<tr class="ta"><td class="darkblue" colspan='4'>前两日未出</td><td class="t2" colspan='15' data-bind="html:trendModel.weichuk3()[1]"></td></tr>
+					<tr class="ta"><td class="blue" colspan='4'>前三日未出<span>(未出期数)</span></td><td class="t3" colspan='15' data-bind="html:trendModel.weichuk3()[2]"></td></tr>
+				</table>
+				<div class = "news">
+					<marquee id="notice" direction="left" behavior="scroll" scrollamount="3" scrolldelay="30" loop="-1"  hspace="10" vspace="10" > 
+						<span></span>
+					</marquee>
+					<div class = "leftfoot"></div>
+					<div class = "rightfoot"></div>
+				</div>
+			</section>			
+		</div>
+		<script type="text/javascript" src="js/shortcut.js"></script>
+		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="js/htmlUtils.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="js/k3_hotnumber.js"></script>
+	</body>
+</html>

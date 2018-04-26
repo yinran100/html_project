@@ -1,0 +1,53 @@
+.xyc_logo{	left: 325px;}
+.name{	left: 410px;}
+.table{font-size: 19px;}
+.table tr:not(.bottom) td.termN.time, .table tr:not(.bottom) td.state{
+	font-size: 20px;
+}
+.append_border:after{	margin-left: -2px;}
+.t th:nth-last-child(n+2){
+	border-right: 1px solid #A9A9A9;
+}
+.table .h th:nth-child(10),.table .h th:nth-child(20),.table .h th:nth-child(30),
+.table tr:not(.bottom):not(.djs) td:nth-child(4),
+.table tr:not(.bottom):not(.djs) td:nth-child(14),
+.table tr:not(.bottom):not(.djs) td:nth-child(24),
+.table tr:not(.bottom):not(.djs) td:nth-child(34),
+.table tr.djs td:nth-child(12),
+.table tr.djs td:nth-child(22),
+.table tr.djs td:nth-child(32),
+.table tr.bottom td:nth-child(11),
+.table tr.bottom td:nth-child(21),
+.table tr.bottom td:nth-child(31){
+	border-right: 2px solid #444444 !important;
+}
+.table tr td.dia{
+	width: 35px;
+}
+.table tr td.dia:nth-last-child(n+4){
+	width: 26px;
+}
+.table tr td.dia div.one,.table tr td.dia div.two,.table tr td.dia div.three{
+	font-size: 29px;
+	line-height: 1;
+	letter-spacing: -2px;
+	color: cornsilk;
+	margin: -2px;
+}
+.table tr:not(.bottom) td.dia:nth-last-child(3) div{
+	font-size: 25px;
+	color: #000;
+	font-weight: bold;
+}
+.table tr td.dia div.four{
+	font-size: 20px;
+	color: #000;
+	font-family: "wr";
+	font-weight: bold;
+}
+.table tr.bottom td:nth-child(1) div{
+	font-size: 18px;
+}
+.table tr td.first{background-color: #DC143C;}
+.table tr td.second{background-color: #F68602;}
+.table tr td.third{background-color: #0066CC;}

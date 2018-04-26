@@ -1,0 +1,36 @@
+.header_title{
+	width: 475px;
+	left: 280px;
+	background: url(../../img/header/k3_2bt_title.png);
+}
+.k3_logo{
+	left: 735px;
+}
+.name{
+	font-size: 27px;
+	top: 21px;
+	left: 370px;
+}
+.table .h th:nth-child(6),.table .h th:nth-child(21),
+.table tr:not(.bottom):not(.djs) td:nth-child(4),
+.table tr:not(.bottom):not(.djs) td:nth-child(10),
+.table tr:not(.bottom):not(.djs) td:nth-child(25),
+.table tr.djs td:nth-child(8),
+.table tr.djs td:nth-child(23),
+.table tr.bottom td:nth-child(7),
+.table tr.bottom td:nth-child(22){
+	border-right: 2px solid #444444 !important;
+}
+.table tr td.dia div.one,.table tr td.dia div.two,.table tr td.dia div.three{
+	font-size: 26px;
+	line-height:1;
+	font-weight: bold;
+	letter-spacing: -1px;
+	margin: -2px;
+}
+.table tr td.dia{
+	width: 37px;
+}
+.table tr td.dia:nth-last-child(n+7){
+	width: 33px;	
+}

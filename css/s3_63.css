@@ -1,0 +1,72 @@
+.s3_logo {
+	left: 365px;
+	position: inherit;
+	height: 75px;
+	width: 75px;
+	background-image: url(../img/logo_s3.png);
+}
+.name{
+	left: 465px;
+}
+.table{
+	font-size: 17px;
+}
+.append_border:after{
+	height: 77px;
+}
+.table .t th{
+	font-size: 19px;
+}
+.table .h th{
+	font-size: 18px;
+}
+.table tr:not(.bottom) td.win:not(.state){
+	font-weight: bold;
+	font-size: 22px;
+}
+.table tr:not(.bottom) td.termN.time,.table tr:not(.bottom) td.win.state{
+	font-size: 18px;
+}
+
+.table .h th:nth-child(10),.table .h th:nth-child(20),.table .h th:nth-child(30),.table .h th:nth-child(40),
+.table tr:not(.bottom):not(.djs) td:nth-child(4),
+.table tr:not(.bottom):not(.djs) td:nth-child(14),
+.table tr:not(.bottom):not(.djs) td:nth-child(24),
+.table tr:not(.bottom):not(.djs) td:nth-child(34),
+.table tr:not(.bottom):not(.djs) td:nth-child(44),
+.table tr.djs td:nth-child(12),
+.table tr.djs td:nth-child(22),
+.table tr.djs td:nth-child(32),
+.table tr.djs td:nth-child(42),
+.table tr.bottom td:nth-child(11),
+.table tr.bottom td:nth-child(21),
+.table tr.bottom td:nth-child(31),
+.table tr.bottom td:nth-child(41){
+	border-right: 2px solid #444444 !important;
+}
+.table tr td.dia{
+	width: 30px;
+}
+.table tr td.dia:nth-last-child(n+3){
+	width: 21px;
+}
+.table tr td.dia div.one,
+.table tr td.dia div.two,
+.table tr td.dia div.three,
+.table tr td.dia div.four{
+	line-height:1;
+	margin: 0 -2px;
+	font-size: 31px;
+	font-weight: bold;
+}
+.table tr td.dia div.zero{
+	color: #000000;
+	letter-spacing: -1px;
+	font-size: 23px;
+}
+.table tr.bottom td.dia div.md{
+	font-size: 15px;
+}
+.table tr.bottom td.dia div.lg{
+	font-size: 14px;
+}

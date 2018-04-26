@@ -1,0 +1,81 @@
+.xyc_logo{	left: 315px;}
+.table{font-size: 19px;}
+.name{
+	left: 385px;
+	font-size: 35px;
+	top: 16px;
+}
+.append_border:after{
+	top: 39px;
+	height: 72px;
+}
+.append:before{
+	top: 39px;
+	height: 74px;
+	margin-left: -1px; 
+}
+.table tr:not(.bottom) td.time, .table tr:not(.bottom) td.state{	font-size: 21px;}
+.table tr.hot{
+	border-top: 2px solid #444444;
+	font-family: "wr";
+}
+.table tr.hot th:not(.mm1){
+	border-right: 2px solid #444444;
+}
+.t th{
+	border-top: 1px solid #A9A9A9;
+}
+.table tr th.hz{font-size: 16px;}
+.t th:nth-last-child(n+2){
+	border-right: 1px solid #A9A9A9;
+}
+.table .h th:nth-child(3),.table .h th:nth-child(4),
+.table tr:not(.bottom):not(.djs) td:nth-child(4),
+.table tr:not(.bottom):not(.djs) td:nth-child(11),
+.table tr:not(.bottom):not(.djs) td:nth-child(14),
+.table tr:not(.bottom):not(.djs) td:nth-child(15),
+.table tr.djs td:nth-child(9),
+.table tr.djs td:nth-child(12),
+.table tr.djs td:nth-child(13),
+.table tr.bottom td:nth-child(8),
+.table tr.bottom td:nth-child(11),
+.table tr.bottom td:nth-child(12){
+	border-right: 2px solid #444444 !important;
+}
+.table tr td.dia{
+	width: 74px;
+}
+.table tr td.dia:nth-last-child(n+8){
+	width: 40px;
+}
+.table tr td.dia div.one{
+	font-size: 32px;
+	line-height: 1;
+	margin: -2px;
+	letter-spacing: -1px;
+}
+.table tr:not(.bottom) td.dia div.zero{
+	color: #000 !important;
+	font-size: 26px;
+	line-height: 1;
+	margin: -2px;
+}
+.table tr td.dia div.two{
+	font-size: 21px;
+	white-space: nowrap; 
+	font-family: "wr";
+	font-weight: bolder;
+	line-height: 1;
+	color: #000;
+	margin: -2px;
+}
+
+.table tr td.dia.first{
+	background-color: #a4e6f7 !important;
+}
+.table tr td.dia.second{
+	background-color: #b5f5d1 !important;
+}
+.table tr td.dia.third{
+	background-color: #f1d992 !important;
+}

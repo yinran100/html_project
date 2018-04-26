@@ -1,0 +1,96 @@
+.xyc_logo{	left: 325px;}
+.name{	left: 410px;}
+.table{font-size: 19px;}
+.table tr:not(.bottom) td.termN.time, .table tr:not(.bottom) td.state,.table th{
+	font-size: 21px;
+}
+.table col:nth-child(4n+1){
+	background-color:  #e2f3fa;
+}
+.table col:nth-child(2n){
+	background-color: rgb(255,251,249);
+}
+.table col:nth-child(4n+3){
+	background-color: #eae5c4;
+}
+.table tr.hot{
+	border-top: 2px solid #444444;
+	font-family: "wr";
+}
+.table tr.hot th:not(.mm1){
+	border-right: 2px solid #444444;	
+}
+.black_border:after{
+	content: "";
+	display: block;
+	position: absolute;
+	height: 1800px;
+	top: 2px;
+	margin-left: -2px; 
+	border-right: 2px solid #444444;
+}
+.append_border:after{
+	top: 38px;
+	height: 72px;
+	margin-left: -1px;
+}
+.append:before{
+	top: 38px;
+}
+.t th{
+	border-top: 1px solid #A9A9A9;
+}
+.t th:nth-last-child(n+2){
+	border-right: 1px solid #A9A9A9;
+}
+.table .h th:nth-child(3),.table .h th:nth-child(6),.table .h th:nth-child(9),.table .h th:nth-child(19),
+.table tr:not(.bottom):not(.djs) td:nth-child(4),
+.table tr:not(.bottom):not(.djs) td:nth-child(7),
+.table tr:not(.bottom):not(.djs) td:nth-child(10),
+.table tr:not(.bottom):not(.djs) td:nth-child(11),
+.table tr:not(.bottom):not(.djs) td:nth-child(21),
+.table tr.djs td:nth-child(5),
+.table tr.djs td:nth-child(8),
+.table tr.djs td:nth-child(9),
+.table tr.djs td:nth-child(19),
+.table tr.bottom td:nth-child(4),
+.table tr.bottom td:nth-child(7),
+.table tr.bottom td:nth-child(10),
+.table tr.bottom td:nth-child(21),
+.table tr.notr td:nth-child(2){
+	border-right: 2px solid #444444 !important;
+}
+.table tr td.win:not(.state){
+	width: 40px;
+}
+.table tr td.dia{
+	width: 42px;
+}
+.table tr td:nth-last-child(12),.table tr td:nth-last-child(1){
+	width: 58px;
+}
+.table tr:not(.bottom) td:nth-last-child(12) div,.table tr:not(.bottom) td:nth-last-child(1)  div{
+	font-size: 22px;
+	color: #000000;
+}
+.table tr td.dia div.one,.table tr td.dia div.two{
+	font-size: 29px;
+	line-height: 1;
+	letter-spacing: -2px;
+}
+.table tr td.dia div.two{color: cornsilk;}
+.table tr td.first{background-color: #DC143C;}
+.table tr td.second{background-color: #F68602;}
+.table tr td.third{background-color: #0066CC;}
+.table tr.bottom td:nth-child(1){
+	font-size: 15px;
+}
+.table tr.bottom td.bom{
+	font-size: 14px;
+}
+.table tr.bottom td.dia div.md {
+    font-size: 19px;
+}
+.table tr.bottom td.dia div.lg {
+    font-size: 18px;
+}

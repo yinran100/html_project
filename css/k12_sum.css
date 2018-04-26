@@ -1,0 +1,26 @@
+.table tr:not(.day):nth-child(even) td.dia{	background-color: #e6f7fe;}
+.table tr:not(.day):nth-child(odd) td.dia{	background-color: #f5f9fc;}
+.table tr:not(.day):nth-child(even) td.dia:nth-last-child(n+2){	background-color: #fcf0f1;}
+.table tr:not(.day):nth-child(odd) td.dia:nth-last-child(n+2){	background-color: #fffafa;}
+
+.table .h th:nth-child(36),
+.table tr:not(.bottom) td:nth-last-child(2),
+.table tr:not(.bottom) td:nth-last-child(38),
+.table tr.bottom td:nth-child(1),
+.table tr.bottom td:nth-child(37){
+	border-right: 2px solid #444444 !important;
+}
+.table tr:not(.bottom) td.dia:nth-last-child(1){
+	width: 29px;
+	font-size: 19px !important;
+	color: black;	
+}
+.table tr td div.zero{
+	font-size: 22px;
+	line-height: 1;
+	margin: -2px;
+	letter-spacing: -1px;
+}
+.table tr td.dia{
+	width: 25px;
+}

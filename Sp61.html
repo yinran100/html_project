@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>东方6+1走势图</title>
+		<link id="basecss" rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link id="viewcss" rel="stylesheet" type="text/css" href="css/sp61.css"/>
+	</head>
+	<body>
+		<div id="homePage">
+			<header class="header">
+				<div class="logo"></div>
+				<div class="sp61_logo"></div>
+				<div class="header_title"></div>
+				<span class="name">东方6+1基本走势图</span>
+				<div class = "date"><span></span><span></span></div>
+				<div class = "version"><span></span><span></span></div>
+			</header>
+			<canvas id="line" width="1080" height="1800"> </canvas>
+			<div id="layer"></div>
+			<section id="contentBody">
+				<table class="table" id="ta" border="0" cellpadding="0" cellspacing="1">
+					<colgroup>
+   						<col class = "issue" span="1">
+    					<col span="4"><col span="4">
+    					<col span="4"><col span="4">
+    					<col span="4"><col span="4">
+    					<col span="12">
+  					</colgroup>
+					<tbody>
+						<tr class="t">
+							<th class="yellow term" rowspan="2">期 号</th>
+							<th class="orange" colspan="4">第一位</th>
+							<th class="orange" colspan="4">第二位</th>
+							<th class="orange" colspan="4">第三位</th>
+							<th class="orange" colspan="4">第四位</th>
+							<th class="orange" colspan="4">第五位</th>
+							<th class="orange" colspan="4">第六位</th>
+							<th class="orange mm1" colspan="12">生肖位</th>
+						</tr>
+						<tr class="h">
+							<th>号</th><th>大</th><th>奇</th><th>质</th><th>号</th><th>大</th><th>奇</th><th>质</th>
+							<th>号</th><th>大</th><th>奇</th><th>质</th><th>号</th><th>大</th><th>奇</th><th>质</th>
+							<th>号</th><th>大</th><th>奇</th><th>质</th><th>号</th><th>大</th><th>奇</th><th>质</th>
+							<th class="hz">鼠</th><th class="hz">牛</th><th class="hz">虎</th><th class="hz">兔</th><th class="hz">龙</th><th class="hz">蛇</th>
+							<th class="hz">马</th><th class="hz">羊</th><th class="hz">猴</th><th class="hz">鸡</th><th class="hz">狗</th><th class="hz mm1">猪</th>
+						</tr>
+						<tbody id="tabody" data-bind="foreach:diagramHtml">
+							<tr data-bind="{attr:{'class':'n'+($index()+1)},style:{height:trHeight()},css:{'border':$index()%10==9&&$index()>0,'day':$data.daycut==1,'djs':isLast($index())}}"></tr>
+						</tbody>
+						<tr class="bottom"  data-bind="foreach:wintimes">
+							<td data-bind="{css:{'dia': $index()!=0,'bom':$index()==0,'green':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+								<div data-bind="{text:($index()<22&&$index()%4==1)?'-':$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+						</tr>
+						<tr class="bottom" data-bind="foreach:misstimes">
+							<td data-bind="{css:{'dia': $index()!=0,'orange':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+								<div data-bind="{text:($index()<22&&$index()%4==1)?'-':$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+						</tr>
+						<tr class="bottom" data-bind="foreach:maxtimes">
+							<td data-bind="{css:{'dia': $index()!=0,'yellow':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+								<div data-bind="{text:($index()<22&&$index()%4==1)?'-':$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class = "news">
+					<marquee id="notice" direction="left" behavior="scroll" scrollamount="3" scrolldelay="30" loop="-1"  hspace="10" vspace="10" > 
+						<span></span>
+					</marquee>
+					<div class = "leftfoot"></div>
+					<div class = "rightfoot"></div>
+				</div>
+			</section>
+		</div>
+		<script type="text/javascript" src="js/shortcut.js"></script>
+		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="js/htmlUtils.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="js/sp61.js"></script>
+	</body>
+</html>

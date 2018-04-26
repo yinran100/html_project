@@ -1,0 +1,37 @@
+.header_title{
+	width: 412px;
+	left: 330px;
+	background: url(../../img/header/k3_2thdan_title.png);
+}
+.k3_logo{
+	left: 718px;
+}
+.h th {
+    font-size: 16px;
+}
+.name{
+	font-size: 37px;
+	top: 15px;
+	left: 425px;
+}
+.table tr.ta td:nth-child(1){
+	font-size: 15px;
+}
+.table tr:not(.bottom):not(.djs) td:nth-child(4){
+	border-right: 2px solid #444444 !important;
+}
+.table tr td.dia{
+	width: 30px;
+}
+.table tr td.dia div.dif{
+	font-size: 22px ;
+	line-height: 1;
+	letter-spacing: -2px;
+	margin: -2px;
+}
+.table tr.bottom td.dia div.md{
+	font-size: 16px;
+}
+.table tr.bottom td.dia div.lg{
+	font-size: 15px;
+}

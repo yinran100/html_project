@@ -1,0 +1,80 @@
+.header_title{
+	width: 372px;
+	left: 340px;
+	background: url(../../img/header/i515_title.png);
+}
+.ql515_logo {
+	left: 680px;
+	position: inherit;
+	height: 75px;
+	width: 59px;
+	background-image: url(../../img/logo_ql515.png);
+}
+.name{
+	left: 470px;
+}
+.table{
+	font-size: 17px;
+}
+.table .t th{
+	font-size: 18px;
+}
+.table .t th:nth-child(2){
+	/*font-size: 19px;*/
+}
+.table .h th{
+	font-size: 18px;
+}
+.table tr:not(.bottom) td.win:not(.state){
+	width: 25px;
+	font-weight: bold;
+	font-size: 20px;
+}
+.table tr:not(.bottom) td.termN.time,.table tr:not(.bottom) td.win.state{
+	font-size: 18px;
+}
+
+.table tr:not(.h) th:nth-last-child(n+2),.table .h th:nth-child(5),
+.table .h th:nth-child(10),.table .h th:nth-child(15),.table .h th:nth-child(21),.table .h th:nth-child(27),.table .h th:nth-child(33),
+.table tr:not(.bottom) td:nth-last-child(2),.table tr:not(.bottom) td:nth-last-child(8),
+.table tr:not(.bottom) td:nth-last-child(14),.table tr:not(.bottom) td:nth-last-child(20),
+.table tr:not(.bottom) td:nth-last-child(25),.table tr:not(.bottom) td:nth-last-child(30),
+.table tr:not(.bottom) td:nth-last-child(35),
+.table tr.bottom td:nth-child(6),.table tr.bottom td:nth-child(11),
+.table tr.bottom td:nth-child(16),.table tr.bottom td:nth-child(22),
+.table tr.bottom td:nth-child(28),.table tr.bottom td:nth-child(34){
+	border-right: 2px solid #444444 !important;
+}
+.table tr td.dia{
+	width: 24px;
+}
+.table tr:not(.bottom) td div {
+	font-weight: 100;
+	font-size: 16px;
+	letter-spacing: -1px;
+
+}
+.table tr td.dia div.one,
+.table tr td.dia div.two,
+.table tr td.dia div.three,
+.table tr td.dia div.four{
+	border-radius: 50%;
+	color: #fffdf0;
+	letter-spacing: -2px;
+	line-height: 1.1;
+	padding: 2px;
+	font-size: 18px;
+	width: 20px;
+	background-color: #2D93CA;
+	margin: auto;
+}
+.table tr td.dia div.one{
+	background-color: #DC143C;
+}
+.table tr:not(.bottom) td.dia:nth-last-child(1) div{
+	color: green;
+	font-size: 20px;
+}
+.table tr.bottom td:nth-child(n+2){
+	color: #fe241e;
+}

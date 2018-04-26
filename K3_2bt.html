@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>快3二同二不同复选与三同号走势图</title>
+		<link id="basecss" rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link id="viewcss" rel="stylesheet" type="text/css" href="css/k3_2bt.css"/>
+	</head>
+	<body>
+		<div id="homePage">
+			<header class="header">
+					<div class="logo"></div>
+					<div class="k3_logo"></div>
+					<div class="header_title"></div>
+					<span class="name">快3二同二不同复选与三同号走势图</span>
+					<div class = "date"><span></span><span></span></div>
+					<div class = "version"><span></span><span></span></div>
+			</header>
+			<canvas id="line" height="1800" width="1080"> </canvas>
+			<div id="layer"></div>
+			<section id="contentBody">
+				<table class="table" id="ta" border="0"  cellspacing="1" cellpadding="0">
+					<colgroup>
+   						<col class = "issue" span="1">
+    					<col class = "winNumbers" span="3">
+    					<col class = "dia1" span="6">
+    					<col class = "dia2" span="15">
+    					<col class = "dia3" span="6">
+  					</colgroup>
+					<tr class="t">
+						<th class = "yellow term" rowspan="2" colspan="1" >期号</th>
+						<th class = "green append_border winnum" colspan="3" rowspan="2">开奖号码</th>
+						<th class="hz" colspan="6">二同号复选(1/13<span style="font-size: 21px;line-height: 0.5;font-family: 'ar';">.</span>5中15元)</th>
+						<th colspan="15">二不同号复选(1/7.2中8元)</th>
+						<th class="hz mm1" colspan="6">三同号(1/216中240元)</th>
+					</tr>
+					<tr class="h">
+						<th>11*</th><th>22*</th><th>33*</th><th>44*</th><th>55*</th><th>66*</th>
+						<th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>23</th><th>24</th>
+						<th>25</th><th>26</th><th>34</th><th>35</th><th>36</th><th>45</th><th>46</th><th>56</th>
+						<th>111</th><th>222</th><th>333</th><th>444</th><th>555</th><th class="mm1">666</th>
+					</tr>
+					<tbody id="tabody" data-bind="foreach:diagramHtml">
+						<tr data-bind="{attr:{'class':'n'+($index()+1)},style:{height:trHeight()},css:{'border':$index()%10==9&&$index()>0,'day':$data.daycut==1,'djs':isLast($index())}}"></tr>
+					</tbody>
+					<tr class="bottom"  data-bind="foreach:wintimes">
+						<td data-bind="{css:{'dia': $index()!=0,'green':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="bottom" data-bind="foreach:misstimes">
+						<td data-bind="{css:{'dia': $index()!=0,'orange':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="bottom" data-bind="foreach:maxtimes">
+						<td data-bind="{css:{'dia': $index()!=0,'yellow':$index()==0},attr:{'colspan':bottomAttr($index())}}">
+							<div data-bind="{text:$data,css:{'md': $data>99,'lg': $data>999}}"></div></td>
+					</tr>
+					<tr class="ta"><td class="blue" colspan='4'>昨日未出</td><td class="t1" colspan='27' data-bind="html:weichuk3()[0]"></td></tr>
+					<tr class="ta"><td class="darkblue" colspan='4'>前两日未出</td><td class="t2" colspan='27' data-bind="html:trendModel.weichuk3()[1]"></td></tr>
+					<tr class="ta"><td class="blue" colspan='4'>前三日未出<span>(未出期数)</span></td><td class="t3" colspan='27' data-bind="html:trendModel.weichuk3()[2]"></td></tr>
+				</table>
+				<div class = "news">
+					<marquee id="notice" direction="left" behavior="scroll" scrollamount="3" scrolldelay="30" loop="-1"  hspace="10" vspace="10" > 
+						<span></span>
+					</marquee>
+					<div class = "leftfoot"></div>
+					<div class = "rightfoot"></div>
+				</div>
+			</section>
+		</div>
+		<script type="text/javascript" src="js/shortcut.js"></script>
+		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="js/knockout-2.2.0.js"></script>
+		<script type="text/javascript" src="js/htmlUtils.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="js/k3_2bt.js"></script>
+	</body>
+</html>

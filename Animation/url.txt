@@ -1,0 +1,3 @@
+url= 链接+?+加密的[期号+:+中奖号码+双色球期号+奖池+最高奖数+最高奖金]
+如 127.0.0.1:8020/AnimationPage/index.html?MDUwMDQxOjAxMDMwNQ==
+MDUwMDQxOjAxMDMwNQ== 对应 050041:010305

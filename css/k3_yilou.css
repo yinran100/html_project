@@ -1,0 +1,115 @@
+table{font-size: 18px;}
+.table th{font-size: 17px;font-family: "wr";}
+.k3_logo{left: 320px;}
+.table tr td.sbt,.table tr td.rth{height: 30px;}
+.name{
+	left: 410px;
+	top: 17px;
+	font-size: 32px;
+}
+.append_border:after{height: 1800px;}
+.t th {   border-top: 1px solid #A9A9A9;}
+.table th.top:nth-child(1),.table th.top:nth-child(2),
+.table .t th:nth-last-child(n+2),
+.table .h th.max{
+	border-right: 2px solid #444444;
+}
+.table tr:not(.bottom) td.time, .table tr:not(.bottom) td.state{
+	font-size: 22px;
+}
+.table tr:nth-last-child(n+2) td:not(.state){
+	border-bottom: 1px solid #A9A9A9;
+}
+.table tr td:not(.hh):nth-last-child(n+2){
+	border-right: 1px solid #A9A9A9;
+}
+.table tr:nth-child(even) td.sth,
+.table tr:nth-child(even) td.sbt,
+.table tr:nth-child(even) td.rbt{
+	background-color: #E6F7FE;
+}
+.table tr:nth-child(odd) td.sth,
+.table tr:nth-child(odd) td.sbt,
+.table tr:nth-child(odd) td.rbt{
+	background-color: #F5F9FC;
+}
+.table tr:nth-child(even) td.rth,
+.table tr:nth-child(odd) td.dm,
+.table tr:nth-child(even) td.sl{
+	background-color: #F8E8E9;
+}
+.table tr:nth-child(odd) td.rth,
+.table tr:nth-child(even) td.dm,
+.table tr:nth-child(odd) td.sl{
+	background-color: #FFFAFA;
+}
+.table tr:nth-child(even) td.sum,
+.table tr:nth-child(odd) td.rthfx,
+.table tr:nth-child(odd) td.jodx,
+.table tr:nth-child(odd) td.termNB{
+	background-color: #DDF4E0;
+}
+.table tr:nth-child(odd) td.sum,
+.table tr:nth-child(even) td.rthfx,
+.table tr:nth-child(even) td.jodx,
+.table tr:nth-child(even) td.termNB{
+	background-color: #F0FAF2;
+}
+
+.table tr:not(.zz):not(.cc) td:nth-child(1),
+.table tr:not(.zz):not(.cc) td:nth-child(4),
+.table tr:not(.zz):not(.cc) td:nth-child(7){
+	border-right: 2px solid #444444 ;
+}
+.table tr.zz:nth-child(4){
+	border-top: 2px solid #A9A9A9;
+}
+.table th.top ,.table tr.zz:nth-child(n+5) td:nth-last-child(n+8),
+.table tr.slh td.ll,.table tr.slh td.termNB{
+	border-top: 2px solid #444444;
+}
+.table tr:nth-child(10) td:nth-child(n+8),
+.table tr:nth-child(40) td:nth-child(n+8){
+	border-top: 2px solid #444444;
+}
+.table tr td.jodx:nth-child(1),.table tr.hot{
+	font-family: "wr";
+}
+.table tr td.hh {
+    border-right: 1px solid #A9A9A9;
+    border-bottom: 1px solid #A9A9A9;
+    width: 30px;
+    font-family: "wr";
+    color: black;
+	font-weight: bold;
+}
+.table tr td.hz{
+	font-family: "wr";
+    color: black;
+	font-weight: bold;
+}
+.table tr td.head{
+	color: black;
+	font-weight: bold;
+}
+.table tr.zz td:nth-child(2),
+.table tr.zz td:nth-child(5),
+.table tr.zz td:nth-child(8){
+	border-right: 2px solid #444444;
+}
+
+.table tr:not(.cc) td:nth-last-child(4),
+.table tr:not(.cc) td:nth-last-child(7){
+	border-right: 2px solid #444444;
+}
+.table tr.cc td:nth-last-child(4),
+.table tr.cc td:nth-last-child(7),
+.table tr.cc td:nth-last-child(8),
+.table tr.cc td:nth-last-child(9){
+	border-right: 2px solid #444444;
+}
+.table tr.slh td.termNB:nth-child(2){
+	color: #000000;
+	font-family: "ar";
+	font-size: 21px;
+}

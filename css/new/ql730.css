@@ -1,0 +1,59 @@
+.header_title{
+	width: 372px;
+	left: 360px;
+	background: url(../../img/header/ql730_title.png);
+}
+.ql730_logo {
+	position: inherit;
+	left: 685px;
+	top: 5px;
+	height: 74px;
+	width: 93px;
+	background: url(../../img/logo_ql730.png) no-repeat;
+}
+.name{
+	left: 455px;
+}
+.table{
+	font-size: 17px;
+}
+.table .t th.term{
+	font-size: 21px;
+}
+.table .t th:nth-child(2){
+	/*font-size: 19px;*/
+}
+
+.table tr:not(.bottom) td.termN.time{
+	font-size: 16px;
+	font-family: "wr";
+}
+.table tr.bottom td.bom{
+	font-size: 14px;
+}
+.table tr:not(.h) th:nth-last-child(n+2),
+.table tr:not(.bottom) td:nth-last-child(31),
+.table tr.bottom td:nth-child(1){
+	border-right: 2px solid #444444 !important;
+}
+.table tr:not(.bottom) td.dia{
+	width: 32px;
+}
+
+.table tr td.dia div.one,
+.table tr td.dia div.two{
+	border-radius: 50%;
+	color: #fffdf0;
+	letter-spacing: -1px;
+	font-size: 21px;
+	line-height: 1;
+	padding: 4px;
+	width: 21px;
+	margin: auto;
+}
+.table tr.bottom td.dia div.md{
+	font-size: 16px;
+}
+.table tr.bottom td.dia div.lg{
+	font-size: 15px;
+}
