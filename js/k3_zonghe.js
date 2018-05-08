@@ -12,7 +12,7 @@ function initThisModel(){
 			var sum = maindata[parseInt(i)+this.page()*max_rowcount].sum-3;
 			var span = maindata[parseInt(i)+this.page()*max_rowcount].span;
 			arr.push(dataUtils.getTrend(arr,num[0]-1,6,0).concat(dataUtils.getTrend(arr,num[1]-1,6,6),dataUtils.getTrend(arr,num[2]-1,6,12)
-									,dataUtils.getDiagram(arr,num,6,18),dataUtils.getTrend(arr,sum,16,24),dataUtils.getTrend(arr,span,6,30)));
+									,dataUtils.getDiagram(arr,num,6,18),dataUtils.getTrend(arr,sum,16,24),dataUtils.getTrend(arr,span,6,40)));
 		}
 		return arr;
 	}, trendModel);
@@ -26,7 +26,7 @@ function initThisModel(){
 			var sum = maindata[parseInt(i)+x].sum-3;
 			var span = maindata[parseInt(i)+x].span;
 			arr.push(dataUtils.getTrend(arr,num[0]-1,6,0).concat(dataUtils.getTrend(arr,num[1]-1,6,6),dataUtils.getTrend(arr,num[2]-1,6,12)
-									,dataUtils.getDiagram(arr,num,6,18),dataUtils.getTrend(arr,sum,16,24),dataUtils.getTrend(arr,span,6,30)));
+									,dataUtils.getDiagram(arr,num,6,18),dataUtils.getTrend(arr,sum,16,24),dataUtils.getTrend(arr,span,6,40)));
 		}
 		return arr;
 	}, trendModel);

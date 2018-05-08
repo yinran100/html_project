@@ -52,7 +52,7 @@ var K12view = {
 	yilounum: new Array("0", "4", "1|2", "1|2|3") 	//每个视图需要的遗漏序号
 };
 var K3view_63 = {
-	htmlname:new Array("K3_base.html", "K3_zonghe.html", "K3_sum_36.html", "K3_form.html", "K3_weitu.html", "K3_2thdan.html", "K3_2bt.html", "K3_3bt.html"),
+	htmlname:new Array("K3_base.html", "K3_zonghe.html", "K3_sum.html", "K3_form.html", "K3_weitu.html", "K3_2thdan.html", "K3_2bt.html", "K3_3bt.html"),
 	menuicon:new Array("img/menu/k3_base.png", "img/menu/k3_zonghe.png", "img/menu/k3_sum.png", "img/menu/k3_form.png", "img/menu/k3_weitu.png", "img/menu/k3_2thdan.png", "img/menu/k3_2bt.png", "img/menu/k3_3bt.png"),
 	menuicon_ac:new Array("img/menu/k3_base_ac.png", "img/menu/k3_zonghe_ac.png","img/menu/k3_sum_ac.png","img/menu/k3_form_ac.png","img/menu/k3_weitu_ac.png","img/menu/k3_2thdan_ac.png","img/menu/k3_2bt_ac.png","img/menu/k3_3bt_ac.png"),
 	particon:new Array("img/menu/k3_base_part.png", "img/menu/k3_zonghe_part.png","img/menu/k3_sum_part.png","img/menu/k3_form_part.png","img/menu/k3_weitu_part.png",
@@ -63,7 +63,7 @@ var K3view_63 = {
 	viewtext:new Array(0, 0, 0, 0, 0, 0, 0, 0),
 	datanum: new Array(0, 0, 0, 0, 0, 0, 0, 0),
 	isScross: new Array(0, 0, 0, 0, 0, 0, 0, 0),		//是否横屏
-	yilounum: new Array("0|1|8", "14|15|16|0|1|8", "1|20|19|13|21", "0|1|8", "0|14|15|16","3","4|5|7","6|8") 	//每个视图需要的遗漏序号 0|1|2**1|18|13
+	yilounum: new Array("0|1|8", "14|15|16|0|1|8", "0|1|2", "0|1|8", "0|14|15|16","3","4|5|7","6|8") 	//每个视图需要的遗漏序号 0|1|2**1|18|13
 };
 var K3view_32 = {	//江苏
 	htmlname:new Array("K3_base.html", "K3_sum.html", "K3_form.html", "K3_weitu.html", "K3_2thdan.html", "K3_2bt.html", "K3_3bt.html"),
@@ -208,7 +208,7 @@ var ALLview ={		//K_public.CS_name，K_public.CS_text的长周期玩法名 也�
 //};
 var gameArray = { 
 	playname : new Array(K2NAME, K3NAME, XYCNAME, K10NAME, K12NAME), //所有玩法
-	relationview: new Array(K2view, K3view_22, XYCview, K10view, K12view),
+	relationview: new Array(K2view, K3view_63, XYCview, K10view, K12view),
 	settingtext : new Array("快2","快3","幸运彩","快乐10分","快乐12"),
 	playstate : new Array(2, 2, 2, 2, 2),			 //目前状态，0为等待开奖中，1为新期等待中，2为新期售卖中（只兑）
 	playLastate: new Array(2, 2, 2, 2, 2),
@@ -223,8 +223,8 @@ var gameArray = {
 };
 var ALL_COLOR = new Array("black", "orangered","#e8980e", "blue","green","purple");	//号码颜色
 var K_public={
-	hasNoFlag: false,	//有没有默认视图为no的选项
-	playHtmlMvflag:true,		//是否播放开奖动画和奖池
+	hasNoFlag: true,	//有没有默认视图为no的选项
+	playHtmlMvflag:false,		//是否播放开奖动画和奖池
 	haslx:0,	//是否有三连号,0代表没有
 	ipCode:false,		//修改是否需要密码
 	skinFlag:true,		//是否有简约多彩风格选项

@@ -40,7 +40,7 @@
 .table tr td.dia div.second,
 .table tr td.dia div.third,
 .table tr td.dia div.fouth{
-	font-size:23px;
+	font-size:22px;
 }
 .table tr td.dia{
 	width: 20px;
@@ -54,13 +54,15 @@
 	letter-spacing: -1px;
 }
 .table tr td.dia div.kua{font-size: 21px;}
-.table tr.ta td:nth-child(1){	font-size: 15px;}
+.table tr.ta td:nth-child(1){	font-size: 14px;}
 .table tr.ta td:nth-child(1) span{font-size: 14px;}
 .table tr.bottom td.dia div.md{
 	font-size: 15px;
 	font-weight: 200;
+	letter-spacing: -1px;
 }
 .table tr.bottom td.dia div.lg{
 	font-size: 13px;
 	font-weight: 100;
+	letter-spacing: -2px;
 }
