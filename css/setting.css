@@ -63,14 +63,16 @@ article{
 	top: 5px;
 	line-height: 13px;
 }
-article.public{	line-height: 18px;font-size: 29px;}
+article.public{	
+	line-height: 15px;
+	font-size: 28px;
+}
 article.k3view{
 	line-height: 19px;
 	font-size: 27px;
 }
 #context3 article{line-height: 1.2;}
 article p{
-	
 }
 article p.ac{
 	color: gold;
@@ -83,7 +85,6 @@ span.ac{border: 1px dashed;}
 article p.darkgray{color:darkgray;}
 span .darkgray{	color:darkgray;}
 span.padleft{margin-left: 209px !important;}
-#context1 .q1 span{	margin-left: 90px;}
 #context1 .q3 span{	
 	margin-left: 65px;
 	line-height: 1.9;
@@ -95,10 +96,10 @@ span.padleft{margin-left: 209px !important;}
 	
 }
 #context1 .q2 span,#context2 .q1 span,#context2 .q2 span,#context2 .q3 span{
-	margin: 0 90px;
+	margin-left: 85px;
 }
-#context3  span{
-	margin: 50px;
+#context1 .q1 span, #context3 .q1 span, #context3 .q2 span{
+	margin-left: 85px;
 }
 .choosebox{
 	position: absolute;
@@ -125,10 +126,10 @@ span.padleft{margin-left: 209px !important;}
 	text-shadow: 5px 5px 5px #FF0000;
 }
 
-#context2 .s4,#context2 .s5,#context2 .s6,#context2 .s7{
+#context2 .s4,#context2 .s5,#context2 .s6,#context2 .s7,#context2 .s8,#context3 .s3,#context3 .s4{
 	position: absolute;
 }
-#context2 .s4 .line{
+.sliderdiv .line{
 	width: 305px;
 	height: 2px;
 	margin: 0px auto;
@@ -136,65 +137,66 @@ span.padleft{margin-left: 209px !important;}
 	background-color: #D5D5D5;
 	overflow: hidden;
 	position: inherit;
-	top: 325px;
+	top: 10px;
 	left: 250px;
 }
 
-#context2 .s4 .slider{
-	top: 317px;
+.sliderdiv  .slider{
 	position: absolute;
 	left: 250px;
 	width: 5px;
 	height: 20px;
 	background-color: #D5D5D5; 
 }
-
-#context2 .s4 span{
+.sliderdiv  span{
 	font-size: 18px;
-	top: 317px;
 	position: inherit;
 	color: #D5D5D5; 
 	left:570px;
 }
-#context2 .s4 div.ac{
+.sliderdiv  div.ac{
 	background-color:#FFFF00;
 }
-#context2 .s4 span.ac{
+.sliderdiv  span.ac{
 	color: 	#FFFF00;
 	border: hidden;
 }
-#context2 .s5,#context2 .s6{
-	top: 350px;
+#context2 .s4{top: 286px}
+#context2 .s5{top: 326px}
+#context3 .s3{top: 206px}
+#context3 .s4{top: 260px}
+#context2 .s6,#context2 .s7{
+	top: 360px;
 	left: 310px;
 	width: 222px;
 	height: 43px;
 	background: url(../img/input.png);
 }
-#context2 .s6{
-	top: 397px;
+#context2 .s7{
+	top: 405px;
 }
-#context2 .s5.ac,#context2 .s6.ac{
+#context2 .s6.ac,#context2 .s7.ac{
 	background-image: url(../img/input_ac.png);
 }
-#context2 .s5 span,#context2 .s6 span{
+#context2 .s6 span,#context2 .s7 span{
 	color: #000000;
 	font-size: 28px;
 	margin: 6px 0px 0px 10px;
 	text-align: center;
 	position: inherit;
 }
-#context2 .s7{
+#context2 .s8{
 	color: white;
 	font-size: 24px;
 	text-align: center;
 	line-height: 40px;
 	width: 129px;
 	height: 40px;
-	top: 445px;
+	top: 448px;
 	left: 350px;
 	background-image: url(../img/button.png);
 }
-#context2 .s7.ac{
+#context2 .s8.ac{
 	background-image: url(../img/button_ac.png);
 }
 #left,#right{
@@ -253,7 +255,6 @@ span.padleft{margin-left: 209px !important;}
 	line-height:0px; 
 	float:left; 
 	text-align: center;
-	display:inline; 
 	overflow:hidden;
 	width:140px;
 	height:86px;

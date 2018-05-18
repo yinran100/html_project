@@ -91,14 +91,14 @@ var web = self.setInterval(function(){
 							var view=t.data.fupingview;
 							var page=t.data.fupingpage;
 							if(view!=person_setting.fupingview||page!=person_setting.fupingpage
-								||t.data.showyilou!=person_setting.showyilou+""||t.data.showVersion!=person_setting.showVersion+""
-			                    ||t.data.showStation!=person_setting.showStation+""||t.data.skinStyle!=person_setting.skinStyle+""){
+								||t.data.showyilou!=person_setting.showyilou||t.data.showVersion!=person_setting.showversion
+								||t.data.showStation!=person_setting.showstation||t.data.skinStyle!=person_setting.skinStyle){
 								person_setting.fupingview = view;
-								person_setting.fupingpage = page;
-			                    person_setting.showyilou= parseInt(t.data.showyilou);
-			                    person_setting.showversion= parseInt(t.data.showVersion);
-			                    person_setting.skinStyle= parseInt(t.data.skinStyle);
-			                    person_setting.showstation= parseInt(t.data.showStation);
+								person_setting.fupingpage = parseInt(page);
+								person_setting.showyilou= parseInt(t.data.showyilou);
+								person_setting.showversion= parseInt(t.data.showVersion);
+								person_setting.skinStyle= parseInt(t.data.skinStyle);
+								person_setting.showstation= parseInt(t.data.showStation);
 								gotoPage(view,page);
 							}
 						}

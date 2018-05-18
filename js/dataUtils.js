@@ -9,7 +9,7 @@ var debugflag=1;//0为调试模式可单机运行，实际运行设为1，非常
 var person_setting={
 		haveset:0,
 		playCode:K3NAME,	//玩法名,"NO"代表不进入任何走势图maindata
-		playview:3,		//默认打开第几个视图
+		playview:2,		//默认打开第几个视图
 		showpage:6,		//K_public.MAX_PAGE,		//显示第几页
 		showpage_h:10,
 		showstation:0,	//是否显示站点号
@@ -27,8 +27,10 @@ var person_setting={
 		jihao:"",
 		version:"",
 		serverIP:"",
-		screenLight:100, //亮度
-		fupingScreenLight:100 //副屏亮度
+		screenLight:90, //主屏亮度
+		screenLight_B:90, //副屏亮度
+		sysSoundVal:80, //主屏音量
+		sysSoundVal_B:80 //副屏音量
 };
 var dataUtils = {
 	initialize: function(){

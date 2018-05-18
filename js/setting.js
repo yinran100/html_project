@@ -15,7 +15,6 @@ var showPage=parent.person_setting.showpage-1; //第几页显示
 var showStation=parent.person_setting.showstation; //站点显示
 var showVersion=parent.person_setting.showversion; //版本显示
 var showYilou=parent.person_setting.showyilou;//号码间是否显示遗漏
-var screenLight=parent.person_setting.screenLight; //亮度
 var skinStyle = parent.person_setting.skinStyle; //界面风格
 var fupingviewNum=Math.max(K_public.CS_name.indexOf(parent.person_setting.fupingview),0); //副屏视图
 var fupingpage = parent.person_setting.fupingpage-1; //副屏页码
@@ -24,8 +23,12 @@ var bt3color= parent.person_setting.bt3color;
 var th2color= parent.person_setting.th2color;
 var th3color= parent.person_setting.th3color;
 var lh3color= parent.person_setting.lh3color;
-var current = parent.strPage=="0"||parent.strPage=="1"?1:0;
+var screenLight=parent.person_setting.screenLight; //亮度
+var screenLight_B=parent.person_setting.screenLight_B; //副屏亮度
+var sysSoundVal=parent.person_setting.sysSoundVal; //音量
+var sysSoundVal_B=parent.person_setting.sysSoundVal_B; //副屏音量
 
+var current = parent.strPage=="0"||parent.strPage=="1"?1:0;
 var row=0;  //第几行nowpage
 var prerow = 0; //前一个行
 var col;  //第几个
@@ -189,9 +192,20 @@ var context2q4 = { // 第二页第四 亮度
 	hasSlider:true,
 	isSecQuestion:false
 };
-var context2q5 = { // 第二页第五
+var context2q5 = { // 第二页第五 音量
 	line: $("#context2 article .q5"),  //当前行高亮
-	editBox: new Array($("#context2 .s5")), //选中选项边框
+	editBox: new Array($("#context2 .s5").find("div").eq(0),$("#context2 .s5").find("div").eq(1),$("#context2 .s5").find("span")), //选中选项边框
+	choosed: new Array(), //选择框选中
+	isRadio: false,  //是否单选
+	currentSelect:sysSoundVal+"",
+	result:function(){},
+	isQuestion:false,
+	hasSlider:true,
+	isSecQuestion:false
+};
+var context2q6 = { // 第二页第六
+	line: $("#context2 article .q6"),  //当前行高亮
+	editBox: new Array($("#context2 .s6")), //选中选项边框
 	choosed: new Array(), //选择框选中
 	result:function(){
 		clicktag =K_public.ipCode?1:3;
@@ -203,9 +217,9 @@ var context2q5 = { // 第二页第五
 	hasSlider:false,
 	isSecQuestion:false
 };
-var context2q6 = { // 第二页第六
-	line: $("#context2 article .q6"),  //当前行高亮
-	editBox: new Array($("#context2 .s6")), //选中选项边框
+var context2q7 = { // 第二页第七
+	line: $("#context2 article .q7"),  //当前行高亮
+	editBox: new Array($("#context2 .s7")), //选中选项边框
 	choosed: new Array(), //选择框选中
 	result:function(){
 		if(parent.person_setting.sp_playEname.length==0||parent.strPage=="1"||parent.strPage=="0"){
@@ -222,9 +236,9 @@ var context2q6 = { // 第二页第六
 	hasSlider:false,
 	isSecQuestion:false
 };
-var context2q7 = { // 一键清除
-	line: $("#context2 article .q7"),  //当前行高亮
-	editBox: new Array($("#context2 .s7")), //选中选项边框
+var context2q8 = { // 一键清除
+	line: $("#context2 article .q8"),  //当前行高亮
+	editBox: new Array($("#context2 .s8")), //选中选项边框
 	choosed: new Array(), //选择框选中
 	result:function(){
 		console.log("确认重启");
@@ -258,6 +272,28 @@ var context3q2 = { // 第三页第二
 	currentSelect:fupingviewNum+"",
 	isQuestion:true,
 	hasSlider:false,
+	isSecQuestion:false
+};
+var context3q3 = { // 第三页第三 副屏亮度
+	line: $("#context3 article .q3"),  //当前行高亮
+	editBox: new Array($("#context3 .s3").find("div").eq(0),$("#context3 .s3").find("div").eq(1),$("#context3 .s3").find("span")), //选中选项边框
+	choosed: new Array(), //选择框选中
+	isRadio: false,  //是否单选
+	currentSelect:screenLight_B+"",
+	result:function(){},
+	isQuestion:false,
+	hasSlider:true,
+	isSecQuestion:false
+};
+var context3q4 = { // 第三页第四 副屏音量
+	line: $("#context3 article .q4"),  //当前行高亮
+	editBox: new Array($("#context3 .s4").find("div").eq(0),$("#context3 .s4").find("div").eq(1),$("#context3 .s4").find("span")), //选中选项边框
+	choosed: new Array(), //选择框选中
+	isRadio: false,  //是否单选
+	currentSelect:sysSoundVal_B+"",
+	result:function(){},
+	isQuestion:false,
+	hasSlider:true,
 	isSecQuestion:false
 };
 var context4q1 = { // 第四页第一
@@ -315,13 +351,13 @@ var context4q5 = { // 第四页第五
 	isSecQuestion:false
 };
 
-var currentpage = new Array(new Array(context1q1,context1q2, context1q3, context1q3s, lrBtn, enterBtn),			//,context1q2
-			new Array(context2q1, context2q2, context2q3, context2q4,context2q5, context2q6,context2q7, lrBtn, enterBtn),
-			new Array(context3q1, context3q2, lrBtn, enterBtn),
+var currentpage = new Array(new Array(context1q1,context1q2, context1q3, context1q3s, lrBtn, enterBtn),	
+			new Array(context2q1, context2q2, context2q3, context2q4,context2q5, context2q6,context2q7,context2q8, lrBtn, enterBtn),
+			new Array(context3q1, context3q2,context3q3,context3q4, lrBtn, enterBtn),
 			new Array(context4q1, context4q2, context4q3, context4q4,context4q5, lrBtn, enterBtn));
 
 var	resarr = new Array(context1q1,context1q2,context1q3, context1q3s, context2q1, context2q2, context2q3,context3q1, context3q2,
-								context4q1, context4q2, context4q3, context4q4,context4q5);//,context1q2
+								context4q1, context4q2, context4q3, context4q4,context4q5);
 var nowpage = currentpage[current];
 $(function(){
 	putSetText();console.log(hasNoFlag+"__"+playCodeNum);
@@ -335,8 +371,8 @@ $(function(){
 		context1q3s.line.addClass("darkgray");
 	}
 	nowpage = currentpage[current];
-	$("#context2 .s5 span").text(parent.person_setting.serverIP);
-	$("#context2 .s6 span").text(parent.person_setting.jihao);
+	$("#context2 .s6 span").text(parent.person_setting.serverIP);
+	$("#context2 .s7 span").text(parent.person_setting.jihao);
 	if(parent.strPage=="0"){
 		clicktag =K_public.ipCode?1:3;
 		showInput(clicktag);
@@ -362,6 +398,8 @@ function putSetText(){
 	if(K_public.setFuping){	//有主副屏
 		$("#slect0").text("主屏视图设置");
 		$("#slect2").show();
+		context2q4.line.text("4、主屏亮度");
+		context2q5.line.text("5、主屏音量");
 		MAX_CONTEXT = 3;
 	}
 	var strlength = 0,count = 0;
@@ -398,7 +436,8 @@ function putSetText(){
 		}else context3q2.line.eq(0).append("<span></span>");
 		context3q2.editBox.push(context3q2.line.find("span").eq(i));
 		context3q2.editBox[i].text(K_public.CS_text[i]);
-		$("<div class='s2 choosebox y"+(K_public.CS_text.length-i)+"'></div>").appendTo($("#context3"));
+		//$("<div class='s2 choosebox y"+(K_public.CS_text.length-i)+"'></div>").appendTo($("#context3 .s3"));
+		$("#context3 .s3").before("<div class='s2 choosebox y"+(K_public.CS_text.length-i)+"'></div>");
 		context3q2.choosed.push($("#context3 .s2.y"+(K_public.CS_text.length-i)));
 	}
 	context3q2.choosed.reverse();
@@ -542,10 +581,22 @@ document.onkeydown=function(event){
 				nowpage[row].editBox[1].css("left",p+"px");
 				nowpage[row].currentSelect=Math.floor((p-250)/3)+"";
 				nowpage[row].editBox[2].text(nowpage[row].currentSelect);
-				if(nowpage[row]==context2q4){//亮度
+				if(nowpage[row]==context2q4){//主屏亮度
 					parent.person_setting.screenLight = parseInt(nowpage[row].currentSelect);
-					webApi.invoke("/term/setScreenLight",nowpage[row].currentSelect);
-					
+					console.log("/term/setScreenLight",'{"paramKey":"screenLightVal","paramValue":"'+nowpage[row].currentSelect+'","screenFlag":"A"}');
+					webApi.invoke("/term/setScreenLight",'{"paramKey":"screenLightVal","paramValue":"'+nowpage[row].currentSelect+'","screenFlag":"A"}');
+				}else if(nowpage[row]==context2q5){	//主屏音量
+					parent.person_setting.sysSoundVal = parseInt(nowpage[row].currentSelect);
+					console.log("/term/setScreenVol",'{"paramKey":"sysSoundVal","paramValue":"'+nowpage[row].currentSelect+'","screenFlag":"A"}');
+					webApi.invoke("/term/setScreenVol",'{"paramKey":"sysSoundVal","paramValue":"'+nowpage[row].currentSelect+'","screenFlag":"A"}');
+				}else if(nowpage[row]==context3q3){	//副屏亮度
+					parent.person_setting.screenLight_B = parseInt(nowpage[row].currentSelect);
+					console.log("/term/setScreenLight",'{"paramKey":"screenLightVal","paramValue":"'+nowpage[row].currentSelect+'","screenFlag":"B"}');
+					webApi.invoke("/term/setScreenLight",'{"paramKey":"screenLightVal","paramValue":"'+nowpage[row].currentSelect+'","screenFlag":"B"}');
+				}else if(nowpage[row]==context3q4){	//副屏音量
+					parent.person_setting.sysSoundVal_B = parseInt(nowpage[row].currentSelect);
+					console.log("/term/setScreenVol",'{"paramKey":"sysSoundVal","paramValue":"'+nowpage[row].currentSelect+'","screenFlag":"B"}');
+					webApi.invoke("/term/setScreenVol",'{"paramKey":"sysSoundVal","paramValue":"'+nowpage[row].currentSelect+'","screenFlag":"B"}');
 				}
 			}else{
 				for(var i=0;i<nowpage[row].editBox.length;i++)
@@ -563,9 +614,22 @@ document.onkeydown=function(event){
 				nowpage[row].editBox[1].css("left",p+"px");
 				nowpage[row].currentSelect=Math.floor((p-250)/3);
 				nowpage[row].editBox[2].text(nowpage[row].currentSelect);
-				if(nowpage[row]==context2q4){//亮度
+				if(nowpage[row]==context2q4){//主屏亮度
 					parent.person_setting.screenLight = parseInt(nowpage[row].currentSelect);
-					webApi.invoke("/term/setScreenLight",nowpage[row].currentSelect);
+					console.log("/term/setScreenLight",'{"paramKey":"screenLightVal","paramValue":"'+nowpage[row].currentSelect+'","screenFlag":"A"}');
+					webApi.invoke("/term/setScreenLight",'{"paramKey":"screenLightVal","paramValue":"'+nowpage[row].currentSelect+'","screenFlag":"A"}');
+				}else if(nowpage[row]==context2q5){	//主屏音量
+					parent.person_setting.sysSoundVal = parseInt(nowpage[row].currentSelect);
+					console.log("/term/setScreenVol",'{"paramKey":"sysSoundVal","paramValue":"'+nowpage[row].currentSelect+'","screenFlag":"A"}');
+					webApi.invoke("/term/setScreenVol",'{"paramKey":"sysSoundVal","paramValue":"'+nowpage[row].currentSelect+'","screenFlag":"A"}');
+				}else if(nowpage[row]==context3q3){	//副屏亮度
+					parent.person_setting.screenLight_B = parseInt(nowpage[row].currentSelect);
+					console.log("/term/setScreenLight",'{"paramKey":"screenLightVal","paramValue":"'+nowpage[row].currentSelect+'","screenFlag":"B"}');
+					webApi.invoke("/term/setScreenLight",'{"paramKey":"screenLightVal","paramValue":"'+nowpage[row].currentSelect+'","screenFlag":"B"}');
+				}else if(nowpage[row]==context3q4){	//副屏音量
+					parent.person_setting.sysSoundVal_B = parseInt(nowpage[row].currentSelect);
+					console.log("/term/setScreenVol",'{"paramKey":"sysSoundVal","paramValue":"'+nowpage[row].currentSelect+'","screenFlag":"B"}');
+					webApi.invoke("/term/setScreenVol",'{"paramKey":"sysSoundVal","paramValue":"'+nowpage[row].currentSelect+'","screenFlag":"B"}');
 				}
 			}else{
 				for(var i=0;i<nowpage[row].editBox.length;i++)
