@@ -36,7 +36,12 @@ var web = self.setInterval(function(){
 			layer.close(index); 
 		}else{			
 			if(strPage=="B") K_public.isfuping=true;
-			if(strPage=="A") K_public.setFuping = true;
+			if(debugflag==1){
+				var screenSet = JSON.parse(webApi.invoke("/term/getTmScreenSet", '{"paramKey":"screen_num","screenFlag":"A"}'));
+				if(screenSet&&screenSet.data && screenSet.result){
+					K_public.setFuping = screenSet.data.param_value!="1";
+				}
+			}else if(strPage=="A") K_public.setFuping = true;
 			console.log((K_public.setFuping?"双屏模式：":"常规屏")+(K_public.setFuping&&K_public.isfuping?"这是副屏":"这是主屏"));
 			dataUtils.initialize();			//初始化，站点号和版本号
 			ajustPlayView();
@@ -162,25 +167,19 @@ function gotoPage(fupingview,fupingpage){		//跳转某一页，后台接口
 	if(K_public.isfuping){
 		var i = gameArray.playname.indexOf(fupingview);
 		if(i<K_public.CS_COUNT){			//跳长周期页面
-//			person_setting.fupingpage = parseInt(fupingpage);
-//			person_setting.fupingview = gameArray.playname[i];
 			currentSelect = i;
 			$("#ifrContent").attr("src",ALLview.htmlname[i]).show().focus();
-//			if(currentSelect != i){
-//				
-//		//		$("#ifrContent")[0].focus();
-//			}else{				//仅仅是跳转页
-//				theload();
-//				myframe.trendModel.page(Math.min(person_setting.fupingpage - 1, myframe.max_page - 1));
-//				myframe.showPage(0);
-//				layer.close(index);
-//				if(mainnote[ALLview.datanum[i]].length < myframe.max_rowcount*K_public.MAX_PAGE-1){
-//					layer.msg('数据不足，最大页数为'+max_page+'页！', {
-//					  icon: 0,
-//					  time: 2500 //2秒关闭（如果不配置，默认是3秒）
-//					});
-//				}
-//			}
 		}
 	}
+}
+function openNotice(content,title,kind="A",sceen=0,time=5){
+	mynotice.model(kind,sceen);
+	mynotice.setText(content,title);
+	$("#ifrNotice").css("height",sceen==0?"960px":"1920px").show();
+	$("#ifrContent").focus();
+	if(time>0) setTimeout(function(){closeNotice();},time*1000);
+}
+function closeNotice(){
+	$("#ifrNotice").hide();
+	$("#ifrContent").focus();
 }
