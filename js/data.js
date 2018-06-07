@@ -6,7 +6,7 @@
  * 				3D都有三连号，全国统一
  * 			海南46：（一体机）快三叫快乐三宝，k3、k2两个短周期，无主菜单选项，无多彩简约版，快3四个图参考截图
  * 			河南41：幸运彩，日切点为3点，无多彩简约版，有主菜单选项，无开奖动画，两行日期分界变色，无长周期，没有考虑没有短周期，IP设置需要密码，表头表尾为浅绿色，中间为白色
- *			快乐12还没做完,css边框按顺选
+ *			辽宁21：快乐12（一体机）无多彩简约版，无主菜单选项，基本走势图两种风格,有开奖动画
  * 			吉林有一个横屏，没有开奖动画
  * *****关于快三的不同省份，这里分别分配了不同的K3view+省码，针对不同省份的任务，只需要修改该省份的K3view即可，并把gameArray.relationview的K3view改成本项目所在的省份，并同步上述对应的参数；
  * 打开快3字体颜色大小设置的个性化：1、把setting.html里#context4的快三字体那部分display：none改为显示；
@@ -43,13 +43,13 @@ var K12view = {
 	htmlname:new Array("K12_base.html", "K12_sum.html", "K12_zhi2.html", "K12_zhi3.html"),
 	menuicon:new Array("img/menu/k12_base.png", "img/menu/k12_sum.png", "img/menu/k12_zhi2.png", "img/menu/k12_zhi3.png"),
 	menuicon_ac:new Array("img/menu/k12_base_ac.png", "img/menu/k12_sum_ac.png", "img/menu/k12_zhi2_ac.png", "img/menu/k12_zhi3_ac.png"),
-	particon:new Array(),
-	menumsg: new Array("基本走势图", "和值走势图", "前二直走势图", "前三直走势图"),
-	sp_view: new Array("基本走势图","选一走势图","前直走势图"),
+	particon:new Array("img/menu/k12_part.png"),
+	menumsg: new Array("快乐12（基本走势图）", "快乐12和值走势图", "快乐12前二直走势图", "快乐12前三直走势图"),
+	sp_view: new Array("基本走势图","选一走势图", "前二直走势图", "前三直走势图"),
 	viewtext:new Array(0, 0, 0, 0),
 	datanum: new Array(0, 0, 0, 0),
 	isScross: new Array(0, 0, 0, 0),		//是否横屏
-	yilounum: new Array("0", "4", "1|2", "1|2|3") 	//每个视图需要的遗漏序号
+	yilounum: new Array("0", "4", "1|2", "1|2|3") 	//每个视图需要的遗漏序号 1230
 };
 var K3view_63 = {
 	htmlname:new Array("K3_base.html", "K3_zonghe.html", "K3_sum_36.html", "K3_form.html", "K3_weitu.html", "K3_2thdan.html", "K3_2bt.html", "K3_3bt.html"),
@@ -138,18 +138,18 @@ var K3view_54 = {	//西藏
 	yilounum: new Array("0|1|8", "0|1|2", "0|1|8", "0|14|15|16", "3", "4|5|7", "6|8") 	//每个视图需要的遗漏序号
 };
 var K3view_22 = {	//吉林
-	htmlname:new Array("K3_base.html", "K3_sum.html", "K3_form.html", "K3_weitu.html","K3_2thdan.html","K3_2bt.html","K3_3bt.html","K3_3ma.html"),
-	menuicon:new Array("img/menu/k3_base.png", "img/menu/k3_sum.png", "img/menu/k3_form.png", "img/menu/k3_weitu.png", "img/menu/k3_2thdan.png", "img/menu/k3_2bt.png", "img/menu/k3_3bt.png", "img/menu/k3_3ma.png"),
-	menuicon_ac:new Array("img/menu/k3_base_ac.png","img/menu/k3_sum_ac.png","img/menu/k3_form_ac.png","img/menu/k3_weitu_ac.png","img/menu/k3_2thdan_ac.png","img/menu/k3_2bt_ac.png","img/menu/k3_3bt_ac.png","img/menu/k3_3ma_ac.png"),
-	particon:new Array("img/menu/k3_base_part.png","img/menu/k3_sum_part.png","img/menu/k3_form_part.png","img/menu/k3_weitu_part.png",
+	htmlname:new Array("K3_base.html", "K3_sum.html", "K3_form.html", "K3_tail.html", "K3_weitu.html","K3_2thdan.html","K3_2bt.html","K3_3bt.html","K3_3ma.html"),
+	menuicon:new Array("img/menu/k3_base.png", "img/menu/k3_sum.png", "img/menu/k3_form.png", "img/menu/k3_tail.png", "img/menu/k3_weitu.png", "img/menu/k3_2thdan.png", "img/menu/k3_2bt.png", "img/menu/k3_3bt.png", "img/menu/k3_3ma.png"),
+	menuicon_ac:new Array("img/menu/k3_base_ac.png","img/menu/k3_sum_ac.png","img/menu/k3_form_ac.png","img/menu/k3_tail_ac.png","img/menu/k3_weitu_ac.png","img/menu/k3_2thdan_ac.png","img/menu/k3_2bt_ac.png","img/menu/k3_3bt_ac.png","img/menu/k3_3ma_ac.png"),
+	particon:new Array("img/menu/k3_base_part.png","img/menu/k3_sum_part.png","img/menu/k3_form_part.png","img/menu/k3_tail_part.png","img/menu/k3_weitu_part.png",
 							"img/menu/k3_2btdan_part.png","img/menu/k3_2th_part.png","img/menu/k3_3bt_part.png","img/menu/k3_3ma_part.png"),
-	menumsg: new Array("快3（基本走势图）", "快3（和值走势图）", "快3（形态走势图）", "快3（位图走势图）",
+	menumsg: new Array("快3（基本走势图）", "快3（和值走势图）", "快3（形态走势图）", "快3（和尾走势图）", "快3（位图走势图）",
 						"快3（二同号单选走势图）","快3（二同二不同复选与三同号走势图）","快3（三不同号单选走势图）","快3（三码走势图）-横屏"),
-	sp_view: new Array("基本走势图","和值走势图","形态走势图","位图走势图","二同号单选走势图","二同二不同复选与三同号走势图","三不同号单选走势图","三码走势图（横屏）"),
-	viewtext:new Array(0, 0, 0, 0, 0, 0, 0, 0),
-	datanum: new Array(0, 0, 0, 0, 0, 0, 0, 0),
-	isScross: new Array(0, 0, 0, 0, 0, 0, 0, 1),		//是否横屏
-	yilounum: new Array("0|1|8", "0|1|2", "0|1|8", "0|14|15|16", "3", "4|5|7", "6|8", "0|1|8|7|10|6") 	//每个视图需要的遗漏序号
+	sp_view: new Array("基本走势图","和值走势图","形态走势图","和尾走势图","位图走势图","二同号单选走势图","二同二不同复选与三同号走势图","三不同号单选走势图","三码走势图（横屏）"),
+	viewtext:new Array(0, 0, 0, 0, 0, 0, 0, 0, 0),
+	datanum: new Array(0, 0, 0, 0, 0, 0, 0, 0, 0),
+	isScross: new Array(0, 0, 0, 0, 0, 0, 0, 0, 1),		//是否横屏
+	yilounum: new Array("0|1|8", "0|1|2", "0|1|8", "0|1|8", "0|14|15|16", "3", "4|5|7", "6|8", "0|1|8|7|10|6") 	//每个视图需要的遗漏序号
 };
 var K3view_46 = {	//海南的快乐三宝
 	htmlname:new Array("K3_base_52.html", "K3_sum.html", "K3_form.html", "weitu.html"),
@@ -176,7 +176,7 @@ var XYCview = {		//幸运彩
 	yilounum: new Array("0|5", "6|7|5", "0", "1|2|3|4","6|7|5","9")	//每个视图需要的遗漏序号
 };
 var ALLview ={		//K_public.CS_name，K_public.CS_text的长周期玩法名 也要同步
-	htmlname: new Array("B001.html", "S3_63.html", "QL730.html", "setting.html"),
+	htmlname: new Array("B001.html", "S3.html", "QL730.html", "setting.html"),
 	menuicon: new Array("img/menu/b001.png", "img/menu/s3.png", "img/menu/ql730.png", "img/menu/set.png"),
 	menuicon_ac: new Array("img/menu/b001_ac.png", "img/menu/s3_ac.png", "img/menu/ql730_ac.png", "img/menu/set_ac.png"),
 	particon: new Array("img/menu/b001_part.png", "img/menu/s3_part.png","img/menu/ql730_part.png"),
@@ -186,16 +186,17 @@ var ALLview ={		//K_public.CS_name，K_public.CS_text的长周期玩法名 也�
 	isScross: new Array(0, 0, 0, 0),		//是否横屏
 	yilounum: new Array("0|1", "0|1|2|3", "0") 	//每个视图需要的遗漏序号
 };
-//var ALLview ={
-//	htmlname: new Array("B001.html", "S3.html", "QL730.html", "Sp61.html", "QL515.html", "setting.html"),
-//	menuicon: new Array("img/menu/b001.png", "img/menu/s3.png", "img/menu/ql730.png", "img/menu/sp61.png", "img/menu/ql515.png","img/menu/set.png"),
-//	menuicon_ac: new Array("img/menu/b001_ac.png", "img/menu/s3_ac.png", "img/menu/ql730_ac.png", "img/menu/sp61_ac.png", "img/menu/ql515_ac.png", "img/menu/set_ac.png"),
-//	particon: new Array("img/menu/b001_part.png", "img/menu/s3_part.png","img/menu/ql730_part.png", "img/menu/sp61_part.png", "img/menu/ql515_part.png"),
-//	menumsg: new Array("双色球（基本走势图）", "3D（基本走势图）", "七乐彩（基本走势图）", "东方6+1（基本走势图）", "15选5（基本走势图）","个性化设置"),
-//	viewtext: new Array(2, 2, 2, 2, 2, 2),
-//	datanum: new Array(0, 1, 2, 3, 4, 5),
-//	yilounum: new Array("0|1", "0|1|2|3", "0", "7|9|11|6","0|1|2|3|4|5") 	//每个视图需要的遗漏序号
-//};
+// var ALLview ={
+// 	htmlname: new Array("B001.html", "S3.html", "QL730.html", "Sp61.html", "QL515.html", "setting.html"),
+// 	menuicon: new Array("img/menu/b001.png", "img/menu/s3.png", "img/menu/ql730.png", "img/menu/sp61.png", "img/menu/ql515.png","img/menu/set.png"),
+// 	menuicon_ac: new Array("img/menu/b001_ac.png", "img/menu/s3_ac.png", "img/menu/ql730_ac.png", "img/menu/sp61_ac.png", "img/menu/ql515_ac.png", "img/menu/set_ac.png"),
+// 	particon: new Array("img/menu/b001_part.png", "img/menu/s3_part.png","img/menu/ql730_part.png", "img/menu/sp61_part.png", "img/menu/ql515_part.png"),
+// 	menumsg: new Array("双色球（基本走势图）", "3D（基本走势图）", "七乐彩（基本走势图）", "东方6+1（基本走势图）", "15选5（基本走势图）","个性化设置"),
+// 	viewtext: new Array(2, 2, 2, 2, 2, 2),
+// 	datanum: new Array(0, 1, 2, 3, 4, 5),
+// 	isScross: new Array(0, 0, 0, 0, 0, 0),		//是否横屏
+// 	yilounum: new Array("0|1", "0|1|2|3", "0", "7|9|11|6","0|1|2|3|4|5") 	//每个视图需要的遗漏序号
+// };
 //var ALLview ={		//可用玩法最少的情况，起码有设置
 //	htmlname: new Array("setting.html"),
 //	menuicon: new Array("img/menu/set.png"),
@@ -204,6 +205,7 @@ var ALLview ={		//K_public.CS_name，K_public.CS_text的长周期玩法名 也�
 //	menumsg: new Array("个性化设置"),
 //	viewtext: new Array(),
 //	datanum: new Array(),
+//	isScross: new Array(),
 //	yilounum: new Array() 	//每个视图需要的遗漏序号
 //};
 var gameArray = { 
@@ -223,16 +225,16 @@ var gameArray = {
 };
 var ALL_COLOR = new Array("black", "orangered","#e8980e", "blue","green","purple");	//号码颜色
 var K_public={
-	hasNoFlag: true,	//有没有默认视图为no的选项
-	playHtmlMvflag:false,		//是否播放开奖动画和奖池
-	haslx:0,	//是否有三连号,0代表没有
+	hasNoFlag: false,	//有没有默认视图为no的选项
+	playHtmlMvflag:true,		//是否播放开奖动画和奖池
+	haslx:1,	//是否有三连号,0代表没有
 	ipCode:false,		//修改是否需要密码
-	skinFlag:true,		//是否有简约多彩风格选项
+	skinFlag:false,		//是否有简约多彩风格选项
 	isfuping :false,  //是否为副屏
 	setFuping:false,	//个性化是否带有副屏设置
 	CS_COUNT:ALLview.htmlname.length-1,
-	CS_name:new Array("B001","S3","QL730"),
-	CS_text:new Array("双色球", "3D", "七乐彩"),
+	CS_name:new Array("B001","S3","QL730"),		//,"SP61","QL515"
+	CS_text:new Array("双色球", "3D", "七乐彩"),	//,"东方6+1","15选5"
 	K2_PL: new Array(),//所有号码组合
 	K3_PL: new Array(),//所有号码组合
 	all56:new Array(),
@@ -304,13 +306,14 @@ function ajustPlayView(){
 			arr.push(i);	//存储没用玩法的序号
 		}else gameArray.loadFunction[i]();
 	}
-	if(K_public.skinFlag)skinload();
+	if(K_public.skinFlag) skinload();
 	arr.sort(function(a,b){return b-a});
+	changek12Style();  //检测快乐12样式
 	for(var i in arr){
 		for(var key in gameArray)
 			gameArray[key].splice(arr[i],1);	//过滤掉不用的玩法，筛选出要用的视图
 	}
-	for(var x in gameArray.relationview){
+	for(var x in gameArray.relationview){		//短周期玩法
 		if(x>0){
 			for(var i in gameArray.relationview[x].datanum)
 				gameArray.relationview[x].datanum[i]+=1;
@@ -382,22 +385,29 @@ function CountDown(nameindex){
 						gameArray.remainTime[nameindex] = dataUtils.getDate2(gameArray.newterm[nameindex].endtime,nameindex);
 					}
 				}else gameArray.remainTime[nameindex] = 0;
-			}else if(newdata(nameindex, gameArray.newterm[nameindex].encashFlag)){//取新的开奖号码
-				if(K_public.playHtmlMvflag&&gameArray.playname[nameindex]==K3NAME&&PLAYING==0){			//快3有开奖动画的情况
+			}else if(newdata(nameindex, gameArray.newterm[nameindex].encashFlag)){		//取新的开奖号码
+				if(K_public.playHtmlMvflag&&(gameArray.playname[nameindex]==K3NAME||gameArray.playname[nameindex]==K12NAME)&&PLAYING==0){			//有开奖动画的情况
 						var mvres=false;
 						var newnote = mainnote[nameindex][mainnote[nameindex].length-1];
-						if(gameArray.newterm[nameindex].encashFlag!=1) mvres = dataUtils.playMvandB001(newnote.term+"|0"+newnote.numbers.join("0")+"|"
+						if(gameArray.newterm[nameindex].encashFlag!=1){
+							if(gameArray.playname[nameindex]==K12NAME&&"undefined" != typeof webApi&&webApi!=null) {
+								webApi.invoke("/term/setFlashParam",newnote.term+"|"+ dataUtils.fullNum(newnote.numbers,2).join(""));
+								console.log("/term/setFlashParam_("+newnote.term+"|"+ dataUtils.fullNum(newnote.numbers,2).join("")+")")
+							}
+							mvres = dataUtils.playMvandB001(newnote.term+"|"+ dataUtils.fullNum(newnote.numbers,2).join("") +"|"
 								+B001PricePool.term_code+"|"+B001PricePool.innext_firstaward+"|"+B001PricePool.big_win_num+"|"+B001PricePool.big_win_amount);
+						}
 						if(mvres){
 							if(debugflag!=0) dataUtils.getB001();//取奖池
 							PLAYING = 1;
 							putplay(gameArray.newterm[nameindex].encashFlag);
-							gameArray.remainTime[nameindex] = 10;
-						}else{
+							gameArray.remainTime[nameindex] = gameArray.playname[nameindex]==K3NAME?10:50;
+						}else{		//播放失败，直接出号码显示
 							gameArray.playstate[nameindex] = 1;//变成新期等待
 							gameArray.remainTime[nameindex] = 0;
 							dataUtils.getSysParam(nameindex); //获取期结数据
 							noticelist=dataUtils.getNotification();
+							console.log(nowdj+"-@@@@@-"+PLAYING);
 							if($("#ifrContent").attr("src")!="about:blank"&&ALLview.datanum[currentSelect]==nameindex&&ALLview.viewtext[currentSelect]<2){
 								theload();
 								loadpage();
@@ -409,6 +419,7 @@ function CountDown(nameindex){
 					gameArray.remainTime[nameindex] = 0;
 					dataUtils.getSysParam(nameindex); //获取期结数据
 					noticelist=dataUtils.getNotification();
+					console.log(nowdj+"-$$$$$$-"+PLAYING);
 					if($("#ifrContent").attr("src")!="about:blank"&&ALLview.datanum[currentSelect]==nameindex&&ALLview.viewtext[currentSelect]<2){
 						theload();
 						loadpage();
@@ -475,15 +486,15 @@ function loadAllData(name){
 	else if(name=="QL515") return dataUtils.getI515();
 }
 function newdata(n,encash){
-	if(gameArray.playname[n]==K3NAME&&K_public.playHtmlMvflag&&PLAYING==1){
-		return true;
+	if((gameArray.playname[n]==K3NAME||gameArray.playname[n]==K12NAME)&&K_public.playHtmlMvflag&&PLAYING==1){
+		return true;   //开奖动画过程中不能取到新期
 	}else{
-		var re =  dataUtils.getnewData(n);
-		if(re)	return true;
-		else if(encash==1){
+		if(encash==1){
 			console.log("只兑期");
 			return true;
-		}else return false;
+		}else{
+			return dataUtils.getnewData(n);
+		} 
 	}
 }
 var noticelist =[];//文字通知
@@ -556,7 +567,7 @@ function countweichu_k2(mnote){
 	return str;
 }
 function putplay(flag){		//延时调用播放视频
-	var tm = 13;		//安卓版本的延时了的,大于开奖动画时间，否则有点问题
+	var tm = gameArray.playname[ALLview.datanum[currentSelect]]==K3NAME?13:51;		//安卓版本的延时了的,大于开奖动画时间，否则有点问题
 	if(parseFloat(B001PricePool.innext_firstaward)>0){
 		tm+=5;
 		if(parseFloat(B001PricePool.big_win_num)>0&&parseFloat(B001PricePool.big_win_amount)>0){
@@ -609,4 +620,29 @@ function addscross(){
 function removescross(){
 	$("#isScross").attr("href", "");
 	if(person_setting.skinStyle==1){$("body").css("background-image","url(img/background.png)");}
+}
+function changek12Style(){
+	if(gameArray.playname.indexOf(K12NAME)>=0){
+		var style0 =  ALLview.htmlname.indexOf("K12_base.html");
+		var style1 =  ALLview.htmlname.indexOf("K12_base_1.html");
+		if(person_setting.k12BaseStyle==1){
+			K12view.htmlname[0]="K12_base_1.html";
+			K12view.yilounum[0]="1|2|3|0";
+			if(style0>=0){
+				ALLview.htmlname[style0] = "K12_base_1.html";
+				ALLview.yilounum[style0] = "1|2|3|0";
+				yilouarr = dataUtils.getmaxyilou();//获取所有遗漏信息
+				$('.i'+style0+' .part').show();	
+			}
+		}else{
+			K12view.htmlname[0]="K12_base.html";
+			K12view.yilounum[0]="0";
+			if(style1>=0){
+				ALLview.htmlname[style1] = "K12_base.html";
+				ALLview.yilounum[style1] = "0";
+				yilouarr = dataUtils.getmaxyilou();//获取所有遗漏信息
+				$('.i'+style0+' .part').hide();
+			}
+		}
+	}
 }

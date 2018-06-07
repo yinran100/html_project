@@ -94,10 +94,8 @@ span.padleft{margin-left: 209px !important;}
 	line-height: 2;
 	
 }
-#context1 .q2 span,#context2 .q1 span,#context2 .q2 span,#context2 .q3 span{
-	margin-left: 85px;
-}
-#context1 .q1 span, #context3 .q1 span, #context3 .q2 span{
+#context1 .q1 span,#context1 .q2 span,#context1 .q4 span,#context2 .q1 span, 
+#context2 .q2 span,#context2 .q3 span, #context3 .q1 span, #context3 .q2 span{
 	margin-left: 85px;
 }
 .choosebox{

@@ -23,6 +23,7 @@ var bt3color= parent.person_setting.bt3color;
 var th2color= parent.person_setting.th2color;
 var th3color= parent.person_setting.th3color;
 var lh3color= parent.person_setting.lh3color;
+var k12BaseStyle = parent.person_setting.k12BaseStyle;
 var screenLight=parent.person_setting.screenLight; //亮度
 var screenLight_B=parent.person_setting.screenLight_B; //副屏亮度
 var sysSoundVal=parent.person_setting.sysSoundVal; //音量
@@ -46,24 +47,40 @@ var enterBtn={
 		skinStyle = resarr[1].currentSelect;  //多彩风格
 		playCodeNum = hasNoFlag?parseInt(resarr[2].currentSelect)-1:parseInt(resarr[2].currentSelect);
 		playView = resarr[3].currentSelect;
-		showStation = resarr[4].currentSelect;
-		showVersion = resarr[5].currentSelect;
-		showYilou = resarr[6].currentSelect;
-		fupingpage = parseInt(resarr[7].currentSelect)+1;
-		fupingviewNum = parseInt(resarr[8].currentSelect);
-		fontsize= resarr[9].currentSelect;
-		bt3color= resarr[10].currentSelect;
-		th2color= resarr[11].currentSelect;
-		th3color= resarr[12].currentSelect;
-		lh3color= resarr[13].currentSelect;
+		k12BaseStyle = resarr[4].currentSelect;
+		showStation = resarr[5].currentSelect;
+		showVersion = resarr[6].currentSelect;
+		showYilou = resarr[7].currentSelect;
+		fupingpage = parseInt(resarr[8].currentSelect)+1;
+		fupingviewNum = parseInt(resarr[9].currentSelect);
+		fontsize= resarr[10].currentSelect;
+		bt3color= resarr[11].currentSelect;
+		th2color= resarr[12].currentSelect;
+		th3color= resarr[13].currentSelect;
+		lh3color= resarr[14].currentSelect;
 		console.log(playCodeNum);
-		//for(var x in resarr)	console.log(resarr[x].currentSelect);
-		var param="playCode\|"+(playCodeNum<0?"NO":parent.gameArray.playname[playCodeNum])+"\|playView\|"+playView+"\|skinStyle\|"+skinStyle+"\|showPage\|"+showPage
-					+"\|showStation\|"+showStation+"\|showVersion\|"+showVersion+"\|showYilou\|"+showYilou+"\|fontsize\|"+fontsize+"\|bt3color\|"+bt3color
+		for(var x in resarr)	console.log(resarr[x].currentSelect);
+		var paramVue="playCode\|"+(playCodeNum<0?"NO":parent.gameArray.playname[playCodeNum])+"\|playView\|"+playView+"\|skinStyle\|"+skinStyle+"\|showPage\|"+showPage
+					+"\|showStation\|"+showStation+"\|showVersion\|"+showVersion+"\|showYilou\|"+showYilou+"\|k12BaseStyle\|"+k12BaseStyle+"\|fontsize\|"+fontsize+"\|bt3color\|"+bt3color
 					+"\|th2color\|"+th2color+"\|th3color\|"+th3color+"\|lh3color\|"+lh3color+"\|fupingview\|"+K_public.CS_name[fupingviewNum]+"\|fupingpage\|"+fupingpage;
-		console.info(param);
+		// var paramVue='[{"paramKey":"playCode","paramValue":"'+(playCodeNum<0?"NO":parent.gameArray.playname[playCodeNum])+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"playView","paramValue":"'+playView+'","screenFlag":"A"},'+
+		// 	'{"paramKey":"skinStyle","paramValue":"'+skinStyle+'","screenFlag":"A"},'+
+		// 	'{"paramKey":"showPage","paramValue":"'+showPage+'","screenFlag":"A"},'+
+		// 	'{"paramKey":"showStation","paramValue":"'+showStation+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"showVersion","paramValue":"'+showVersion+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"showYilou","paramValue":"'+showYilou+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"fontsize","paramValue":"'+fontsize+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"k12BaseStyle","paramValue":"'+k12BaseStyle+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"bt3color","paramValue":"'+bt3color+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"th2color","paramValue":"'+th2color+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"th3color","paramValue":"'+th3color+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"lh3color","paramValue":"'+lh3color+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"fupingview","paramValue":"'+K_public.CS_name[fupingviewNum]+'","screenFlag":"B"},'+
+		// 	'{"paramKey":"fupingpage","paramValue":"'+fupingpage+'","screenFlag":"B"}]';
+		console.info(paramVue);
 		var webApi=parent.webApi;
-		var result = parent.debugflag!=0?webApi.invoke("/term/setting",param):true;
+		var result = parent.debugflag!=0?webApi.invoke("/term/setting",paramVue):true;
 		if(result){console.log(playCodeNum);
 			parent.person_setting.playCode = playCodeNum<0?"NO":parent.gameArray.playname[playCodeNum];
 			parent.person_setting.playview = parseInt(playView); //视图
@@ -74,6 +91,7 @@ var enterBtn={
 			parent.person_setting.showyilou = parseInt(showYilou);//号码间是否显示遗漏
 			parent.person_setting.fupingview = K_public.CS_name[fupingviewNum]; 
 			parent.person_setting.fupingpage = parseInt(fupingpage); 
+			parent.person_setting.k12BaseStyle = parseInt(k12BaseStyle); 
 			parent.person_setting.fontsize = parseInt(fontsize); 
 			parent.person_setting.th2color = parseInt(th2color); 
 			parent.person_setting.bt3color = parseInt(bt3color); 
@@ -150,6 +168,16 @@ var context1q3 = {		//默认打开的玩法
 	isSecQuestion:true,
 	secTarget:context1q3s,
 	secNo:"0"		//选择第几个的时候目标secTarget变为可用, K_public.CS_COUNT
+};
+var context1q4 = { // 风格
+	line: $("#context1 article .q4"),  //当前行高亮
+	editBox: new Array($("#context1 article .q4 span").eq(0), $("#context1 article .q4 span").eq(1)), //选中选项边框
+	choosed: new Array($("#context1 .s4.y1"), $("#context1 .s4.y2")), //选择框选中
+	isRadio: true,  //是否单选
+	currentSelect: k12BaseStyle+"",
+	isQuestion:true,
+	hasSlider:false,
+	isSecQuestion:false
 };
 var context2q1 = { // 第二页第一问 显示站点号
 	line: $("#context2 article .q1"),  //当前行高亮
@@ -351,12 +379,12 @@ var context4q5 = { // 第四页第五
 	isSecQuestion:false
 };
 
-var currentpage = new Array(new Array(context1q1,context1q2, context1q3, context1q3s, lrBtn, enterBtn),	
+var currentpage = new Array(new Array(context1q1,context1q2, context1q3, context1q3s,context1q4, lrBtn, enterBtn),	
 			new Array(context2q1, context2q2, context2q3, context2q4,context2q5, context2q6,context2q7,context2q8, lrBtn, enterBtn),
 			new Array(context3q1, context3q2,context3q3,context3q4, lrBtn, enterBtn),
 			new Array(context4q1, context4q2, context4q3, context4q4,context4q5, lrBtn, enterBtn));
 
-var	resarr = new Array(context1q1,context1q2,context1q3, context1q3s, context2q1, context2q2, context2q3,context3q1, context3q2,
+var	resarr = new Array(context1q1,context1q2,context1q3, context1q3s, context1q4, context2q1, context2q2, context2q3,context3q1, context3q2,
 								context4q1, context4q2, context4q3, context4q4,context4q5);
 var nowpage = currentpage[current];
 $(function(){
@@ -403,18 +431,23 @@ function putSetText(){
 		MAX_CONTEXT = 3;
 	}
 	var strlength = 0,count = 0;
-	if(!K_public.skinFlag){
+	if(!K_public.skinFlag){				//去掉多彩风格设置选项
 		$("#context1 .q2").remove();
 		$("#context1 .s2").remove();
 		$("#context1 .q3").text("2、默认玩法");
-		removeArrOf(currentpage[0], context1q2);	//去掉多彩风格设置选项
+		removeArrOf(currentpage[0], context1q2);	
 	}	
+	if(parent.gameArray.playname.indexOf(parent.K12NAME)<0){		//快乐12的样式选择
+		$("#context1 .q4").remove();
+		$("#context1 .s4").remove();
+		removeArrOf(currentpage[0], context1q4);
+	}
 	var arr = hasNoFlag?["主菜单"]:[];
 	arr = arr.concat(parent.gameArray.settingtext);
 	for (var i in arr) {		//玩法名，根据字节数长度,判断什么时候换行
 		strlength = strlength+arr[i].getBytesLength()/2;
 		count++;
-		if(strlength>12||count>5){
+		if(strlength+count*2>23||count>5){
 			context1q3.line.eq(0).append("<br/><span class='padleft'></span>");
 			strlength=arr[i].getBytesLength()/2;
 			count=1;
@@ -426,10 +459,10 @@ function putSetText(){
 	}
 	strlength = 0;
 	count=0;
-	for(var i in K_public.CS_text){
+	for(var i in K_public.CS_text){		//视图名称
 		strlength = strlength+K_public.CS_text[i].getBytesLength()/2;
-		count++;
-		if(strlength>12||count>5){
+		count++;//console.info(K_public.CS_text[i]+strlength);
+		if(strlength+count*2>23||count>5){
 			context3q2.line.eq(0).append("<br/><span class='padleft'></span>");
 			strlength=K_public.CS_text[i].getBytesLength()/2;
 			count=1;
@@ -458,7 +491,7 @@ function selectPlayView(n){
 		for(var i in sp_view){		//视图名，根据字节数长度,判断什么时候换行
 			strlength = strlength+sp_view[i].getBytesLength()/2;
 			count++;
-			if(strlength>24||count>4){		
+			if(strlength+count*2>28||count>4){		
 				context1q3s.line.eq(1).append("<br/><span></span>");
 				strlength=sp_view[i].getBytesLength()/2;
 				count=1;
@@ -701,6 +734,7 @@ document.onkeydown=function(event){
 				parent.ALL_COLOR[0] = "black";
 				parent.K_public.S3_COLOR[1]="black";
 			}
+			parent.changek12Style();
 			K_public.COLOR=[parent.ALL_COLOR[parseInt(lh3color)],parent.ALL_COLOR[parseInt(bt3color)],parent.ALL_COLOR[parseInt(th2color)],parent.ALL_COLOR[parseInt(th3color)]];
 			parent.FLAG = 1;
 			parent.$(".homePage").show();

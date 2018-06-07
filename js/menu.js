@@ -1,4 +1,5 @@
 ﻿var dev_mode=0; //0为前端调试模式
+var debugflag=1;//0为调试模式可单机运行，实际运行设为1，非常重要！
 var K2NAME = "K221";//------------------------------------------------------
 var K3NAME = "K3";
 var XYCNAME = "GAMEAB";
@@ -8,6 +9,10 @@ var currentSelect = 0;
 var clickMedia = 0;
 var FLAG = 0; //开机进入某一页
 var cc = 0;//计时
+var strPage = window.location.search;
+strPage = strPage.substr(1,strPage.length);	
+var timeFunTimer;
+var index ;
 $(function(){
 	if(dev_mode==0) $("#head").append("<script src='js/vconsole.min.js'></script>");
 	setTimeout(function(){
@@ -19,10 +24,7 @@ $(function(){
 	shortcut.add("Ctrl+L",function() {$(".vc-switch").click();});
 	shortcut.add("Ctrl+H",function() {$(".vc-mask").click();});
 });
-var strPage = window.location.search;
-strPage = strPage.substr(1,strPage.length);	
-var timeFunTimer;
-var index ;
+
 var web = self.setInterval(function(){
 	if(debugflag!=0&&("undefined" == typeof webApi||webApi==null)){
 		console.info("webApi还未初始化");
@@ -172,14 +174,20 @@ function gotoPage(fupingview,fupingpage){		//跳转某一页，后台接口
 		}
 	}
 }
-function openNotice(content,title,kind="A",sceen=0,time=5){
-	mynotice.model(kind,sceen);
+function openNotice(content,title,kind,screen,time){
+	var kind = kind?kind:"A";
+	var screen = (screen||screen==0)?screen:0;
+	var time = (time||time==0)?time:5;
+	var myDate = new Date();
+	console.log("快捷通知"+kind,screen==1?"全屏":"半屏",time+"秒-"+myDate.toLocaleString());
+	mynotice.model(kind,screen);
 	mynotice.setText(content,title);
-	$("#ifrNotice").css("height",sceen==0?"960px":"1920px").show();
+	$("#ifrNotice").css("height",screen==0?"960px":"1920px").show();
 	$("#ifrContent").focus();
 	if(time>0) setTimeout(function(){closeNotice();},time*1000);
 }
 function closeNotice(){
+	mynotice.setText("","");
 	$("#ifrNotice").hide();
 	$("#ifrContent").focus();
 }

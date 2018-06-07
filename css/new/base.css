@@ -117,7 +117,7 @@ section,#contentBody {
 }
 .table{
 	color: #444;
-	width: 1078px;
+	width: 1080px;
 	height: 1803px;
 	font-size: 17px;
 	text-align: center;
@@ -345,4 +345,7 @@ section,#contentBody {
 .rightfoot{
 	right: 0px;
 	background: url(../../img/right_bottom.png);
+}
+.table tr td.back{
+	background-color: #FABEC3;
 }

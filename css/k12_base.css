@@ -12,9 +12,6 @@
 .table tr:not(.bottom) td.win.state{
 	font-size: 16px;
 }
-.table .t th.mm1:nth-last-child(n+2){
-	border-right: 1px solid #A9A9A9;
-}
 .table tr:not(.bottom) td.win:nth-child(2):not(.state),
 .table tr:not(.bottom) td.win:nth-child(3):not(.state),
 .table tr:not(.bottom) td.win:nth-child(4):not(.state){

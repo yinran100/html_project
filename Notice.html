@@ -18,12 +18,14 @@
 			font-family: "wr";
 		}
 		#title{
+			position: absolute;
 			text-align: center;
-			margin-top: 50px;
+			top: 50px;
 			letter-spacing: 15px;
 			font-size: 55px;
 			color: gold;
 			font-weight: bold;
+			width: 100%;
 		} 
 		#title.long{
 			letter-spacing: 10px;
@@ -34,33 +36,40 @@
 			font-size: 60px;
 		}
 		#title.full{
-			margin-top: 90px;
+			top: 90px;
+		}
+		#content{
+			position: absolute;
+			top: 170px;
+			left: 190px;
+			width: 666px;
 		}
 		p{
 			text-indent: 64px;
 			font-size: 32px;
-			width: 666px;
-			margin-left: 190px;
-			margin-top: 105px;
+			margin-bottom: 0;
+			margin-top: 0;
 			line-height: 1.5;
 			color: #DC143C;
+			word-break: break-all;
 		}
-		p.b{
+		#content.b{
 			width: 840px;
 			font-size: 38px;
-			margin-left: 115px;
+			left: 115px;
 		}
-		p.full:not(.b){
-			width: 710px;
+		#content.full:not(.b){
+			width: 720px;
 		}
-		p.full{
-			margin-top: 165px;
+		#content.full{
+			top: 320px;
 		}
+		
 	</style>
 	<body>
-		<div id="notice" v-bind:style="{backgroundImage:'url('+('img/notic_'+modelKind.toLowerCase() + '_tle10_'+(modelSceen==0?'960':'1920')+'.jpg')+')',height:(modelSceen+1)*960+'px'}">
-			<div id="title" v-bind:class="{long:(title.getBytesLength()/2>8),b:(modelKind!='A'),full:(modelSceen!=0)}">{{title}}</div>
-			<p v-bind:class="{b:(modelKind!='A'),full:(modelSceen!=0)}">{{ content }}</p>
+		<div id="notice" v-bind:style="{backgroundImage:'url('+('img/notic_'+modelKind.toLocaleLowerCase() + '_tle10_'+(modelScreen==0?'960':'1920')+'.jpg')+')',height:(modelScreen+1)*960+'px'}">
+			<div id="title" v-bind:class="{long:(title.getBytesLength()/2>8),b:(modelKind!='A'),full:(modelScreen!=0)}">{{title}}</div>
+			<div id="content" v-bind:class="{b:(modelKind!='A'),full:(modelScreen!=0)}" v-html="content"></div>
 		</div>
 	</body>
 	<script>
@@ -71,14 +80,14 @@
 		  el: "#notice",
 		  data: {
 		  	modelKind:"A",
-		  	modelSceen: 0,	//0代表半屏，1代表全屏
-		    title: "文字通知",
-		    content: "尽管算力的价格呈指数级下降，但对算力的需求却增长地更快。AI 和机器学习与其庞大的数据集以及数以万亿计的矢量和矩阵计算对芯片有着惊人的胃口，而且似乎永远都得不到满足。"
+		  	modelScreen: 0,	//0代表半屏，1代表全屏
+		    title: "",
+		    content: "<p>asdwwwwwwwwwwwwaaaaaaaaaaaaaaaaaaaaaacccccccccccccccccccccccccccccccccccccccccfffffffffffffffffffffffffffffff</p><p>一一二二三三四四五五六六七七八八九九十十一一二二三三四四五五六六七七八八九九十十</p>"
 		  }
 		})
-		function model(kind,sceen){	//0代表半屏，1代表全屏
-			noticeVue.modelKind = kind.toUpperCase()=="A"?"A":"B";
-			noticeVue.modelSceen = sceen==0?0:1;
+		function model(kind,screen){	//0代表半屏，1代表全屏
+			noticeVue.modelKind = kind.toLocaleUpperCase()=="A"?"A":"B";
+			noticeVue.modelScreen = screen==0?0:1;
 		}
 		function setText(content,title){
 			noticeVue.content=content;

@@ -68,7 +68,7 @@ function initModel(){
 		if(ALLview.viewtext[select]<2){
 			for(var i = 0; i < this.maindiagram()[0].length; i++) 
 				arr.push(dataUtils.checkWin2(this.maindiagram(),i,this.maindiagram().length-1));
-				return changeEnd(arr,"今日出现期数");
+				return changeEnd(arr,"当日出现期数");
 		}else{
 			for(var i = 0; i < this.maindiagram()[0].length; i++) 
 				arr.push(dataUtils.checkWin2(this.maindiagram(),i));

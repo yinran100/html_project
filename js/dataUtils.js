@@ -4,29 +4,28 @@
  * 100-0:取新期返回false
  * 200-0：遗漏数据返回false,200-1:某个玩法遗漏数据不存在，200-2：遗漏数据不完整
  */
-var debugflag=1;//0为调试模式可单机运行，实际运行设为1，非常重要！
-
 var person_setting={
 		haveset:0,
-		playCode:K3NAME,	//玩法名,"NO"代表不进入任何走势图maindata
-		playview:2,		//默认打开第几个视图
+		playCode:K12NAME,	//玩法名,"NO"代表不进入任何走势图maindata
+		playview:0,		//默认打开第几个视图
 		showpage:6,		//K_public.MAX_PAGE,		//显示第几页
 		showpage_h:10,
 		showstation:0,	//是否显示站点号
 		showversion:0,	//是否显示版本号
 		showyilou:1,	//是否显示连续遗漏
 		skinStyle:0,	//1是多彩版
-		sp_playEname:new Array(K3NAME),
+		sp_playEname:new Array(K12NAME),
 		fontsize:0,
 		fupingview:"B001",	//副屏上显示的玩法名（长周期）
 		fupingpage:6,	//副屏上显示第几页
 		bt3color:0,
 		th2color:1,
 		th3color:3,
-		lh3color:4,
+		lh3color:0,
 		jihao:"",
 		version:"",
 		serverIP:"",
+		k12BaseStyle:0,  //快乐12内容样式选择 1为更新版
 		screenLight:90, //主屏亮度
 		screenLight_B:90, //副屏亮度
 		sysSoundVal:80, //主屏音量
@@ -63,12 +62,6 @@ var dataUtils = {
 						for(var x in ar)
 							person_setting.sp_playEname.push(ar[x]);
 						person_setting.sp_playEname.sort();
-						if(person_setting.sp_playEname==[]) $("#ad").css("background-image","url(img/all_ad.png))");
-						else if(person_setting.sp_playEname.indexOf(K3NAME)>=0)$("#ad").css("background-image","url(img/ad_k3.png))");
-						else if(person_setting.sp_playEname.indexOf(K10NAME)>=0)$("#ad").css("background-image","url(img/ad_k10.png)");
-						else if(person_setting.sp_playEname.indexOf(K2NAME)>=0)$("#ad").css("background-image","url(img/ad_k2.png))");
-						else if(person_setting.sp_playEname.indexOf(XYCNAME)>=0)$("#ad").css("background-image","url(img/ad_xyc.png))");
-						else if(person_setting.sp_playEname.indexOf(K12NAME)>=0)$("#ad").css("background-image","url(img/ad_k12.png))");
 					}
 				}catch(e){console.error("个性化设置参数有错误");
 					//TODO handle the exception
@@ -76,13 +69,19 @@ var dataUtils = {
 				}
 			}
 		}else {
-			if(person_setting.jihao=="") person_setting.jihao = "36000000001";
+			if(person_setting.jihao=="") person_setting.jihao = "21000000001";
 			if(person_setting.version=="") person_setting.version = "1.0.0";
 		}
 		if(K_public.isfuping){			//副屏不要短周期
 			person_setting.sp_playEname=[];
 			$("#ad").css("background-image","url(img/all_ad.png))");
 		}
+		if(person_setting.sp_playEname==[]) $("#ad").css("background-image","url(img/all_ad.png)");
+		else if(person_setting.sp_playEname.indexOf(K3NAME)>=0)$("#ad").css("background-image","url(img/ad_k3.png)");
+		else if(person_setting.sp_playEname.indexOf(K10NAME)>=0)$("#ad").css("background-image","url(img/ad_k10.png)");
+		else if(person_setting.sp_playEname.indexOf(K2NAME)>=0)$("#ad").css("background-image","url(img/ad_k2.png)");
+		else if(person_setting.sp_playEname.indexOf(XYCNAME)>=0)$("#ad").css("background-image","url(img/ad_xyc.png)");
+		else if(person_setting.sp_playEname.indexOf(K12NAME)>=0)$("#ad").css("background-image","url(img/ad_k12.png)");
 		dataUtils.getplayMvflag();//是否播放
 		person_setting.haveset=1;console.info("取到个性化设置参数");
 		console.log(person_setting);
@@ -343,7 +342,7 @@ var dataUtils = {
 		if(debugflag!=0)
 			var termlist=JSON.parse(webApi.invoke("/term/getSpNewTerms",gameArray.playname[n]+"_"+lastnote.yearmonth+"_"+lastnote.term));		
 		else var termlist = {result:true,
-				data:[{month_id:"201703", term_code:lastnote.term.slice(0, 4)+"0"+(parseInt(lastnote.term.slice(-3))+1),play_code:codestr}]
+				data:[{month_id:"201703", term_code:lastnote.term.slice(0, 4)+dataUtils.fullNum(parseInt(lastnote.term.slice(-3))+1,3),play_code:codestr}]
 			};
 		if(termlist&&termlist.result){
 			if(termlist.data.length>0) mainnote[n] = addnote[n].concat(mainnote[n]);  //补回完整期
@@ -675,7 +674,7 @@ var dataUtils = {
 		if(debugflag!=0) var termendtime=JSON.parse(webApi.invoke("/term/getMaxSpTerm",gameArray.playname[n]));
 			else var termendtime={result:true,data:{
 				term_code:dataUtils.gettodayMMdd()+"025",
-				term_end_datetime:gameArray.playname[n]==K2NAME?dataUtils.getlocalTime(9,50):dataUtils.getlocalTime(4,30),
+				term_end_datetime:gameArray.playname[n]==K2NAME?dataUtils.getlocalTime(9,50):dataUtils.getlocalTime(1,30),
 				only_encash_term_flag:0}
 			};
 		if(termendtime&&termendtime.result){
@@ -715,6 +714,20 @@ var dataUtils = {
 		if(s.getMonth()<9) ll=ll.slice(0,4)+"0"+ll.slice(4);
 		if(s.getDate()<10) ll=ll.slice(0,6)+"0"+ll.slice(6);
 		return ll;
+	},
+	fullNum:function(num,len){
+		if(num instanceof Array){
+			var arr=[];
+			for(var i in num)
+				arr.push(dataUtils.fullNum(num[i],len)); 
+			return arr;
+		} 
+		num="00000000000000"+num;
+		var rst="";
+		for(var i=1; i<=len; i++){
+			rst=num[num.length-i].toString()+rst;
+		}
+		return rst;
 	},
 	countyilou:function(n, yilouData){//console.log(ALLview.datanum[n]+"&"+n);console.log(ALLview.yilounum[n]);
 		var numarr = ALLview.yilounum[n].split("|"); //console.log(yilouData[ALLview.datanum[n]]);

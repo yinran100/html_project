@@ -18,7 +18,6 @@ body{
 	top: 0px;
 	height: 607px;
 	width: 1080px;
-	background: url(../img/ad_k3.png);
 }
 .menubody {
 	position: absolute;
@@ -110,7 +109,7 @@ body{
 }
 .msg{
 	/*top: 1600px;*/
-	top: 1215px;
+	top: 1205px;
 	left: 80px;
 	font-family: "wr";
 	position: absolute;
