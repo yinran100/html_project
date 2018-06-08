@@ -93,7 +93,7 @@ var web = self.setInterval(function(){
 				if(K_public.isfuping&&cc%5==0){		//每五秒调整页面
 					var t=JSON.parse(webApi.invoke("/term/getCsPlayShowInfo","B"));
 					if(t&&t.result){
-						for(var key in t.data) console.log(key+"="+t.data[key]);
+						//for(var key in t.data) console.log(key+"="+t.data[key]);
 						if(t.data.fupingview&&t.data.fupingpage&&t.data.showyilou&&t.data.showVersion&&t.data.showStation&&t.data.skinStyle){
 							var view=t.data.fupingview;
 							var page=t.data.fupingpage;
@@ -187,7 +187,8 @@ function openNotice(content,title,kind,screen,time){
 	if(time>0) setTimeout(function(){closeNotice();},time*1000);
 }
 function closeNotice(){
-	mynotice.setText("","");
+	mynotice.clearImg();
 	$("#ifrNotice").hide();
 	$("#ifrContent").focus();
 }
+

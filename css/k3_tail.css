@@ -1,0 +1,72 @@
+.table .h th:nth-child(6),.table .h th:nth-child(22),.table .h th:nth-child(28),
+.table tr:not(.bottom):not(.djs) td:nth-child(4),
+.table tr:not(.bottom):not(.djs) td:nth-child(10),
+.table tr:not(.bottom):not(.djs) td:nth-child(26),
+.table tr:not(.bottom):not(.djs) td:nth-child(32),
+.table tr.djs td:nth-child(8),
+.table tr.djs td:nth-child(24),
+.table tr.djs td:nth-child(30),
+.table tr.bottom td:nth-child(7),
+.table tr.bottom td:nth-child(23),
+.table tr.bottom td:nth-child(29){
+	border-right: 2px solid #444444 !important;
+}
+.table tr th.term {
+    min-width: 58px;
+}
+.table tr th.winnum {
+    min-width: 92px;
+}
+.table tr:not(.bottom) td.time, .table tr:not(.bottom) td.state{
+	font-size: 17px;
+}
+.table tr td div.tail{
+	font-weight:bold ;
+	font-size: 27px;
+	margin: -2px;
+}
+
+.table tr td.dia{
+	width: 40px;
+}
+.table tr td.dia:nth-last-child(n+2){
+	width: 29px;
+}
+.table tr td.dia:nth-last-child(n+8){
+	width: 33px;
+}
+.table tr td.dia:nth-last-child(n+24){
+	width: 29px;
+}
+table.table tr td.dia div.one,
+table.table tr td.dia div.two,table.table tr td.dia div.kua{
+	line-height: 1;
+	letter-spacing: -1px;
+	margin: -4px;
+	font-size: 34px;
+}
+.table tr td.dia div.kua{
+	font-size: 29px;
+	font-weight:bold;
+}
+/*贵州 江西*/
+/*.table tr:not(.day):nth-child(even) td.dia{	background-color: #e6f7fe;}
+.table tr:not(.day):nth-child(odd) td.dia{	background-color: #f5f9fc;}
+.table tr:not(.day):nth-child(even) td.dia:nth-last-child(n+2){	background-color: #f8e8e9;}
+.table tr:not(.day):nth-child(odd) td.dia:nth-last-child(n+2){	background-color: #fffafa;}
+.table tr:not(.day):nth-child(even) td.dia:nth-last-child(n+8){	background-color: #e6f7fe;}
+.table tr:not(.day):nth-child(odd) td.dia:nth-last-child(n+8){	background-color: #f5f9fc;}
+.table tr:not(.day):nth-child(even) td.dia:nth-last-child(n+24){ background-color: #f8e8e9;}
+.table tr:not(.day):nth-child(odd) td.dia:nth-last-child(n+24){	background-color: #fffafa;}*/
+/*吉林双延*/
+.table tr:not(.bottom):not(.ta):not(.t):not(.h):not(.hot){
+	background-color: rgba(0,0,0,0);	/*取消原有颜色*/
+}
+.table col{background-color:  rgb(255,251,249);}
+.table col:nth-child(3),.table col:nth-child(5){	/*黄色*/
+	background-color: #fdf2e5;
+}
+.table col:nth-child(2),.table col:nth-child(4){	/*绿色*/
+	background-color: #edfbef;
+}
+

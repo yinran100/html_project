@@ -79,10 +79,10 @@
 		var noticeVue = new Vue({
 		  el: "#notice",
 		  data: {
-		  	modelKind:"A",
+		  	modelKind:"",
 		  	modelScreen: 0,	//0代表半屏，1代表全屏
 		    title: "",
-		    content: "<p>asdwwwwwwwwwwwwaaaaaaaaaaaaaaaaaaaaaacccccccccccccccccccccccccccccccccccccccccfffffffffffffffffffffffffffffff</p><p>一一二二三三四四五五六六七七八八九九十十一一二二三三四四五五六六七七八八九九十十</p>"
+		    content: ""
 		  }
 		})
 		function model(kind,screen){	//0代表半屏，1代表全屏
@@ -92,6 +92,10 @@
 		function setText(content,title){
 			noticeVue.content=content;
 			noticeVue.title=title;
+		}
+		function clearImg(){	//清除页面
+			setText("","");
+			noticeVue.modelKind="";
 		}
 	</script>
 </html>
