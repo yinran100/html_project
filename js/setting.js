@@ -59,25 +59,24 @@ var enterBtn={
 		th3color= resarr[13].currentSelect;
 		lh3color= resarr[14].currentSelect;
 		console.log(playCodeNum);
-		for(var x in resarr)	console.log(resarr[x].currentSelect);
-		var paramVue="playCode\|"+(playCodeNum<0?"NO":parent.gameArray.playname[playCodeNum])+"\|playView\|"+playView+"\|skinStyle\|"+skinStyle+"\|showPage\|"+showPage
-					+"\|showStation\|"+showStation+"\|showVersion\|"+showVersion+"\|showYilou\|"+showYilou+"\|k12BaseStyle\|"+k12BaseStyle+"\|fontsize\|"+fontsize+"\|bt3color\|"+bt3color
-					+"\|th2color\|"+th2color+"\|th3color\|"+th3color+"\|lh3color\|"+lh3color+"\|fupingview\|"+K_public.CS_name[fupingviewNum]+"\|fupingpage\|"+fupingpage;
-		// var paramVue='[{"paramKey":"playCode","paramValue":"'+(playCodeNum<0?"NO":parent.gameArray.playname[playCodeNum])+'","screenFlag":"public"},'+
-		// 	'{"paramKey":"playView","paramValue":"'+playView+'","screenFlag":"A"},'+
-		// 	'{"paramKey":"skinStyle","paramValue":"'+skinStyle+'","screenFlag":"A"},'+
-		// 	'{"paramKey":"showPage","paramValue":"'+showPage+'","screenFlag":"A"},'+
-		// 	'{"paramKey":"showStation","paramValue":"'+showStation+'","screenFlag":"public"},'+
-		// 	'{"paramKey":"showVersion","paramValue":"'+showVersion+'","screenFlag":"public"},'+
-		// 	'{"paramKey":"showYilou","paramValue":"'+showYilou+'","screenFlag":"public"},'+
-		// 	'{"paramKey":"fontsize","paramValue":"'+fontsize+'","screenFlag":"public"},'+
-		// 	'{"paramKey":"k12BaseStyle","paramValue":"'+k12BaseStyle+'","screenFlag":"public"},'+
-		// 	'{"paramKey":"bt3color","paramValue":"'+bt3color+'","screenFlag":"public"},'+
-		// 	'{"paramKey":"th2color","paramValue":"'+th2color+'","screenFlag":"public"},'+
-		// 	'{"paramKey":"th3color","paramValue":"'+th3color+'","screenFlag":"public"},'+
-		// 	'{"paramKey":"lh3color","paramValue":"'+lh3color+'","screenFlag":"public"},'+
-		// 	'{"paramKey":"fupingview","paramValue":"'+K_public.CS_name[fupingviewNum]+'","screenFlag":"B"},'+
-		// 	'{"paramKey":"fupingpage","paramValue":"'+fupingpage+'","screenFlag":"B"}]';
+		// var paramVue="playCode\|"+(playCodeNum<0?"NO":parent.gameArray.playname[playCodeNum])+"\|playView\|"+playView+"\|skinStyle\|"+skinStyle+"\|showPage\|"+showPage
+		// 			+"\|showStation\|"+showStation+"\|showVersion\|"+showVersion+"\|showYilou\|"+showYilou+"\|k12BaseStyle\|"+k12BaseStyle+"\|fontsize\|"+fontsize+"\|bt3color\|"+bt3color
+		// 			+"\|th2color\|"+th2color+"\|th3color\|"+th3color+"\|lh3color\|"+lh3color+"\|fupingview\|"+K_public.CS_name[fupingviewNum]+"\|fupingpage\|"+fupingpage;
+		var paramVue='[{"paramKey":"playCode","paramValue":"'+(playCodeNum<0?"NO":parent.gameArray.playname[playCodeNum])+'","screenFlag":"public"},'+
+			'{"paramKey":"playView","paramValue":"'+playView+'","screenFlag":"A"},'+
+			'{"paramKey":"skinStyle","paramValue":"'+skinStyle+'","screenFlag":"A"},'+
+			'{"paramKey":"showPage","paramValue":"'+showPage+'","screenFlag":"A"},'+
+			'{"paramKey":"showStation","paramValue":"'+showStation+'","screenFlag":"public"},'+
+			'{"paramKey":"showVersion","paramValue":"'+showVersion+'","screenFlag":"public"},'+
+			'{"paramKey":"showYilou","paramValue":"'+showYilou+'","screenFlag":"public"},'+
+			'{"paramKey":"fontsize","paramValue":"'+fontsize+'","screenFlag":"public"},'+
+			'{"paramKey":"k12BaseStyle","paramValue":"'+k12BaseStyle+'","screenFlag":"public"},'+
+			'{"paramKey":"bt3color","paramValue":"'+bt3color+'","screenFlag":"public"},'+
+			'{"paramKey":"th2color","paramValue":"'+th2color+'","screenFlag":"public"},'+
+			'{"paramKey":"th3color","paramValue":"'+th3color+'","screenFlag":"public"},'+
+			'{"paramKey":"lh3color","paramValue":"'+lh3color+'","screenFlag":"public"},'+
+			'{"paramKey":"fupingview","paramValue":"'+K_public.CS_name[fupingviewNum]+'","screenFlag":"B"},'+
+			'{"paramKey":"fupingpage","paramValue":"'+fupingpage+'","screenFlag":"B"}]';
 		console.info(paramVue);
 		var webApi=parent.webApi;
 		var result = parent.debugflag!=0?webApi.invoke("/term/setting",paramVue):true;

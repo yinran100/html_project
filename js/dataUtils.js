@@ -25,7 +25,7 @@ var person_setting={
 		jihao:"",
 		version:"",
 		serverIP:"",
-		k12BaseStyle:0,  //快乐12内容样式选择 1为更新版
+		k12BaseStyle:1,  //快乐12内容样式选择 1为更新版
 		screenLight:90, //主屏亮度
 		screenLight_B:90, //副屏亮度
 		sysSoundVal:80, //主屏音量
@@ -56,6 +56,7 @@ var dataUtils = {
 					if(sp.showYilou) person_setting.showyilou = parseInt(sp.showYilou);
 					if(t.data.skinStyle) person_setting.skinStyle = parseInt(t.data.skinStyle);
 					if(sp.screenLightVal) person_setting.screenLight = parseInt(sp.screenLightVal);
+					if(sp.k12BaseStyle) person_setting.k12BaseStyle = parseInt(sp.k12BaseStyle);
 					if(sp.spPlayEname&&!K_public.isfuping){
 						person_setting.sp_playEname=[];
 						var ar = sp.spPlayEname.split(",");
@@ -63,6 +64,7 @@ var dataUtils = {
 							person_setting.sp_playEname.push(ar[x]);
 						person_setting.sp_playEname.sort();
 					}
+					console.info("取到个性化设置参数");
 				}catch(e){console.error("个性化设置参数有错误");
 					//TODO handle the exception
 					console.error(person_setting);
@@ -83,7 +85,7 @@ var dataUtils = {
 		else if(person_setting.sp_playEname.indexOf(XYCNAME)>=0)$("#ad").css("background-image","url(img/ad_xyc.png)");
 		else if(person_setting.sp_playEname.indexOf(K12NAME)>=0)$("#ad").css("background-image","url(img/ad_k12.png)");
 		dataUtils.getplayMvflag();//是否播放
-		person_setting.haveset=1;console.info("取到个性化设置参数");
+		person_setting.haveset=1;
 		console.log(person_setting);
 		if(person_setting.skinStyle==1){
 			$(".part").show();
@@ -1391,6 +1393,31 @@ var dataUtils = {
 			data.push({		//21跨度奇偶 2
 				cur_val:dataUtils.getcurstr(2,1,15),
 				max_val:dataUtils.getmaxstr(2,20,30)
+			});
+		}else if(name==QYHNAME){
+			data.push({		//0开奖号码分布区 20
+				cur_val:dataUtils.getcurstr(20,3,20),
+				max_val:dataUtils.getmaxstr(20,20,30)
+			});
+			data.push({		//1顺1
+				cur_val:dataUtils.getcurstr(20,1,12),
+				max_val:dataUtils.getmaxstr(20,15,35)
+			});
+			data.push({		//2围2 
+				cur_val:dataUtils.getcurstr(20,2,12),
+				max_val:dataUtils.getmaxstr(20,15,35)
+			});
+			data.push({		//3五行 （木火土金水 仁智信义礼）
+				cur_val:dataUtils.getcurstr(10,1,20),
+				max_val:dataUtils.getmaxstr(10,30,60)
+			});
+			data.push({		//4方位   东南中西北 
+				cur_val:dataUtils.getcurstr(5,1,20),
+				max_val:dataUtils.getmaxstr(5,30,50)
+			});
+			data.push({		//5尾数 0-9
+				cur_val:dataUtils.getcurstr(10,1,20),
+				max_val:dataUtils.getmaxstr(10,30,50)
 			});
 		}else if(name==XYCNAME){
 			data.push({		//0幸运魔方分局分布区0 1 2（第一局）   0 1 2（第二局）   0 1 2（第三局）

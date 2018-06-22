@@ -42,5 +42,5 @@
 	font-weight: bold;
 }
 /*江西贵州*/
-/*.table tr:not(.day):nth-child(even) td.dia{	background-color: #e6f7fe;}
-.table tr:not(.day):nth-child(odd) td.dia{	background-color: #f5f9fc;}*/
+.table tr:not(.day):nth-child(even) td.dia{	background-color: #e6f7fe;}
+.table tr:not(.day):nth-child(odd) td.dia{	background-color: #f5f9fc;}

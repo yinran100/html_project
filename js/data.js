@@ -45,7 +45,7 @@ var K12view = {
 	menuicon_ac:new Array("img/menu/k12_base_ac.png", "img/menu/k12_sum_ac.png", "img/menu/k12_zhi2_ac.png", "img/menu/k12_zhi3_ac.png"),
 	particon:new Array("img/menu/k12_part.png"),
 	menumsg: new Array("快乐12（基本走势图）", "快乐12和值走势图", "快乐12前二直走势图", "快乐12前三直走势图"),
-	sp_view: new Array("基本走势图","选一走势图", "前二直走势图", "前三直走势图"),
+	sp_view: new Array("基本走势图","和值走势图", "前二直走势图", "前三直走势图"),
 	viewtext:new Array(0, 0, 0, 0),
 	datanum: new Array(0, 0, 0, 0),
 	isScross: new Array(0, 0, 0, 0),		//是否横屏
@@ -363,7 +363,7 @@ function CountDown(nameindex){
 	if(parseInt(gameArray.remainTime[nameindex])>=1){
 		gameArray.remainTime[nameindex]--;
 		if(gameArray.playstate[nameindex]==2){				//新期售卖的时候
-			if(parseInt(gameArray.remainTime[nameindex])%10==0||parseInt(gameArray.remainTime[nameindex])==5)//每半分钟调整一次倒计时 ,最后五秒再调一次
+			if(parseInt(gameArray.remainTime[nameindex])%12==0||parseInt(gameArray.remainTime[nameindex])==5)//每半分钟调整一次倒计时 ,最后五秒再调一次
 				gameArray.remainTime[nameindex] = dataUtils.getDate2(gameArray.newterm[nameindex].endtime,nameindex);
 			if($("#ifrContent").attr("src")!="about:blank"&&ALLview.datanum[currentSelect]==nameindex){
 				try{
@@ -407,7 +407,6 @@ function CountDown(nameindex){
 							gameArray.remainTime[nameindex] = 0;
 							dataUtils.getSysParam(nameindex); //获取期结数据
 							noticelist=dataUtils.getNotification();
-							console.log(nowdj+"-@@@@@-"+PLAYING);
 							if($("#ifrContent").attr("src")!="about:blank"&&ALLview.datanum[currentSelect]==nameindex&&ALLview.viewtext[currentSelect]<2){
 								theload();
 								loadpage();
@@ -419,7 +418,6 @@ function CountDown(nameindex){
 					gameArray.remainTime[nameindex] = 0;
 					dataUtils.getSysParam(nameindex); //获取期结数据
 					noticelist=dataUtils.getNotification();
-					console.log(nowdj+"-$$$$$$-"+PLAYING);
 					if($("#ifrContent").attr("src")!="about:blank"&&ALLview.datanum[currentSelect]==nameindex&&ALLview.viewtext[currentSelect]<2){
 						theload();
 						loadpage();

@@ -5,6 +5,7 @@ var K3NAME = "K3";
 var XYCNAME = "GAMEAB";
 var K10NAME = "K520";
 var K12NAME = "K512";
+var QYHNAME = "K523";
 var currentSelect = 0;
 var clickMedia = 0;
 var FLAG = 0; //开机进入某一页
@@ -41,6 +42,7 @@ var web = self.setInterval(function(){
 			if(debugflag==1){
 				var screenSet = JSON.parse(webApi.invoke("/term/getTmScreenSet", '{"paramKey":"screen_num","screenFlag":"A"}'));
 				if(screenSet&&screenSet.data && screenSet.result){
+					console.log(screenSet.data);
 					K_public.setFuping = screenSet.data.param_value!="1";
 				}
 			}else if(strPage=="A") K_public.setFuping = true;

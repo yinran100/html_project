@@ -37,9 +37,7 @@
 .table tr.bottom td:nth-child(37){
 	border-right: 2px solid #444444 !important;
 }
-.table tr.bottom:nth-child(1) td:nth-child(1) div{
-	font-size: 14px;
-}
+
 .table tr td.dia{
 	width: 20px;
 }
@@ -62,10 +60,16 @@
 	background-color: #FABEC3 !important;
 }
 .table tr.bottom td.dia div.md {
-	font-size: 15px;
+	font-size: 14px;
 	font-weight: 200;
 }
 .table tr.bottom td.dia div.lg {
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: 100;
+}
+.table tr.bottom td:nth-child(1) div{
+	font-size: 14px;
+}
+.table tr td.jo{
+	background-color: #f9cf76 !important;
 }

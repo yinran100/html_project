@@ -48,7 +48,7 @@ function initThisModel(){
 						}else if(parseInt(index)<36){
 							diastr += '<td class=\"dia\"><div class=\"third\">'+(index-23)+'</div></td>';
 						}else	
-						diastr+= '<td class=\"dia '+(data.lian[index-36]==1?'back':'')+'\"><div class=\"'+(narr.indexOf(index-35)<1?'one':'zero')+'\">'+(index-35)+'</div></td>';
+						diastr+= '<td class=\"dia '+(data.lian[index-36]==1?'back':'')+(data.js==0||data.js==K_public.K12_WIN_NUMBER?'jo':'')+'\"><div class=\"'+(narr.indexOf(index-35)<1?'one':'zero')+'\">'+(index-35)+'</div></td>';
 					} else {
 						if(parent.person_setting.showyilou==0)	diastr+= '<td class=\"dia\"><div>'+value+'</div></td>';
 						else diastr+= '<td class=\"dia\"><div></div></td>';

@@ -31,9 +31,8 @@ if(parent.ALLview.isScross[parent.currentSelect]==1){
 	else  $("#notice").css({"width":"72%","left":"14%"});
 }
 $(".logo").click(function() {
-	if(parent.debugfklag==0) window.clearInterval(parent.timeFunTimer);
+	if(parent.debugflag==0) window.clearInterval(parent.timeFunTimer);
 });
-var dayline=[];
 var htmlUtils={
 	puttime:function(){//顶部时钟变化
 		var d = new Date();
