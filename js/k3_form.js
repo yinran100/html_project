@@ -1,6 +1,6 @@
 var linecolor = new Array("blueviolet","blueviolet");
 var point=new Array(2);
-var formStr = new Array("三连号","三不同","二同号","三同号");
+var formStr = new Array(parent.provinceCode==22?"三不同":"三连号","三不同","二同号","三同号");
 var WIN_NUMBER = K_public.K3_WIN_NUMBER;
 function initThisModel(){
 	trendModel.note = ko.dependentObservable(function () {	

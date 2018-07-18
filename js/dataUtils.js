@@ -43,33 +43,33 @@ var dataUtils = {
 					person_setting.version = sp.version;
 					person_setting.serverIP = sp.serverIP;
 					if(sp.fontsize) person_setting.fontsize = parseInt(sp.fontsize);
-					if(sp.bt3color) person_setting.bt3color = parseInt(sp.bt3color);
-					if(sp.th2color) person_setting.th2color = parseInt(sp.th2color);
-					if(sp.th3color) person_setting.th3color = parseInt(sp.th3color);
-					if(sp.lh3color) person_setting.lh3color = parseInt(sp.lh3color);
-					if(sp.playCode) person_setting.playCode = sp.playCode;
-					if(sp.playView) person_setting.playview = parseInt(sp.playView);
-					if(sp.showPage) person_setting.showpage = Math.min(Math.max(parseInt(sp.showPage), 1), K_public.MAX_PAGE);
-					if(sp.fupingview) person_setting.fupingview = parseInt(sp.fupingview);
-					if(sp.fupingpage) person_setting.fupingpage = Math.min(Math.max(parseInt(sp.fupingpage), 1), K_public.MAX_PAGE);
-					if(sp.showStation) person_setting.showstation = parseInt(sp.showStation);
-					if(sp.showVersion) person_setting.showversion = parseInt(sp.showVersion);
-					if(sp.showYilou) person_setting.showyilou = parseInt(sp.showYilou);
-					if(t.data.skinStyle) person_setting.skinStyle = parseInt(t.data.skinStyle);
-					if(sp.screenLightVal) person_setting.screenLight = parseInt(sp.screenLightVal);
-					if(sp.k12BaseStyle) person_setting.k12BaseStyle = parseInt(sp.k12BaseStyle);
-					if(sp.spPlayEname&&!K_public.isfuping){
+					if(sp.bt3color!=undefined) person_setting.bt3color = parseInt(sp.bt3color);
+					if(sp.th2color!=undefined) person_setting.th2color = parseInt(sp.th2color);
+					if(sp.th3color!=undefined) person_setting.th3color = parseInt(sp.th3color);
+					if(sp.lh3color!=undefined) person_setting.lh3color = parseInt(sp.lh3color);
+					if(sp.playCode!=undefined) person_setting.playCode = sp.playCode;
+					if(sp.playView!=undefined) person_setting.playview = parseInt(sp.playView);
+					if(sp.showPage!=undefined) person_setting.showpage = Math.min(Math.max(parseInt(sp.showPage), 1), K_public.MAX_PAGE);
+					if(sp.fupingview!=undefined) person_setting.fupingview = parseInt(sp.fupingview);
+					if(sp.fupingpage!=undefined) person_setting.fupingpage = Math.min(Math.max(parseInt(sp.fupingpage), 1), K_public.MAX_PAGE);
+					if(sp.showStation!=undefined) person_setting.showstation = parseInt(sp.showStation);
+					if(sp.showVersion!=undefined) person_setting.showversion = parseInt(sp.showVersion);
+					if(sp.showYilou!=undefined) person_setting.showyilou = parseInt(sp.showYilou);
+					if(t.data.skinStyle!=undefined) person_setting.skinStyle = parseInt(t.data.skinStyle);
+					if(sp.screenLightVal!=undefined) person_setting.screenLight = parseInt(sp.screenLightVal);
+					if(sp.k12BaseStyle!=undefined) person_setting.k12BaseStyle = parseInt(sp.k12BaseStyle);
+					if(sp.spPlayEname!=undefined&&!K_public.isfuping){
 						person_setting.sp_playEname=[];
 						var ar = sp.spPlayEname.split(",");
 						for(var x in ar)
-							person_setting.sp_playEname.push(ar[x]);
+							if(ar[x].trim()!='') person_setting.sp_playEname.push(ar[x]);
 						//person_setting.sp_playEname.sort();
 					}
-					if(sp.csPlayEname){		//长周期授权，没有这个属性就保持默认
+					if(sp.csPlayEname!=undefined){		//长周期授权，没有这个属性就保持默认
 						person_setting.cs_playEname=[];
 						var ar = sp.csPlayEname.split(",");
 						for(var x in ar)
-							person_setting.cs_playEname.push(ar[x]);
+							if(ar[x].trim()!='') person_setting.cs_playEname.push(ar[x]);
 					}
 					console.info("取到个性化设置参数");
 				}catch(e){console.error("个性化设置参数有错误");
@@ -85,9 +85,11 @@ var dataUtils = {
 			person_setting.sp_playEname=[];
 			$("#ad").css("background-image","url(img/all_ad.png))");
 		}
-		if(person_setting.sp_playEname==[]) $("#ad").css("background-image","url(img/all_ad.png)");
-		else if(person_setting.sp_playEname.indexOf(K3NAME)>=0)$("#ad").css("background-image","url(img/ad_k3.png)");
-		else if(person_setting.sp_playEname.indexOf(K10NAME)>=0)$("#ad").css("background-image","url(img/ad_k10.png)");
+		if(person_setting.sp_playEname.length==0) $("#ad").css("background-image","url(img/all_ad.png)");
+		else if(person_setting.sp_playEname.indexOf(K3NAME)>=0){
+			$("#ad").css("background-image","url(img/ad_k3.png)");
+			
+		}else if(person_setting.sp_playEname.indexOf(K10NAME)>=0)$("#ad").css("background-image","url(img/ad_k10.png)");
 		else if(person_setting.sp_playEname.indexOf(K2NAME)>=0)$("#ad").css("background-image","url(img/ad_k2.png)");
 		else if(person_setting.sp_playEname.indexOf(XYCNAME)>=0)$("#ad").css("background-image","url(img/ad_xyc.png)");
 		else if(person_setting.sp_playEname.indexOf(K12NAME)>=0)$("#ad").css("background-image","url(img/ad_k12.png)");
@@ -148,7 +150,7 @@ var dataUtils = {
 			 		console.error("3D"+termlist.data[i].term_code+"期的开奖号码数据有误！");
 			 	}
 				thenote.push({term: termlist.data[i].term_code, numbers: num});
-				s3color.push(dataUtils.getcolor(num,1));
+				s3color.push(dataUtils.getcolor(num,true));
 			}
 			if(termlist.data.length==0){
 				console.error("3D没有数据！");
@@ -325,7 +327,7 @@ var dataUtils = {
 	},
 	getplayMvflag:function(){			//后台是否播放开奖动画
 		if(debugflag!=0&&"undefined" != typeof webApi&&webApi!=null) var sysresult=JSON.parse(webApi.invoke("/term/getTmScreenSet", '{"paramKey":"export","screenFlag":"A"}'));
-		if(sysresult && sysresult.result){
+		if(sysresult!=undefined && sysresult.result){
 			var res = sysresult.data;
 			if(res.param_value) K_public.playHtmlMvflag = res.param_value.indexOf("5")>=0;
 		}
@@ -402,7 +404,7 @@ var dataUtils = {
 							sum2: dataUtils.sumValue(num2), 
 							ds:dataUtils.getds(num2, 10),//大数
 							js:dataUtils.getjs(num2),//奇数
-							form:dataUtils.getcolor(num1,0)
+							form:dataUtils.getcolor(num1,false)
 						});
 				 	}else if(gameArray.playname[n]==K10NAME){
 				 		if(gameArray.maindata[n].length==K_public.MAX_PAGE*K_public.MAX_ROWCOUNT-1)	gameArray.maindata[n].shift();
@@ -677,7 +679,7 @@ var dataUtils = {
 							sum2: dataUtils.sumValue(num2), 
 							ds:dataUtils.getds(num2, 10),//大数
 							js:dataUtils.getjs(num2),//奇数
-							form:dataUtils.getcolor(num1,0)
+							form:dataUtils.getcolor(num1,false)
 						});
 					}
 					thenote.push({term: termlist.data[i].term_code, numbers1: num1, numbers2: num2, yearmonth: termlist.data[i].month_id});
@@ -891,7 +893,7 @@ var dataUtils = {
 		for (var i = 0; i < warr.length; i++) {
 			nn = Math.max(nn, dataUtils.match(warr[i], warr));
 		}
-		if(lx==1&&dataUtils.islx(warr)&&warr.length==3)
+		if(lx&&dataUtils.islx(warr)&&warr.length==3)
 			nn = 0;
 		return nn;
 	},
@@ -971,7 +973,7 @@ var dataUtils = {
 	},
 	gethui:function(arr, n1, n2){//win1这次号码，win2上次号码
 		var win1 = n1[0];
-		var win2 = n2==[]?0:n2[0];
+		var win2 = n2.length==0?0:n2[0];
 		var a = new Array(3);
 		if(win1>win2)	var hui = 0;
 		else if(win1==win2)	var hui = 1;

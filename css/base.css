@@ -340,17 +340,18 @@ table tr.bottom{
 	background-color: #fcf7d8 !important; 
 }
 /*背景颜色不同*/
-	/*河南*/
-/*.table col.lightblue,.table tr:not(.bottom) td.time{	background-color:  #e2f3fa;}
+	/*河南专属*/
+/* .table col.lightblue,.table tr:not(.bottom) td.time{	background-color:  #e2f3fa;}
 .table col.ghostwhite,.table tr:not(.bottom) td.state{	background-color: rgb(255,251,249);}
-.table col.lightyellow{	background-color: #eae5c4;}		*/
+.table col.lightyellow{	background-color: #eae5c4;}		 */
 /*海南*/
 /*.table tr:not(.day):nth-child(even) td.termN,.table tr.bottom:nth-child(even) td,.table tr:not(.day):nth-child(even) td.win,.table tr:not(.bottom) td.state{	background-color: #daf9e6;}
 .table tr:not(.day):nth-child(odd) td.termN,.table tr.bottom:nth-child(odd) td,.table tr:not(.day):nth-child(odd) td.win{	background-color: #f1faf1;} 
 .table tr.ta:nth-child(even) td{	background-color: #f7ecda;}
 .table tr.ta:nth-child(odd) td{	background-color: #f7f2ea;}*/
 /*贵州 江西 等彩色表格*/
-/* 灰色表头*/
+
+/* 灰色表头，彩色表格*/
 /* .table tr.t,.table tr.h,.table tr.ta,.table tr.hot,.table tr.bottom{
 	background-color: #dfe9ea;
 }

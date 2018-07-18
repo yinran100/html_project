@@ -1,20 +1,66 @@
 /*各省份差别：江苏32：快3无三连号,默认形态，有多彩简约版，有主菜单选项，7张快三图，5个长周期，有html的开奖动画和奖池，前三日未出名字改为多日未出，有一行日期分界线，表头表尾为浅绿色，中间为白色
- * 			青海63：（一体机）快三无三连号,默认形态，有多彩简约版，有主菜单选项，比江苏多一个综合走势，3个基本长周期,3D增加了和值一列用S3_63.html，没有html的开奖动画和奖池，没有考虑没有短周期，表头表尾为浅绿色，中间为白色，两种媒体播放模式
+ * 			青海63：（一体机）快三无三连号,默认形态，有多彩简约版，有主菜单选项，比江苏多一个综合走势，3个基本长周期,没有html的开奖动画和奖池，没有考虑没有短周期，表头表尾为浅绿色，中间为白色，两种媒体播放模式，后台会有控制
  * 			西藏54：（一体机和xz2100）快3无三连号,散号黑色，对子绿色，三同号红色，有多彩简约版，无主菜单选项，7张快三图，3个长周期，没有html的开奖动画和奖池，表头表尾为浅绿色，中间为白色
- * 			福建35：快3有三连号，四张基本图，无多彩简约版，无主菜单选项，有字体大小颜色设置，和值走势图用sum.html，没有考虑没有短周期，表头表尾为浅绿色，中间为白色
- * 			江西36：快3有三连号,默认形态，8张图参考截图，无多彩简约版，无主菜单选项，视图菜单顺序形态是快3第一个， 开奖动画全省控制，设置也可以设置是否显示开奖动画，影响个性化该选项是否置灰，有个最早最晚播放时间以及动画时长，U3D的全屏动画
- * 				3D都有三连号，全国统一
- * 			海南46：（一体机）快三叫快乐三宝，k3、k2两个短周期，无主菜单选项，无多彩简约版，快3四个图参考截图
+ * 			福建35：快3有三连号，四张基本图，无多彩简约版，无主菜单选项，有字体大小颜色设置，没有考虑没有短周期，表头表尾为浅绿色，中间为白色，没有html的开奖动画和奖池
+ * 			江西36：快3有三连号,默认形态，无多彩简约版，无主菜单选项， 开奖动画全省控制，设置也可以设置是否显示U3D的全屏动画，影响个性化该选项是否置灰，有个最早最晚播放时间以及动画时长
+ * 			贵州52：快3有三连号,3个长周期是前三个视图，无多彩简约版，无主菜单选项，设置也可以设置是否显示U3D的全屏动画，影响个性化该选项是否置灰，有个最早最晚播放时间以及动画时长
+ * 			3D都有三连号，全国统一			
+ * 			海南46：（一体机）快三叫快乐三宝，k3、k2两个短周期，无主菜单选项，无多彩简约版，快3四个图参考截图,有三连号
  * 			河南41：幸运彩，日切点为3点，无多彩简约版，有主菜单选项，无开奖动画，两行日期分界变色，无长周期，没有考虑没有短周期，IP设置需要密码，表头表尾为浅绿色，中间为白色
  *			辽宁21：快乐12（一体机）无多彩简约版，无主菜单选项，基本走势图两种风格,有开奖动画
- * 			吉林有一个横屏，没有开奖动画
- * *****关于快三的不同省份，这里分别分配了不同的K3view+省码，针对不同省份的任务，只需要修改该省份的K3view即可，并把gameArray.relationview的K3view改成本项目所在的省份，并同步上述对应的参数；
+ * 			吉林22有一个横屏，没有开奖动画，无主菜单选项，有多彩简约版，有三连号但是形态视图中依旧叫三不同
+ * *********关于不同省份，只需更改data.js种的provinceCode参数即省码即可，K3view会赋值成相应的省份内容,同时每个省份的特征也会在K_public中显示表述的数组种有标注
+ * 			每个视图的更改不仅包括html还有遗漏，名称等等一列，在每个view对象中都是上下关联的
+ * -------------------------------------------------------------------------------------------------------------------------------------------------
  * 打开快3字体颜色大小设置的个性化：1、把setting.html里#context4的快三字体那部分display：none改为显示；
  * 								2、把setting.js里的MAX_CONTEXT改为4（第10行左右），若无主副屏则是3。但和副屏设置不能共存，空间不够
  * 制作菜单图标：用firework更改模板里的文字，通过黄色边框显示，导出两个图，截取视图534*297的框大小，用ps放进那两个图中，缩放调整，得到菜单图标，
  * 					最后用firework按ctrl+shift+x（图像预览）把图标变成8位png，而且选项是alpha透明导出
  * *************某些省份后台接口没有统一，需要把相应的方法同步过来，与福建，河南，江苏等同步；
  */
+var ALL_COLOR = new Array("black", "orangered","#e8980e", "blue","green","purple");	//号码颜色
+var provinceCode = 32;	//省码，决定游戏省份
+var K3view = {};  //需要赋值
+var K_public={
+	hasNoFlag: [32,63,41].indexOf(provinceCode)>=0,		//有没有默认视图为no的选项
+	playHtmlMvflag: [32,21].indexOf(provinceCode)>=0,		//是否播放开奖动画和奖池
+	haslx:[35,36,46,22,52].indexOf(provinceCode)>=0,	//k3是否有三连号,false代表没有
+	skinFlag:[32,63,54,22].indexOf(provinceCode)>=0,		//是否有简约多彩风格选项
+	ipCode:[41].indexOf(provinceCode)>=0,		//修改是否需要密码
+	isfuping :false,  //是否为副屏
+	setFuping:false,	//个性化是否带有副屏设置
+	CS_name:new Array("B001","S3","QL730","SP61","QL515"),		
+	CS_text:new Array("双色球", "3D", "七乐彩","东方6+1","15选5"),
+	CS_COUNT:5,
+	K2_PL: new Array(),//所有号码组合
+	K3_PL: new Array(),//所有号码组合
+	all56:new Array(),
+	MAX_ROWCOUNT:50,//最大显示期数
+	MAX_PAGE:6, //总页数
+	KPROWCOUNT:27,
+	K2_WIN_NUMBER:1,
+	K2_ALL_NUMBER:22,
+	K3_WIN_NUMBER:3,
+	K3_ALL_NUMBER:6,
+	K10_WIN_NUMBER:8,
+	K10_ALL_NUMBER:20,
+	K12_WIN_NUMBER:5,
+	K12_ALL_NUMBER:12,
+	cut:0,//日切点
+	headheight:74,
+	bottomheight:44,
+	weekday:new Array("星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"),
+	COLOR:new Array(ALL_COLOR[person_setting.lh3color],ALL_COLOR[person_setting.bt3color],ALL_COLOR[person_setting.th2color],ALL_COLOR[person_setting.th3color]),	//号码颜色
+	CLASS:new Array("lh3","bt3","th2","th3"),
+	S3_COLOR:new Array("green", "black", "orangered", "blue"),
+	repeattime:3, //当开奖号码没取到时间隔时间 
+	termtime:600, //期长
+	spterm:5, 	//当新期没取到时间隔时间
+	tacolor:function(){
+		for(var i in K_public.CLASS)
+			myframe.$("."+K_public.CLASS[i]).css("color" , K_public.COLOR[i]);
+	}
+};
 var K2view = {		//虽然该工程里没有这个玩法
 	htmlname:new Array("kuai2.html", "gezi.html"),
 	menuicon:new Array("img/menu/k2_01.png", "img/menu/k2_02.png"),
@@ -108,7 +154,7 @@ var K3view_36 = {	//江西
 	yilounum: new Array("0|1|8", "0|1|20", "1|20|19|13|21", "0|14|15|16", "4|5|7", "6|8", "0|6|4","") 	//每个视图需要的遗漏序号
 };
 var K3view_52 = {	//贵州
-	htmlname:new Array( "K3_form.html","K3_base_52.html", "K3_sum.html", "K3_weitu.html","K3_2bt.html","K3_3bt.html","K3_hotnumber.html","K3_yilou.html"),
+	htmlname:new Array( "K3_form.html","K3_base_52.html", "K3_sum_36.html", "K3_weitu.html","K3_2bt.html","K3_3bt.html","K3_hotnumber.html","K3_yilou.html"),
 	menuicon:new Array("img/menu/k3_form.png", "img/menu/k3_base.png", "img/menu/k3_sum.png", "img/menu/k3_weitu.png",
 								"img/menu/k3_2bt.png", "img/menu/k3_3bt.png", "img/menu/k3_hotnumber.png", "img/menu/k3_yilou.png"),
 	menuicon_ac:new Array("img/menu/k3_form_ac.png","img/menu/k3_base_ac.png","img/menu/k3_sum_ac.png","img/menu/k3_weitu_ac.png",
@@ -121,7 +167,7 @@ var K3view_52 = {	//贵州
 	viewtext:new Array(0, 0, 0, 0, 0, 0, 0, 0),
 	datanum: new Array(0, 0, 0, 0, 0, 0, 0, 0),
 	isScross: new Array(0, 0, 0, 0, 0, 0, 0, 0),		//是否横屏
-	yilounum: new Array("0|1|8", "0|1|11|12", "0|1|2", "0|14|15|16", "4|5|7", "6|8", "0|6|4","") 	//每个视图需要的遗漏序号
+	yilounum: new Array("0|1|8", "0|1|11|12", "1|20|19|13|21", "0|14|15|16", "4|5|7", "6|8", "0|6|4","") 	//每个视图需要的遗漏序号
 };
 var K3view_54 = {	//西藏
 	htmlname:new Array("K3_base.html", "K3_sum.html", "K3_form.html", "K3_weitu.html","K3_2thdan.html","K3_2bt.html","K3_3bt.html"),
@@ -176,7 +222,7 @@ var XYCview = {		//幸运彩
 	yilounum: new Array("0|5", "6|7|5", "0", "1|2|3|4","6|7|5","9")	//每个视图需要的遗漏序号
 };
 var ALLview ={
-	htmlname: new Array("B001.html", "S3.html", "QL730.html", "Sp61.html", "QL515.html", "setting.html"),
+	htmlname: new Array("B001.html", provinceCode==63?"S3_63.html":"S3.html", "QL730.html", "Sp61.html", "QL515.html", "setting.html"),
 	menuicon: new Array("img/menu/b001.png", "img/menu/s3.png", "img/menu/ql730.png", "img/menu/sp61.png", "img/menu/ql515.png","img/menu/set.png"),
 	menuicon_ac: new Array("img/menu/b001_ac.png", "img/menu/s3_ac.png", "img/menu/ql730_ac.png", "img/menu/sp61_ac.png", "img/menu/ql515_ac.png", "img/menu/set_ac.png"),
 	particon: new Array("img/menu/b001_part.png", "img/menu/s3_part.png","img/menu/ql730_part.png", "img/menu/sp61_part.png", "img/menu/ql515_part.png"),
@@ -197,9 +243,10 @@ var ALLview ={
 // 	isScross: new Array(),
 // 	yilounum: new Array() 	//每个视图需要的遗漏序号
 // };
+eval("K3view =  K3view_" + provinceCode);		//不同省份的快三已被赋值
 var gameArray = { 
 	playname : new Array(K2NAME, K3NAME, XYCNAME, K10NAME, K12NAME), //所有玩法
-	relationview: new Array(K2view, K3view_32, XYCview, K10view, K12view),
+	relationview: new Array(K2view, K3view, XYCview, K10view, K12view),
 	settingtext : new Array("快2","快3","幸运彩","快乐10分","快乐12"),
 	playstate : new Array(2, 2, 2, 2, 2),			 //目前状态，0为等待开奖中，1为新期等待中，2为新期售卖中（只兑）
 	playLastate: new Array(2, 2, 2, 2, 2),
@@ -212,47 +259,7 @@ var gameArray = {
 	maindata: new Array(new Array(), new Array(), new Array(), new Array(), new Array()),
 	loadFunction : new Array(preloadK2,preloadK3,preloadXYC,preloadK10,preloadK12),
 };
-var ALL_COLOR = new Array("black", "orangered","#e8980e", "blue","green","purple");	//号码颜色
-var K_public={
-	hasNoFlag: false,	//有没有默认视图为no的选项
-	playHtmlMvflag:true,		//是否播放开奖动画和奖池
-	haslx:1,	//是否有三连号,0代表没有
-	ipCode:false,		//修改是否需要密码
-	skinFlag:false,		//是否有简约多彩风格选项
-	isfuping :false,  //是否为副屏
-	setFuping:false,	//个性化是否带有副屏设置
-	CS_name:new Array("B001","S3","QL730","SP61","QL515"),		
-	CS_text:new Array("双色球", "3D", "七乐彩","东方6+1","15选5"),
-	CS_COUNT:5,
-	K2_PL: new Array(),//所有号码组合
-	K3_PL: new Array(),//所有号码组合
-	all56:new Array(),
-	MAX_ROWCOUNT:50,//最大显示期数
-	MAX_PAGE:6, //总页数
-	KPROWCOUNT:27,
-	K2_WIN_NUMBER:1,
-	K2_ALL_NUMBER:22,
-	K3_WIN_NUMBER:3,
-	K3_ALL_NUMBER:6,
-	K10_WIN_NUMBER:8,
-	K10_ALL_NUMBER:20,
-	K12_WIN_NUMBER:5,
-	K12_ALL_NUMBER:12,
-	cut:0,//日切点
-	headheight:74,
-	bottomheight:44,
-	weekday:new Array("星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"),
-	COLOR:new Array(ALL_COLOR[person_setting.lh3color],ALL_COLOR[person_setting.bt3color],ALL_COLOR[person_setting.th2color],ALL_COLOR[person_setting.th3color]),	//号码颜色
-	CLASS:new Array("lh3","bt3","th2","th3"),
-	S3_COLOR:new Array("green", "black", "orangered", "blue"),
-	repeattime:3, //当开奖号码没取到时间隔时间 
-	termtime:600, //期长
-	spterm:5, 	//当新期没取到时间隔时间
-	tacolor:function(){
-		for(var i in K_public.CLASS)
-			myframe.$("."+K_public.CLASS[i]).css("color" , K_public.COLOR[i]);
-	}
-};
+
 var B001PricePool={
 	term_code:"",  		 //当前期
 	innext_firstaward:0, 			//奖池累金(已取整，元)
