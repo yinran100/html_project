@@ -330,7 +330,7 @@ table tr.bottom{
 }
 
 
-/* .table tr.t,.table tr.h,.table tr.ta,.table tr.hot,.table tr.bottom{
+.table tr.t,.table tr.h,.table tr.ta,.table tr.hot,.table tr.bottom{
 	background-color:  rgb(208,255,239); 
 }
 .table tr:not(.bottom):not(.ta):not(.t):not(.h):not(.hot){
@@ -338,7 +338,7 @@ table tr.bottom{
 }
 .table tr.day td:not(.list):not(.colortd):not(.back){
 	background-color: #fcf7d8 !important; 
-} */
+}
 /*背景颜色不同*/
 	/*河南*/
 /*.table col.lightblue,.table tr:not(.bottom) td.time{	background-color:  #e2f3fa;}
@@ -351,7 +351,7 @@ table tr.bottom{
 .table tr.ta:nth-child(odd) td{	background-color: #f7f2ea;}*/
 /*贵州 江西 等彩色表格*/
 /* 灰色表头*/
-.table tr.t,.table tr.h,.table tr.ta,.table tr.hot,.table tr.bottom{
+/* .table tr.t,.table tr.h,.table tr.ta,.table tr.hot,.table tr.bottom{
 	background-color: #dfe9ea;
 }
 .table tr.day td:not(.list):not(.colortd):not(.back){
@@ -361,4 +361,4 @@ table tr.bottom{
 .table tr:not(.day):nth-child(even) td.win,.table tr:not(.bottom) td.state{	background-color: #e6f7fe;}
 .table tr:not(.day):nth-child(odd) td.win{	background-color: #f5f9fc;}
 .table tr.ta:nth-child(even) td:nth-child(2){	background-color: #ddf4e0;}
-.table tr.ta:nth-child(odd) td:nth-child(2){	background-color: #f0faf2;}
+.table tr.ta:nth-child(odd) td:nth-child(2){	background-color: #f0faf2;} */

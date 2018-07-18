@@ -6,7 +6,7 @@
  */
 var person_setting={
 		haveset:0,
-		playCode:K12NAME,	//玩法名,"NO"代表不进入任何走势图maindata
+		playCode:K3NAME,	//玩法名,"NO"代表不进入任何走势图maindata
 		playview:0,		//默认打开第几个视图
 		showpage:6,		//K_public.MAX_PAGE,		//显示第几页
 		showpage_h:10,
@@ -14,7 +14,8 @@ var person_setting={
 		showversion:0,	//是否显示版本号
 		showyilou:1,	//是否显示连续遗漏
 		skinStyle:0,	//1是多彩版
-		sp_playEname:new Array(K12NAME),
+		sp_playEname:new Array(K3NAME),
+		cs_playEname:new Array("B001","S3","QL730","SP61","QL515"),		//默认图 "B001","S3","QL730","SP61","QL515"
 		fontsize:0,
 		fupingview:"B001",	//副屏上显示的玩法名（长周期）
 		fupingpage:6,	//副屏上显示第几页
@@ -62,7 +63,13 @@ var dataUtils = {
 						var ar = sp.spPlayEname.split(",");
 						for(var x in ar)
 							person_setting.sp_playEname.push(ar[x]);
-						person_setting.sp_playEname.sort();
+						//person_setting.sp_playEname.sort();
+					}
+					if(sp.csPlayEname){		//长周期授权，没有这个属性就保持默认
+						person_setting.cs_playEname=[];
+						var ar = sp.csPlayEname.split(",");
+						for(var x in ar)
+							person_setting.cs_playEname.push(ar[x]);
 					}
 					console.info("取到个性化设置参数");
 				}catch(e){console.error("个性化设置参数有错误");
@@ -325,13 +332,23 @@ var dataUtils = {
 	},
 	openMedia:function(){
 		if(($("#ifrContent").attr("src")!="about:blank"&&ALLview.viewtext[currentSelect]<2&&ALLview.isScross[currentSelect]==0&&!K_public.setFuping)||(person_setting.sp_playEname.length==0)){
-			console.info("打开视频媒体！");
-			if("undefined" != typeof webApi&&webApi!=null)	webApi.invoke("/term/openMedia",null);
+			if("undefined" != typeof webApi&&webApi!=null){
+				var playModel = JSON.parse(webApi.invoke("/term/getIsPlayTerm",null));
+				console.log("查询播放："+playModel.data);
+				if(playModel.data=="0") return;
+				console.info("打开视频媒体！");
+				webApi.invoke("/term/openMedia",null);
+			}	
 		}
 	},
 	closeMedia:function(){
-		console.info("返回菜单页, 关闭视频媒体！");
-		if("undefined" != typeof webApi&&webApi!=null)	webApi.invoke("/term/closeMedia",null);	
+		if("undefined" != typeof webApi&&webApi!=null){
+			var playModel = JSON.parse(webApi.invoke("/term/getIsPlayTerm",null));
+			console.log("查询播放："+playModel.data);
+			if(playModel.data=="0") return;
+			console.info("返回菜单页, 关闭视频媒体！");
+			webApi.invoke("/term/closeMedia",null);	
+		}	
 	},
 	getnewData: function(n) { //短周期新数据
 		var lastnote = mainnote[n][mainnote[n].length-1];var codestr="";

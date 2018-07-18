@@ -47,6 +47,7 @@ var web = self.setInterval(function(){
 				}
 			}else if(strPage=="A") K_public.setFuping = true;
 			console.log((K_public.setFuping?"双屏模式：":"常规屏")+(K_public.setFuping&&K_public.isfuping?"这是副屏":"这是主屏"));
+			$(".msg").show();
 			dataUtils.initialize();			//初始化，站点号和版本号
 			ajustPlayView();
 			if(K_public.hasNoFlag&&person_setting.playCode=="NO"&&!K_public.isfuping){

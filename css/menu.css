@@ -115,6 +115,7 @@ body{
 	position: absolute;
 	font-size: 40px;
 	color: white;
+	display: none;
 }
 .msg span:nth-child(1){
 	font-family: "ar";

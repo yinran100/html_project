@@ -60,11 +60,11 @@
 	font-size: 14px;
 }
 /*江西贵州*/
-.table tr:nth-child(even) td.dia{	background-color: #e6f7fe;}
+/* .table tr:nth-child(even) td.dia{	background-color: #e6f7fe;}
 .table tr:nth-child(odd) td.dia{	background-color: #f5f9fc;}
 .table tr:nth-child(even) td.dia:nth-last-child(n+11){	background-color: #fcf0f1;}
 .table tr:nth-child(odd) td.dia:nth-last-child(n+11){	background-color: #fffafa;}
 .table tr:nth-child(even) td.dia:nth-last-child(n+21){	background-color: #e6f7fe;}
 .table tr:nth-child(odd) td.dia:nth-last-child(n+21){	background-color: #f5f9fc;}
 .table tr:nth-child(even) td.dia:nth-last-child(n+31){	background-color: #fcf0f1;}
-.table tr:nth-child(odd) td.dia:nth-last-child(n+31){	background-color: #fffafa;}
+.table tr:nth-child(odd) td.dia:nth-last-child(n+31){	background-color: #fffafa;} */

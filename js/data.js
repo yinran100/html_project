@@ -1,5 +1,5 @@
 /*各省份差别：江苏32：快3无三连号,默认形态，有多彩简约版，有主菜单选项，7张快三图，5个长周期，有html的开奖动画和奖池，前三日未出名字改为多日未出，有一行日期分界线，表头表尾为浅绿色，中间为白色
- * 			青海63：（一体机）快三无三连号,默认形态，有多彩简约版，有主菜单选项，比江苏多一个综合走势，3个基本长周期,3D增加了和值一列用S3_63.html，没有html的开奖动画和奖池，没有考虑没有短周期，表头表尾为浅绿色，中间为白色
+ * 			青海63：（一体机）快三无三连号,默认形态，有多彩简约版，有主菜单选项，比江苏多一个综合走势，3个基本长周期,3D增加了和值一列用S3_63.html，没有html的开奖动画和奖池，没有考虑没有短周期，表头表尾为浅绿色，中间为白色，两种媒体播放模式
  * 			西藏54：（一体机和xz2100）快3无三连号,散号黑色，对子绿色，三同号红色，有多彩简约版，无主菜单选项，7张快三图，3个长周期，没有html的开奖动画和奖池，表头表尾为浅绿色，中间为白色
  * 			福建35：快3有三连号，四张基本图，无多彩简约版，无主菜单选项，有字体大小颜色设置，和值走势图用sum.html，没有考虑没有短周期，表头表尾为浅绿色，中间为白色
  * 			江西36：快3有三连号,默认形态，8张图参考截图，无多彩简约版，无主菜单选项，视图菜单顺序形态是快3第一个， 开奖动画全省控制，设置也可以设置是否显示开奖动画，影响个性化该选项是否置灰，有个最早最晚播放时间以及动画时长，U3D的全屏动画
@@ -175,42 +175,31 @@ var XYCview = {		//幸运彩
 	isScross: new Array(0, 0, 0, 0, 0, 0),		//是否横屏
 	yilounum: new Array("0|5", "6|7|5", "0", "1|2|3|4","6|7|5","9")	//每个视图需要的遗漏序号
 };
-var ALLview ={		//K_public.CS_name，K_public.CS_text的长周期玩法名 也要同步
-	htmlname: new Array("B001.html", "S3.html", "QL730.html", "setting.html"),
-	menuicon: new Array("img/menu/b001.png", "img/menu/s3.png", "img/menu/ql730.png", "img/menu/set.png"),
-	menuicon_ac: new Array("img/menu/b001_ac.png", "img/menu/s3_ac.png", "img/menu/ql730_ac.png", "img/menu/set_ac.png"),
-	particon: new Array("img/menu/b001_part.png", "img/menu/s3_part.png","img/menu/ql730_part.png"),
-	menumsg: new Array("双色球（基本走势图）", "3D（基本走势图）", "七乐彩（基本走势图）", "个性化设置"),
-	viewtext: new Array(2, 2, 2, 2),
-	datanum: new Array(0, 1, 2, 3),
-	isScross: new Array(0, 0, 0, 0),		//是否横屏
-	yilounum: new Array("0|1", "0|1|2|3", "0") 	//每个视图需要的遗漏序号
+var ALLview ={
+	htmlname: new Array("B001.html", "S3.html", "QL730.html", "Sp61.html", "QL515.html", "setting.html"),
+	menuicon: new Array("img/menu/b001.png", "img/menu/s3.png", "img/menu/ql730.png", "img/menu/sp61.png", "img/menu/ql515.png","img/menu/set.png"),
+	menuicon_ac: new Array("img/menu/b001_ac.png", "img/menu/s3_ac.png", "img/menu/ql730_ac.png", "img/menu/sp61_ac.png", "img/menu/ql515_ac.png", "img/menu/set_ac.png"),
+	particon: new Array("img/menu/b001_part.png", "img/menu/s3_part.png","img/menu/ql730_part.png", "img/menu/sp61_part.png", "img/menu/ql515_part.png"),
+	menumsg: new Array("双色球（基本走势图）", "3D（基本走势图）", "七乐彩（基本走势图）", "东方6+1（基本走势图）", "15选5（基本走势图）","个性化设置"),
+	viewtext: new Array(2, 2, 2, 2, 2, 2),
+	datanum: new Array(0, 1, 2, 3, 4, 5),
+	isScross: new Array(0, 0, 0, 0, 0, 0),		//是否横屏
+	yilounum: new Array("0|1", "0|1|2|3", "0", "7|9|11|6","0|1|2|3|4|5") 	//每个视图需要的遗漏序号
 };
-// var ALLview ={
-// 	htmlname: new Array("B001.html", "S3.html", "QL730.html", "Sp61.html", "QL515.html", "setting.html"),
-// 	menuicon: new Array("img/menu/b001.png", "img/menu/s3.png", "img/menu/ql730.png", "img/menu/sp61.png", "img/menu/ql515.png","img/menu/set.png"),
-// 	menuicon_ac: new Array("img/menu/b001_ac.png", "img/menu/s3_ac.png", "img/menu/ql730_ac.png", "img/menu/sp61_ac.png", "img/menu/ql515_ac.png", "img/menu/set_ac.png"),
-// 	particon: new Array("img/menu/b001_part.png", "img/menu/s3_part.png","img/menu/ql730_part.png", "img/menu/sp61_part.png", "img/menu/ql515_part.png"),
-// 	menumsg: new Array("双色球（基本走势图）", "3D（基本走势图）", "七乐彩（基本走势图）", "东方6+1（基本走势图）", "15选5（基本走势图）","个性化设置"),
-// 	viewtext: new Array(2, 2, 2, 2, 2, 2),
-// 	datanum: new Array(0, 1, 2, 3, 4, 5),
-// 	isScross: new Array(0, 0, 0, 0, 0, 0),		//是否横屏
-// 	yilounum: new Array("0|1", "0|1|2|3", "0", "7|9|11|6","0|1|2|3|4|5") 	//每个视图需要的遗漏序号
+// var ALLview ={		//可用玩法最少的情况，起码有设置
+// 	htmlname: new Array("setting.html"),
+// 	menuicon: new Array("img/menu/set.png"),
+// 	menuicon_ac: new Array("img/menu/set_ac.png"),
+// 	particon: new Array(),
+// 	menumsg: new Array("个性化设置"),
+// 	viewtext: new Array(),
+// 	datanum: new Array(),
+// 	isScross: new Array(),
+// 	yilounum: new Array() 	//每个视图需要的遗漏序号
 // };
-//var ALLview ={		//可用玩法最少的情况，起码有设置
-//	htmlname: new Array("setting.html"),
-//	menuicon: new Array("img/menu/set.png"),
-//	menuicon_ac: new Array("img/menu/set_ac.png"),
-//	particon: new Array(),
-//	menumsg: new Array("个性化设置"),
-//	viewtext: new Array(),
-//	datanum: new Array(),
-//	isScross: new Array(),
-//	yilounum: new Array() 	//每个视图需要的遗漏序号
-//};
 var gameArray = { 
 	playname : new Array(K2NAME, K3NAME, XYCNAME, K10NAME, K12NAME), //所有玩法
-	relationview: new Array(K2view, K3view_22, XYCview, K10view, K12view),
+	relationview: new Array(K2view, K3view_32, XYCview, K10view, K12view),
 	settingtext : new Array("快2","快3","幸运彩","快乐10分","快乐12"),
 	playstate : new Array(2, 2, 2, 2, 2),			 //目前状态，0为等待开奖中，1为新期等待中，2为新期售卖中（只兑）
 	playLastate: new Array(2, 2, 2, 2, 2),
@@ -232,9 +221,9 @@ var K_public={
 	skinFlag:false,		//是否有简约多彩风格选项
 	isfuping :false,  //是否为副屏
 	setFuping:false,	//个性化是否带有副屏设置
-	CS_COUNT:ALLview.htmlname.length-1,
-	CS_name:new Array("B001","S3","QL730"),		//,"SP61","QL515"
-	CS_text:new Array("双色球", "3D", "七乐彩"),	//,"东方6+1","15选5"
+	CS_name:new Array("B001","S3","QL730","SP61","QL515"),		
+	CS_text:new Array("双色球", "3D", "七乐彩","东方6+1","15选5"),
+	CS_COUNT:5,
 	K2_PL: new Array(),//所有号码组合
 	K3_PL: new Array(),//所有号码组合
 	all56:new Array(),
@@ -300,19 +289,38 @@ var addnote= []; //299期以外的数据，需要留着
 var $frame =$("#ifrContent").contents();
 function ajustPlayView(){
 	//gameArray.playname = new Array(k2name,k3name, "B001","S3","QL730");	//全，不需修改
-	var arr = [];	
+	var indexarr = [];	
 	for(var i in gameArray.playname){		
 		if(person_setting.sp_playEname.indexOf(gameArray.playname[i])<0){
-			arr.push(i);	//存储没用玩法的序号
+			indexarr.push(i);	//存储没用玩法的序号
 		}else gameArray.loadFunction[i]();
 	}
 	if(K_public.skinFlag) skinload();
-	arr.sort(function(a,b){return b-a});
+	indexarr.sort(function(a,b){return b-a});		//倒序显示，去除的时候不影响其他项目
 	changek12Style();  //检测快乐12样式
-	for(var i in arr){
+	for(var i in indexarr){
 		for(var key in gameArray)
-			gameArray[key].splice(arr[i],1);	//过滤掉不用的玩法，筛选出要用的视图
+			gameArray[key].splice(indexarr[i],1);	//过滤掉不用的玩法，筛选出要用的视图
 	}
+	//------------------------------------------------------------------
+	indexarr = [];
+	for(var i in K_public.CS_name){		
+		if(person_setting.cs_playEname.indexOf(K_public.CS_name[i])<0){
+			indexarr.push(i);	//存储没用玩法的序号
+		}
+	}
+	indexarr.sort(function(a,b){return b-a});		//倒序显示，去除的时候不影响其他项目
+	for(var i in indexarr){
+		K_public.CS_name.splice(indexarr[i],1);
+		K_public.CS_text.splice(indexarr[i],1);
+		for(var key in ALLview){
+			if(key=='datanum') ALLview[key].pop();
+			else ALLview[key].splice(indexarr[i],1);	//过滤掉不用的玩法，筛选出要用的视图
+		}
+	}
+	K_public.CS_COUNT = K_public.CS_name.length;
+	console.log(ALLview);
+	//------------------------------------------------------------------
 	for(var x in gameArray.relationview){		//短周期玩法
 		if(x>0){
 			for(var i in gameArray.relationview[x].datanum)
@@ -337,7 +345,10 @@ function ajustPlayView(){
 		if(ALLview.htmlname.length>12){
 			$("#ad").css("background-image","none");
 			$(".menubody").css("top",0);
-		} 
+			$(".msg").css("top",'1600px');
+		}else if(ALLview.htmlname.length<=6){
+			$(".msg").css("top",'900px');
+		}
 	//}
 }
 function getlongdata(){
