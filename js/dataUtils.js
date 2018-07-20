@@ -962,7 +962,7 @@ var dataUtils = {
 		else return [o[0]*11];
 	},
 	getallhui:function(note){
-		var arr =[],lastnum=[];console.log(note.length);
+		var arr =[],lastnum=[];
 		for(var i = 0; i < note.length; i++){
 			if(note.length-i<K_public.MAX_PAGE*K_public.MAX_ROWCOUNT){
 				arr.push(dataUtils.gethui(arr,note[i].numbers,lastnum));

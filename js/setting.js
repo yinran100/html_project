@@ -58,7 +58,6 @@ var enterBtn={
 		th2color= resarr[12].currentSelect;
 		th3color= resarr[13].currentSelect;
 		lh3color= resarr[14].currentSelect;
-		console.log(playCodeNum);
 		// var paramVue="playCode\|"+(playCodeNum<0?"NO":parent.gameArray.playname[playCodeNum])+"\|playView\|"+playView+"\|skinStyle\|"+skinStyle+"\|showPage\|"+showPage
 		// 			+"\|showStation\|"+showStation+"\|showVersion\|"+showVersion+"\|showYilou\|"+showYilou+"\|k12BaseStyle\|"+k12BaseStyle+"\|fontsize\|"+fontsize+"\|bt3color\|"+bt3color
 		// 			+"\|th2color\|"+th2color+"\|th3color\|"+th3color+"\|lh3color\|"+lh3color+"\|fupingview\|"+K_public.CS_name[fupingviewNum]+"\|fupingpage\|"+fupingpage;
@@ -387,7 +386,7 @@ var	resarr = new Array(context1q1,context1q2,context1q3, context1q3s, context1q4
 								context4q1, context4q2, context4q3, context4q4,context4q5);
 var nowpage = currentpage[current];
 $(function(){
-	putSetText();console.log(hasNoFlag+"__"+playCodeNum);
+	putSetText();
 	if(playCodeNum==0&&hasNoFlag){		//主菜单
 		removeArrOf(currentpage[0], context1q3s);
 		context1q3s.line.addClass("darkgray");

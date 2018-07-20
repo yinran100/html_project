@@ -42,7 +42,7 @@ var web = self.setInterval(function(){
 			if(debugflag==1){
 				var screenSet = JSON.parse(webApi.invoke("/term/getTmScreenSet", '{"paramKey":"screen_num","screenFlag":"A"}'));
 				if(screenSet&&screenSet.data && screenSet.result){
-					console.log(screenSet.data);
+					console.log("/term/getTmScreenSet返回结果："+screenSet.data);
 					K_public.setFuping = screenSet.data.param_value!="1";
 				}
 			}else if(strPage=="A") K_public.setFuping = true;
@@ -51,6 +51,8 @@ var web = self.setInterval(function(){
 			dataUtils.initialize();			//初始化，站点号和版本号
 			ajustPlayView();
 			if(K_public.hasNoFlag&&person_setting.playCode=="NO"&&!K_public.isfuping){
+			}else if(gameArray.playname.length==0){
+				layer.alert("本站点没有开通任何玩法，请确认后重启！", {icon: 5,btn: [], closeBtn:0});
 			}else{
 				var code = K_public.isfuping?person_setting.fupingview:person_setting.playCode;//主屏用playCode,副屏根据fupingview	
 				if(code==""||gameArray.playname.indexOf(code)<0)   //过滤掉没有默认视图和玩法名称没有的情况
@@ -76,7 +78,7 @@ var web = self.setInterval(function(){
 		$("*").removeClass("ac");
 		$(".i"+currentSelect).css("background-image","url("+ALLview.menuicon_ac[currentSelect]+")");
 		$(".msg span.view").text(ALLview.menumsg[currentSelect]);
-		if(person_setting.playCode!="NO"){
+		if(person_setting.playCode!="NO"&&gameArray.playname.length!=0){
 			$(".homePage").hide();
 			$("#ifrContent").attr("src", ALLview.htmlname[currentSelect]).show().focus();
 		}else layer.close(index);  
