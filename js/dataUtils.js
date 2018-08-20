@@ -15,7 +15,7 @@ var person_setting={
 		showyilou:1,	//是否显示连续遗漏
 		skinStyle:0,	//1是多彩版
 		sp_playEname:new Array(K3NAME),
-		cs_playEname:new Array("B001","S3","QL730","SP61","QL515"),		//默认图 "B001","S3","QL730","SP61","QL515"
+		cs_playEname:new Array(),		//默认图 "B001","S3","QL730","SP61","QL515"
 		fontsize:0,
 		fupingview:"B001",	//副屏上显示的玩法名（长周期）
 		fupingpage:6,	//副屏上显示第几页
@@ -48,9 +48,9 @@ var dataUtils = {
 					if(sp.th3color!=undefined) person_setting.th3color = parseInt(sp.th3color);
 					if(sp.lh3color!=undefined) person_setting.lh3color = parseInt(sp.lh3color);
 					if(sp.playCode!=undefined) person_setting.playCode = sp.playCode;
-					if(sp.playView!=undefined) person_setting.playview = parseInt(sp.playView);
+					if(sp.playView!=undefined&&sp.playView!='undefined') person_setting.playview = parseInt(sp.playView);
 					if(sp.showPage!=undefined) person_setting.showpage = Math.min(Math.max(parseInt(sp.showPage), 1), K_public.MAX_PAGE);
-					if(sp.fupingview!=undefined) person_setting.fupingview = parseInt(sp.fupingview);
+					if(sp.fupingview!=undefined&&sp.fupingview!='undefined') person_setting.fupingview = parseInt(sp.fupingview);
 					if(sp.fupingpage!=undefined) person_setting.fupingpage = Math.min(Math.max(parseInt(sp.fupingpage), 1), K_public.MAX_PAGE);
 					if(sp.showStation!=undefined) person_setting.showstation = parseInt(sp.showStation);
 					if(sp.showVersion!=undefined) person_setting.showversion = parseInt(sp.showVersion);

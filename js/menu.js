@@ -52,7 +52,7 @@ var web = self.setInterval(function(){
 			ajustPlayView();
 			if(K_public.hasNoFlag&&person_setting.playCode=="NO"&&!K_public.isfuping){
 			}else if(gameArray.playname.length==0){
-				layer.alert("本站点没有开通任何玩法，请确认后重启！", {icon: 5,btn: [], closeBtn:0});
+				layer.alert("本站点没有开通任何玩法的走势图，请确认后重启！", {icon: 5,btn: [], closeBtn:0});
 			}else{
 				var code = K_public.isfuping?person_setting.fupingview:person_setting.playCode;//主屏用playCode,副屏根据fupingview	
 				if(code==""||gameArray.playname.indexOf(code)<0)   //过滤掉没有默认视图和玩法名称没有的情况

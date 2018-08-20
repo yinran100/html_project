@@ -16,7 +16,7 @@ var showStation=parent.person_setting.showstation; //站点显示
 var showVersion=parent.person_setting.showversion; //版本显示
 var showYilou=parent.person_setting.showyilou;//号码间是否显示遗漏
 var skinStyle = parent.person_setting.skinStyle; //界面风格
-var fupingviewNum=Math.max(K_public.CS_name.indexOf(parent.person_setting.fupingview),0); //副屏视图
+var fupingviewNum= Math.max(K_public.CS_name.indexOf(parent.person_setting.fupingview),0); //副屏视图
 var fupingpage = parent.person_setting.fupingpage-1; //副屏页码
 var fontsize= parent.person_setting.fontsize;
 var bt3color= parent.person_setting.bt3color;
@@ -58,24 +58,24 @@ var enterBtn={
 		th2color= resarr[12].currentSelect;
 		th3color= resarr[13].currentSelect;
 		lh3color= resarr[14].currentSelect;
-		// var paramVue="playCode\|"+(playCodeNum<0?"NO":parent.gameArray.playname[playCodeNum])+"\|playView\|"+playView+"\|skinStyle\|"+skinStyle+"\|showPage\|"+showPage
-		// 			+"\|showStation\|"+showStation+"\|showVersion\|"+showVersion+"\|showYilou\|"+showYilou+"\|k12BaseStyle\|"+k12BaseStyle+"\|fontsize\|"+fontsize+"\|bt3color\|"+bt3color
-		// 			+"\|th2color\|"+th2color+"\|th3color\|"+th3color+"\|lh3color\|"+lh3color+"\|fupingview\|"+K_public.CS_name[fupingviewNum]+"\|fupingpage\|"+fupingpage;
-		var paramVue='[{"paramKey":"playCode","paramValue":"'+(playCodeNum<0?"NO":parent.gameArray.playname[playCodeNum])+'","screenFlag":"public"},'+
-			'{"paramKey":"playView","paramValue":"'+playView+'","screenFlag":"A"},'+
-			'{"paramKey":"skinStyle","paramValue":"'+skinStyle+'","screenFlag":"A"},'+
-			'{"paramKey":"showPage","paramValue":"'+showPage+'","screenFlag":"A"},'+
-			'{"paramKey":"showStation","paramValue":"'+showStation+'","screenFlag":"public"},'+
-			'{"paramKey":"showVersion","paramValue":"'+showVersion+'","screenFlag":"public"},'+
-			'{"paramKey":"showYilou","paramValue":"'+showYilou+'","screenFlag":"public"},'+
-			'{"paramKey":"fontsize","paramValue":"'+fontsize+'","screenFlag":"public"},'+
-			'{"paramKey":"k12BaseStyle","paramValue":"'+k12BaseStyle+'","screenFlag":"public"},'+
-			'{"paramKey":"bt3color","paramValue":"'+bt3color+'","screenFlag":"public"},'+
-			'{"paramKey":"th2color","paramValue":"'+th2color+'","screenFlag":"public"},'+
-			'{"paramKey":"th3color","paramValue":"'+th3color+'","screenFlag":"public"},'+
-			'{"paramKey":"lh3color","paramValue":"'+lh3color+'","screenFlag":"public"},'+
-			'{"paramKey":"fupingview","paramValue":"'+K_public.CS_name[fupingviewNum]+'","screenFlag":"B"},'+
-			'{"paramKey":"fupingpage","paramValue":"'+fupingpage+'","screenFlag":"B"}]';
+		var paramVue="playCode\|"+(playCodeNum<0?"NO":parent.gameArray.playname[playCodeNum])+"\|playView\|"+playView+"\|skinStyle\|"+skinStyle+"\|showPage\|"+showPage
+					+"\|showStation\|"+showStation+"\|showVersion\|"+showVersion+"\|showYilou\|"+showYilou+"\|k12BaseStyle\|"+k12BaseStyle+"\|fontsize\|"+fontsize+"\|bt3color\|"+bt3color
+					+"\|th2color\|"+th2color+"\|th3color\|"+th3color+"\|lh3color\|"+lh3color+"\|fupingview\|"+K_public.CS_name[fupingviewNum]+"\|fupingpage\|"+fupingpage;
+		// var paramVue='[{"paramKey":"playCode","paramValue":"'+(playCodeNum<0?"NO":parent.gameArray.playname[playCodeNum])+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"playView","paramValue":"'+playView+'","screenFlag":"A"},'+
+		// 	'{"paramKey":"skinStyle","paramValue":"'+skinStyle+'","screenFlag":"A"},'+
+		// 	'{"paramKey":"showPage","paramValue":"'+showPage+'","screenFlag":"A"},'+
+		// 	'{"paramKey":"showStation","paramValue":"'+showStation+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"showVersion","paramValue":"'+showVersion+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"showYilou","paramValue":"'+showYilou+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"fontsize","paramValue":"'+fontsize+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"k12BaseStyle","paramValue":"'+k12BaseStyle+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"bt3color","paramValue":"'+bt3color+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"th2color","paramValue":"'+th2color+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"th3color","paramValue":"'+th3color+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"lh3color","paramValue":"'+lh3color+'","screenFlag":"public"},'+
+		// 	'{"paramKey":"fupingview","paramValue":"'+K_public.CS_name[fupingviewNum]+'","screenFlag":"B"},'+
+		// 	'{"paramKey":"fupingpage","paramValue":"'+fupingpage+'","screenFlag":"B"}]';
 		console.info(paramVue);
 		var webApi=parent.webApi;
 		var result = parent.debugflag!=0?webApi.invoke("/term/setting",paramVue):true;
@@ -582,13 +582,17 @@ function initialize(){
 			}else  currentpage[i][j].line.removeClass("ac");
 			if(i==0||j<currentpage[i].length-2){
 				if(currentpage[i][j].isQuestion){
-					if(currentpage[i][j].isRadio){
-						var n = parseInt(currentpage[i][j].currentSelect);
-						currentpage[i][j].choosed[n].addClass("ac");//每一个选择框按照设置被选中
-					}else{
-						var radio = currentpage[i][j].currentSelect.split("");
-						for(var x in radio)
-							currentpage[i][j].choosed[radio[x]].addClass("ac");//多选的话，每一个选择框按照设置被选中
+					try{
+						if(currentpage[i][j].isRadio){
+							var n = parseInt(currentpage[i][j].currentSelect);
+							currentpage[i][j].choosed[n].addClass("ac");//每一个选择框按照设置被选中
+						}else{
+							var radio = currentpage[i][j].currentSelect.split("");
+							for(var x in radio)
+								currentpage[i][j].choosed[radio[x]].addClass("ac");//多选的话，每一个选择框按照设置被选中
+						}
+					}catch(e){
+						console.info('第'+(parseInt(i)+1)+'页,第'+(parseInt(j)+1)+'行项目有问题',e);
 					}
 				}else if(currentpage[i][j].hasSlider){
 					var n = parseInt(currentpage[i][j].currentSelect)*3+250;

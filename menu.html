@@ -30,119 +30,117 @@
 		<div  id="#sysmsgicon" class="sysmsg"></div>
 		<iframe id="ifrNotice" name="mynotice" src="Notice.html"></iframe>
 		<iframe id="ifrContent" name="myframe" src="about:blank"></iframe>
-		<div class="hidden">
-		    <script type="text/javascript">
-		            function preload(){
-		               	new Image().src = "img/menu/ql730_ac.png";
-		               	new Image().src = "img/menu/ql730.png";
-		               	new Image().src = "img/menu/s3_ac.png";
-		               	new Image().src = "img/menu/s3.png";
-		               	new Image().src = "img/menu/b001_ac.png";
-		               	new Image().src = "img/menu/b001.png";
-		               	new Image().src = "img/menu/sp61_ac.png";
-		               	new Image().src = "img/menu/sp61.png";
-		               	new Image().src = "img/menu/ql515_ac.png";
-		               	new Image().src = "img/menu/ql515.png";
-		               	new Image().src = "img/menu/set.png";
-		               	new Image().src = "img/menu/set_ac.png";
-		               	new Image().src = "img/input.png";
-		               	new Image().src = "img/button.png";
-		                new Image().src = "img/header.png";
-		                new Image().src = "img/logo.png";
-		                new Image().src = "img/foot_right.png";
-		                new Image().src = "img/header_s.png";
-		            }
-		            function skinload(){
-		               	new Image().src = "img/bottom.png";
-		               	new Image().src = "img/bottom_s.png";
-		                new Image().src = "img/new_header.png";
-		                new Image().src = "img/new_header_s.png";
-		                new Image().src = "img/right_bottom.png";
-		                new Image().src = "img/left_bottom.pngg";
-		            }
-		            function preloadXYC(){
-		            	new Image().src = "img/logo_xyc.png";
-		               	new Image().src = "img/menu/xyc_base1.png";
-		               	new Image().src = "img/menu/xyc_base1_ac.png";
-		               	new Image().src = "img/menu/xyc_base2.png";
-		               	new Image().src = "img/menu/xyc_base2_ac.png";
-		               	new Image().src = "img/menu/xymo_base.png";
-		               	new Image().src = "img/menu/xymo_base_ac.png";
-		               	new Image().src = "img/menu/warrior_base.png";
-		               	new Image().src = "img/menu/warrior_base_ac.png";
-		                new Image().src = "img/menu/warrior_sum.png";
-		               	new Image().src = "img/menu/warrior_sum_ac.png";
-		            }
-		            function preloadK10(){
-		            	new Image().src = "img/logo_kl10.png";
-		               	new Image().src = "img/menu/k10_base.png";
-		               	new Image().src = "img/menu/k10_base_ac.png";
-		               	new Image().src = "img/menu/k10_xuan1.png";
-		               	new Image().src = "img/menu/k10_xuan1_ac.png";
-		               	new Image().src = "img/menu/k10_zhi3.png";
-		               	new Image().src = "img/menu/k10_zhi3_ac.png";
-		            }
-		            function preloadK12(){
-		            	new Image().src = "img/logo_kl12.png";
-		               	new Image().src = "img/menu/k12_base.png";
-		               	new Image().src = "img/menu/k12_base_ac.png";
-		               	new Image().src = "img/menu/k12_sum.png";
-		               	new Image().src = "img/menu/k12_sum_ac.png";
-		               	new Image().src = "img/menu/k12_zhi2.png";
-		               	new Image().src = "img/menu/k12_zhi2_ac.png";
-		               	new Image().src = "img/menu/k12_zhi3.png";
-		               	new Image().src = "img/menu/k12_zhi3_ac.png";
-		            }
-		            function preloadK2(){
-		            	new Image().src ="img/logo_k2.png";
-		            	new Image().src ="img/k2_ad.png";
-		               	new Image().src ="img/menu/k2_01_ac.png";
-		               	new Image().src ="img/menu/k2_01.png";
-		               	new Image().src ="img/menu/k2_02_ac.png";
-		               	new Image().src ="img/menu/k2_02.png";
-		               	for (var i = 1; i < 22; i++) //初始化号码组合-------------------------------------------------
-							K_public.K2_PL.push(i);
-		            }
-		            function preloadK3(){
-		            	new Image().src = "img/logo_k3.png";
-		               	new Image().src = "img/menu/k3_base_ac.png";
-		               	new Image().src = "img/menu/k3_base.png";
-		               	new Image().src = "img/menu/k3_sum_ac.png";
-		               	new Image().src = "img/menu/k3_sum.png";
-		               	new Image().src = "img/menu/k3_form_ac.png";
-		               	new Image().src = "img/menu/k3_form.png";
-		               	new Image().src = "img/menu/k3_weitu_ac.png";
-		               	new Image().src = "img/menu/k3_weitu.png";
-		                new Image().src = "img/menu/k3_2bt_ac.png";
-		               	new Image().src = "img/menu/k3_2bt.png";
-		               	new Image().src = "img/menu/k3_3bt_ac.png";
-		               	new Image().src = "img/menu/k3_3bt.png";
-		               	for (var i = 1; i < 7; i++) //初始化号码组合
-							for (var j = 1; j < 7; j++) 
-								for (var k = 1; k < 7; k++) 
-									if (i <= j && j <= k) 
-										K_public.K3_PL.push(i * 100 + j * 10 + k);
-						var stharr = [],sbtarr = [],rtharr = [];
-						for(var i=0;i<K_public.K3_PL.length;i++){
-							var plstr= K_public.K3_PL[i].toString();
-							if(plstr.charAt(0)==plstr.charAt(1)&&plstr.charAt(1)==plstr.charAt(2)){
-								stharr.push(plstr);
-							}else if(plstr.charAt(0)!=plstr.charAt(1)&&plstr.charAt(1)!=plstr.charAt(2)){
-								sbtarr.push(plstr);
-							}else{
-								rtharr.push(plstr);
-							}
+		<script type="text/javascript">
+				function preload(){
+					new Image().src = "img/menu/ql730_ac.png";
+					new Image().src = "img/menu/ql730.png";
+					new Image().src = "img/menu/s3_ac.png";
+					new Image().src = "img/menu/s3.png";
+					new Image().src = "img/menu/b001_ac.png";
+					new Image().src = "img/menu/b001.png";
+					new Image().src = "img/menu/sp61_ac.png";
+					new Image().src = "img/menu/sp61.png";
+					new Image().src = "img/menu/ql515_ac.png";
+					new Image().src = "img/menu/ql515.png";
+					new Image().src = "img/menu/set.png";
+					new Image().src = "img/menu/set_ac.png";
+					new Image().src = "img/input.png";
+					new Image().src = "img/button.png";
+					new Image().src = "img/header.png";
+					new Image().src = "img/logo.png";
+					new Image().src = "img/foot_right.png";
+					new Image().src = "img/header_s.png";
+				}
+				function skinload(){
+					new Image().src = "img/bottom.png";
+					new Image().src = "img/bottom_s.png";
+					new Image().src = "img/new_header.png";
+					new Image().src = "img/new_header_s.png";
+					new Image().src = "img/right_bottom.png";
+					new Image().src = "img/left_bottom.pngg";
+				}
+				function preloadXYC(){
+					new Image().src = "img/logo_xyc.png";
+					new Image().src = "img/menu/xyc_base1.png";
+					new Image().src = "img/menu/xyc_base1_ac.png";
+					new Image().src = "img/menu/xyc_base2.png";
+					new Image().src = "img/menu/xyc_base2_ac.png";
+					new Image().src = "img/menu/xymo_base.png";
+					new Image().src = "img/menu/xymo_base_ac.png";
+					new Image().src = "img/menu/warrior_base.png";
+					new Image().src = "img/menu/warrior_base_ac.png";
+					new Image().src = "img/menu/warrior_sum.png";
+					new Image().src = "img/menu/warrior_sum_ac.png";
+				}
+				function preloadK10(){
+					new Image().src = "img/logo_kl10.png";
+					new Image().src = "img/menu/k10_base.png";
+					new Image().src = "img/menu/k10_base_ac.png";
+					new Image().src = "img/menu/k10_xuan1.png";
+					new Image().src = "img/menu/k10_xuan1_ac.png";
+					new Image().src = "img/menu/k10_zhi3.png";
+					new Image().src = "img/menu/k10_zhi3_ac.png";
+				}
+				function preloadK12(){
+					new Image().src = "img/logo_kl12.png";
+					new Image().src = "img/menu/k12_base.png";
+					new Image().src = "img/menu/k12_base_ac.png";
+					new Image().src = "img/menu/k12_sum.png";
+					new Image().src = "img/menu/k12_sum_ac.png";
+					new Image().src = "img/menu/k12_zhi2.png";
+					new Image().src = "img/menu/k12_zhi2_ac.png";
+					new Image().src = "img/menu/k12_zhi3.png";
+					new Image().src = "img/menu/k12_zhi3_ac.png";
+				}
+				function preloadK2(){
+					new Image().src ="img/logo_k2.png";
+					new Image().src ="img/k2_ad.png";
+					new Image().src ="img/menu/k2_01_ac.png";
+					new Image().src ="img/menu/k2_01.png";
+					new Image().src ="img/menu/k2_02_ac.png";
+					new Image().src ="img/menu/k2_02.png";
+					for (var i = 1; i < 22; i++) //初始化号码组合-------------------------------------------------
+						K_public.K2_PL.push(i);
+				}
+				function preloadK3(){
+					new Image().src = "img/logo_k3.png";
+					new Image().src = "img/menu/k3_base_ac.png";
+					new Image().src = "img/menu/k3_base.png";
+					new Image().src = "img/menu/k3_sum_ac.png";
+					new Image().src = "img/menu/k3_sum.png";
+					new Image().src = "img/menu/k3_form_ac.png";
+					new Image().src = "img/menu/k3_form.png";
+					new Image().src = "img/menu/k3_weitu_ac.png";
+					new Image().src = "img/menu/k3_weitu.png";
+					new Image().src = "img/menu/k3_2bt_ac.png";
+					new Image().src = "img/menu/k3_2bt.png";
+					new Image().src = "img/menu/k3_3bt_ac.png";
+					new Image().src = "img/menu/k3_3bt.png";
+					for (var i = 1; i < 7; i++) //初始化号码组合
+						for (var j = 1; j < 7; j++) 
+							for (var k = 1; k < 7; k++) 
+								if (i <= j && j <= k) 
+									K_public.K3_PL.push(i * 100 + j * 10 + k);
+					var stharr = [],sbtarr = [],rtharr = [];
+					for(var i=0;i<K_public.K3_PL.length;i++){
+						var plstr= K_public.K3_PL[i].toString();
+						if(plstr.charAt(0)==plstr.charAt(1)&&plstr.charAt(1)==plstr.charAt(2)){
+							stharr.push(plstr);
+						}else if(plstr.charAt(0)!=plstr.charAt(1)&&plstr.charAt(1)!=plstr.charAt(2)){
+							sbtarr.push(plstr);
+						}else{
+							rtharr.push(plstr);
 						}
-						K_public.all56 = stharr.concat(rtharr,sbtarr).map(Math.abs);
-		            }
-		            preload();
-		    </script>
-		</div>
-	<script type="text/javascript" src="js/shortcut.js"></script>
-	<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
-	<script type="text/javascript" src="layer/layer.js"></script> 
-	<script type="text/javascript" src="js/menu.js"></script>
-	<script type="text/javascript" src="js/dataUtils.js"></script> 
-	<script type="text/javascript" src="js/data.js"></script>
+					}
+					K_public.all56 = stharr.concat(rtharr,sbtarr).map(Math.abs);
+				}
+				preload();
+		</script>
+		<script type="text/javascript" src="js/shortcut.js"></script>
+		<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="layer/layer.js"></script> 
+		<script type="text/javascript" src="js/menu.js"></script>
+		<script type="text/javascript" src="js/dataUtils.js"></script> 
+		<script type="text/javascript" src="js/data.js"></script>
 	</body>
 </html>
