@@ -55,7 +55,7 @@ var dataUtils = {
 					if(sp.showStation!=undefined) person_setting.showstation = parseInt(sp.showStation);
 					if(sp.showVersion!=undefined) person_setting.showversion = parseInt(sp.showVersion);
 					if(sp.showYilou!=undefined) person_setting.showyilou = parseInt(sp.showYilou);
-					if(t.data.skinStyle!=undefined) person_setting.skinStyle = parseInt(t.data.skinStyle);
+					if(sp.skinStyle!=undefined) person_setting.skinStyle = parseInt(sp.skinStyle);
 					if(sp.screenLightVal!=undefined) person_setting.screenLight = parseInt(sp.screenLightVal);
 					if(sp.k12BaseStyle!=undefined) person_setting.k12BaseStyle = parseInt(sp.k12BaseStyle);
 					if(sp.spPlayEname!=undefined&&!K_public.isfuping){
